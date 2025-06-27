@@ -1,0 +1,29 @@
+.b_conten .b_content_2 {}
+
+.b_conten .b_content_2 .b_title_1 {
+    font-size: 26px;
+    font-weight: 700;
+    padding: 10px 0;
+    text-transform: uppercase;
+}
+
+.b_conten .b_content_2 .b_title_2 {
+    font-size: 24px;
+    padding: 5px 10px;
+    font-weight: 600;
+    color: #999;
+}
+
+.b_conten .b_content_2 p {
+    padding: 5px 30px;
+    position: relative;
+    margin-left: 30px;
+}
+
+.b_conten .b_content_2 p::before {
+    content: "\f00c";
+    position: absolute;
+    font-family: fontawesome;
+    top: 5px;
+    left: 5px;
+}

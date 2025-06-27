@@ -1,0 +1,29 @@
+.s-content  .title-new{
+    text-align: center;
+    font-size: 19px;
+}
+.s-content p{
+    font-size: 20px;
+    padding-right: 50px;
+    text-align: justify;
+    text-indent: 20px;
+}
+.s-content .thank-you{
+    text-align: end;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+/* ------------------------------------REPONSIVE MOBILE---------------------------------- */
+@media only screen and (max-width:46.1875em){
+    .s-content p{
+        padding: 0 10px;
+    }
+}
+
+/* ------------------------------------REPONSIVE TABLET---------------------------------- */
+@media only screen and (min-width:46.1875em) and (max-width:64em){
+    .s-content p{
+        padding-right: 0;
+    }
+}

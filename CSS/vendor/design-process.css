@@ -1,0 +1,37 @@
+
+.content-1 .s-title-1{
+    text-align: center;
+    font-size: 20px;
+}
+
+.s-table table {
+    font-size: 17px;
+}
+
+table,
+th,
+td {
+    border: 1px #000 solid;
+    padding: 10px;
+    border-collapse: collapse;
+}
+
+.s-conten .b_content .s-title {
+    font-weight: 700;
+    text-align: start;
+}
+.s-conten .b_content .b_desc p{
+    text-align: justify;
+}
+
+.s-table table tbody tr:nth-child(odd) {
+    background-color: #eee;
+    color: #000;
+}
+
+/* ------------------------------------REPONSIVE MOBILE---------------------------------- */
+@media only screen and (max-width:46.1875em){
+    .s-conten{
+        padding-right: 0;
+    }
+}

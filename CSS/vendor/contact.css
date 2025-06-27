@@ -1,0 +1,273 @@
+/* ---------------------------------content-1------------------------------- */
+.conten-1 {
+    margin-top: 50px;
+}
+
+.conten-1 .s-title-1 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    position: relative;
+    margin-bottom: 50px;
+    margin-top: 30px;
+}
+
+.conten-1 .s-title-1::before {
+    content: "";
+    position: absolute;
+    width: 38%;
+    height: 1px;
+    left: 0;
+    top: 21px;
+    background-image: linear-gradient(to right, rgba(255, 0, 0, 0), #ccc 50%, rgba(255, 0, 0, 0));
+}
+
+.conten-1 .s-title-1::after {
+    content: "";
+    position: absolute;
+    width: 38%;
+    height: 1px;
+    right: 0;
+    top: 21px;
+    background-image: linear-gradient(to right, rgba(255, 0, 0, 0), #ccc 50%, rgba(255, 0, 0, 0));
+}
+
+.conten-1 .card-1 {
+    font-size: 16px;
+    padding: 30px 0px;
+}
+
+.conten-1 .card-1 .b_title_1 {
+    font-size: 23px;
+    padding-bottom: 8px;
+    font-weight: 700;
+    position: relative;
+    margin-left: 30px;
+}
+
+.conten-1 .card-1 .b_title_1::before {
+    content: "\f015";
+    position: absolute;
+    font-family: fontawesome;
+    margin-left: -34px;
+    color: #999;
+}
+
+.conten-1 .card-1 .address {
+    position: relative;
+    margin-left: 20px;
+}
+
+.conten-1 .card-1 .address::before {
+    content: "\f3c5";
+    position: absolute;
+    font-family: fontawesome;
+    left: -19px;
+    color: #999;
+}
+
+.conten-1 .card-1 .info {
+    display: flex;
+    margin-top: 8px;
+}
+
+.conten-1 .card-1 .info .email {
+    position: relative;
+    margin-left: 23px;
+}
+
+.conten-1 .card-1 .info .email::before {
+    content: "\f0e0";
+    position: absolute;
+    font-family: fontawesome;
+    left: -24px;
+    color: #999;
+
+}
+
+.conten-1 .card-1 .info .web {
+    margin-left: 90px;
+    position: relative;
+}
+
+.conten-1 .card-1 .info .web::before {
+    content: "\f0ac";
+    position: absolute;
+    font-family: fontawesome;
+    left: -24px;
+    color: #999;
+}
+
+.conten-1 .card-1 .facebook {
+    margin-top: 8px;
+    position: relative;
+    margin-left: 20px;
+}
+
+.conten-1 .card-1 .facebook::before {
+    content: "\f082";
+    position: absolute;
+    font-family: fontawesome;
+    left: -23px;
+    color: #999;
+    font-size: 20px;
+    top: -2px;
+}
+
+.conten-1 .card-1 .hotline {
+    display: flex;
+    margin-top: 8px;
+}
+
+.conten-1 .card-1 .hotline .hotline-1 {
+    position: relative;
+    margin-left: 20px;
+}
+
+.conten-1 .card-1 .hotline .hotline-1::before {
+    content: "\f095";
+    position: absolute;
+    font-family: fontawesome;
+    margin-left: -23px;
+    color: #999;
+}
+
+.conten-1 .card-1 .hotline .hotline-2 {
+    margin-left: 157px;
+    position: relative;
+}
+
+.conten-1 .card-1 .hotline .hotline-2::before {
+    content: "\f10b";
+    position: absolute;
+    font-family: fontawesome;
+    left: -20px;
+    color: #999;
+}
+
+.conten-1 .card-1 .map {
+    margin-top: 30px;
+}
+
+.conten-1 .card-1 .info .email:hover {
+    color: yellow;
+}
+
+.conten-1 .card-1 .info .web:hover {
+    color: yellow;
+}
+
+.conten-1 .card-1 .facebook:hover {
+    color: yellow;
+}
+
+/* -----------------------------------card-2-------------------------------------- */
+.conten-1 .card-3 {
+    margin-top: 216px;
+    margin-left: 50px;
+    background-color: #eee;
+    padding: 65px 15px;
+}
+
+.conten-1 .card-3 .name {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    border: none;
+    outline: unset;
+}
+
+.conten-1 .card-3 .info {
+    display: flex;
+    margin-top: 20px;
+
+}
+
+.conten-1 .card-3 .info .phone {
+    width: 50%;
+    padding: 10px;
+    height: 40px;
+    border: none;
+    outline: unset;
+}
+
+.conten-1 .card-3 .info .email {
+    width: 50%;
+    height: 40px;
+    margin-left: 20px;
+    padding: 10px;
+    border: none;
+    outline: unset;
+}
+
+.conten-1 .card-3 .coment {
+    margin-top: 20px;
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    border: none;
+    outline: unset;
+}
+
+.conten-1 .card-3 .to-send {
+    width: 90px;
+    font-size: 20px;
+    margin-left: auto;
+    text-align: center;
+    margin-top: 20px;
+    padding: 5px 10px;
+    border: 1px #2ea3f2 solid;
+    border-radius: 5px;
+    color: #2ea3f2;
+    cursor: pointer;
+}
+
+.conten-1 .card-3 .to-send:hover {
+    background-color: #2ea3f2;
+    color: white;
+}
+
+.conten-1 .card-3 .error {
+    text-align: center;
+    color: red;
+}
+
+/* ------------------------------------REPONSIVE MOBILE---------------------------------- */
+@media only screen and (max-width:739px) {
+    .conten-1 .card-3 {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .conten-1 .s-title-1::after {
+        display: none;
+    }
+
+    .conten-1 .s-title-1::before {
+        display: none;
+    }
+
+    .map {
+        width: 100%;
+    }
+
+    .conten-1 .card-1 .info .web {
+        margin-left: 78px;
+    }
+
+    .conten-1 .card-1 .hotline .hotline-1 {
+        font-size: 15px;
+    }
+}
+
+/* ------------------------------------REPONSIVE TABLET---------------------------------- */
+@media only screen and (min-width:46.1875em) and (max-width:64em) {
+    .conten-1 .card-3 {
+        margin-top: 0;
+        margin-left: 0;
+    }
+
+    .conten-1 .card-3 .to-send {
+        width: 100%;
+    }
+}

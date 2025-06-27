@@ -1,0 +1,225 @@
+/* Font và thiết lập chung */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+body {
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 14px;
+}
+
+/* HEADER*/
+.header {
+    background: white;
+    width: 100%;
+}
+
+.s-header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    justify-content: space-between;
+}
+
+.s-header .s-img {
+    height: 60px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.s-header .s-img img {
+    height: auto;
+    max-height: 100%;
+    max-width: 200px; /* hoặc điều chỉnh theo menu */
+    display: block;
+    object-fit: contain;
+    margin-top: 6px; /* ép đẩy lên */
+}
+
+.s-header .s-navation {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 700;
+    margin-left: auto;
+}
+
+.s-header .s-navation > ul > li {
+    display: inline-block;
+    padding: 0 12px 20px;
+    position: relative;
+}
+
+.s-header .s-navation > ul > li > a {
+    color: #1f1f1f;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.s-header .s-navation > ul > li:hover > a {
+    color: #20CFCF; 
+    border-bottom: none; 
+}
+
+.s-header .s-navation > ul > li:hover > a {
+    transition: all 0.2s ease;
+    border-bottom: none;
+}
+
+.s-header .s-navation > ul > .even::before {
+    content: "\f107";
+    position: absolute;
+    font-family: fontawesome;
+    left: 45%;
+    top: 27px;
+    font-size: 12px;
+    display: none;
+}
+
+.s-header .s-navation > ul > .even:hover::before {
+    display: block;
+}
+
+.s-header .s-navation .sub-nav {
+    position: absolute;
+    top: 43px;
+    min-width: 230px;
+    background-color: #badfff;
+    padding: 15px;
+    font-size: 18px;
+    color: #000;
+    list-style-type: none;
+    box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 12%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.15s, opacity 0.15s, visibility 0.15s;
+    z-index: 9;
+}
+
+.s-header .s-navation .sub-nav > ul > li {
+    padding: 4px 0;
+}
+
+.s-header .s-navation .sub-nav > ul > li:hover {
+    background-color: #71bdff;
+}
+
+.s-header .s-navation > ul > .even:hover .sub-nav {
+    display: block;
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.s-bars {
+    display: none;
+}
+
+/* NAVBAR SHADOW ON SCROLL */
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: white;
+    z-index: 999;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+#navbar.scrolled {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* SLIDER */
+.s-slider {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+/* Đội ngũ nhân sự */
+.team-container {
+    padding: 40px 20px;
+    background: #f8fbff;
+}
+
+.card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    text-align: center;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 9999px;
+    object-fit: cover;
+    margin: 0 auto 16px;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 18px;
+    color: #1d4ed8;
+    margin-bottom: 4px;
+}
+
+.position {
+    font-style: italic;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 12px;
+}
+
+.description {
+    font-size: 14px;
+    color: #333;
+    text-align: justify;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #1d4ed8;
+}
+
+/* FADE-IN ANIMATION */
+.fade-in {
+    animation: fadeInUp 1s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Nút điều hướng mũi tên slider */
+.arrow-btn {
+  background: #f2f2f2;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 9999px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease;
+  color: #1f1f1f;
+}
+
+.arrow-btn:hover {
+  background: #e0e0e0;
+}
+
+/* Ẩn thanh cuộn slider */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

@@ -1,0 +1,33 @@
+h2,h3{
+    margin-block-start: unset;
+    margin-block-end: unset
+}
+h4{
+    margin: 15px 0;
+}
+.b_conten_2{
+    font-size: 17px;
+    margin-top: 50px;
+}
+.b_conten_2 .b_title_1{
+    font-size: 20px;
+    font-weight: 700;
+    padding: 5px 0;
+}
+.b_conten_2 .s-img img{
+    width: 100%;
+}
+.b_conten_2 .b_nav{
+    padding: 15px 0;
+}
+.b_conten_2 .b_nav>ul>li{
+    list-style: initial;
+    margin-left: 16px;
+}
+.b_conten_2 .b_title_2{
+    font-size: 20px;
+}
+.b_conten_2 p{
+    text-align: justify;
+    text-indent: 20px;
+}

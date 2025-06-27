@@ -1,0 +1,138 @@
+.content-1 .b_content_2 {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.content-1 .b_content_2 .title-1 .b_title_1 {
+    font-size: 22px;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+.content-1 .b_content_2 .title-1 p {
+    margin: 10px 0;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.content-1 .b_content_2 .title-1 p span {
+    padding: 0 27px;
+    font-weight: 500;
+}
+
+
+.content-1 .b_content_2 .title-2 {}
+
+.content-1 .b_content_2 .title-2 .b_title_2 {
+    font-size: 22px;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+.content-1 .b_content_2 .title-2 p {
+    margin: 10px 0;
+    font-size: 18px;
+    position: relative;
+    margin-left: 25px;
+    text-align: justify;
+}
+
+.content-1 .b_content_2 .title-2 p::before {
+    content: "\f101";
+    position: absolute;
+    font-family: fontawesome;
+    left: -28px;
+    color: #959393;
+}
+
+.content-1 .b_content_2 .title-3 .b_title_3 {
+    font-size: 22px;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+.content-1 .b_content_2 .title-3 p {
+    margin: 10px 0;
+    font-size: 18px;
+    text-align: justify;
+    text-indent: 20px;
+}
+
+.content-1 .b_content_2 .title-4 .b_title_4 {
+    font-size: 22px;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+.content-1 .b_content_2 .title-5 .b_title_5 {
+    font-size: 22px;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+.content-1 .b_content_2 .title-5 p {
+    margin: 10px 0;
+    font-size: 18px;
+    text-align: justify;
+    text-indent: 20px;
+}
+
+.title-6 .b_title_6{
+    font-size: 22px;
+    font-weight: bold;
+    padding: 10px 0;
+}
+.title-6 .b_title_7{
+    font-size: 20px;
+    font-weight: 700;
+    padding: 7px 0;
+}
+.title-6 p{
+    position: relative;
+    margin-left: 30px;
+}
+.title-6 p::after{
+    content: "\f00c";
+    position: absolute;
+    font-family:fontawesome;
+    left: -35px;
+    top: 0;
+    padding: 0 10px;
+}
+.title-8 .b_title_8{
+    font-size: 22px;
+    font-weight: bold;
+    padding: 10px 0;
+}
+.title-8 .row{
+    margin: 20px 0;
+}
+.s-title{
+    font-size: 22px;
+    padding: 10px 0;
+    font-weight: 700;
+}
+.ht-ratio__img{
+    height: 100%;
+} 
+
+.content-1 .b_content_2 .title-5 .b_title_5 {
+    font-size: 22px;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+.content-1 .b_content_2 .title-5 p {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+/* ------------------------------------REPONSIVE MOBILE---------------------------------- */
+@media only screen and (max-width:46.1875em){
+    .s-title{
+        font-size: 18px;
+    }
+     .s-table table {
+       font-size: 10px;
+     }
+}

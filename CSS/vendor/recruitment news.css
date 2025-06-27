@@ -1,0 +1,43 @@
+
+strong{
+    font-size: 22px;
+}
+.b_content_2 p{
+    font-size: 22px
+}
+.b_content_2 .b_title_2{
+    margin-top: 30px;
+    font-size: 20px;
+    text-align: justify;
+    text-indent: 20px;
+}
+
+.b_content_2 .b_title_3 p span{
+    margin-left: 60px;
+}
+.b_content_2 .b_title_4 .sub_title_4 p{
+    position: relative;
+    margin-left: 100px;
+}
+.b_content_2 .b_title_4 .sub_title_4 p::after{
+    content: "\f00c";
+    position: absolute;
+    left: -30px;
+    top: 0;
+    font-family: fontawesome;
+}
+.b_content_2 .b_title_5 p{
+    position: relative;
+    margin-left: 60px;
+    margin-top: 15px;
+}
+.b_content_2 .b_title_5 p::after{
+    content: "\f560";
+    position: absolute;
+    left: -30px;
+    top: 0;
+    font-family: fontawesome;
+}
+.s-under{
+    margin: 10px 0;
+}
