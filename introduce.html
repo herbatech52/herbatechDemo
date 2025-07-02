@@ -13,31 +13,44 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <!-- HEADER -->
-    <div class="s-header" id="navbar">
-      <div class="s-img">
-        <a href="./index.html"><img src="./img/Herbatech-logo.png" alt="Logo" /></a>
-      </div>
-      <div class="s-navation">
-        <ul>
-          <li><a href="./introduce.html">Về chúng tôi</a></li>
-          <li>
-            <a href="#">Giải pháp
-              <div class="sub-nav">
-                <ul>
-                  <li><a href="./mixing-station-design.html">Chú thích dữ liệu</a></li>
-                  <li><a href="./control-system-design.html">Tự động hóa</a></li>
-                  <li><a href="./design-process.html">Dịch vụ BPO</a></li>
-                  <li><a href="#">Lập trình nhúng</a></li>
-                </ul>
-              </div>
-            </a>
-          </li>
-          <li><a href="#">Tuyển dụng</a></li>
-          <li><a href="./contact.html">Liên hệ</a></li>
-        </ul>
-      </div>
+   <header class="w-full bg-white py-4 px-8 shadow-sm">
+  <div class="max-w-7xl mx-auto grid grid-cols-[auto_1fr_auto] items-center gap-6">
+    
+    <!-- Logo -->
+    <div>
+      <a href="./index.html">
+        <img src="./img/Herbatech-logo.png" alt="Logo" class="h-10 object-contain" />
+      </a>
     </div>
+
+    <!-- Navigation (menu giữa) -->
+    <nav>
+      <ul class="flex justify-center items-center gap-10 font-medium text-[#1f1f1f] text-base">
+        <li><a href="index.html" class="hover:text-[#20CFCF]">Trang chủ</a></li>
+        <li><a href="./introduce.html" class="hover:text-[#20CFCF]">Về chúng tôi</a></li>
+        <li class="relative group">
+          <a href="#" class="hover:text-[#20CFCF]">Giải pháp</a>
+          <div class="absolute top-full left-1/2 -translate-x-1/2 bg-white shadow-md rounded-md mt-2 py-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+            <a href="#" class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]">Chú thích dữ liệu</a>
+            <a href="#" class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]">Công cụ thu thập dữ liệu</a>
+            <a href="#" class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]">Nhận diện hình ảnh</a>
+            <a href="#" class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]">Kiểm thử</a>
+          </div>
+        </li>
+        <li><a href="#" class="hover:text-[#20CFCF]">Tuyển dụng</a></li>
+      </ul>
+    </nav>
+
+    <!-- CTA bên phải -->
+    <div class="hidden md:flex items-center gap-3">
+      <span class="text-sm text-gray-600">Herbatech luôn sẵn sàng!</span>
+      <a href="./contact.html" class="bg-[#20CFCF] text-white px-5 py-2 rounded-md font-semibold hover:bg-[#333] transition">
+        Liên hệ ngay
+      </a>
+    </div>
+
+  </div>
+</header>
 
     <!-- MAIN CONTENT -->
     <section class="max-w-7xl mx-auto px-4 py-24 mt-20 bg-[#f9fafb] grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -121,14 +134,9 @@
         <p class="position">Member</p>
       </div>
       <div class="card">
-        <img src="./img/team4.jpg" class="avatar" />
+        <img src="./img/huyendo.jpg" class="avatar" />
         <h3 class="name">Đỗ Thúy Huyền</h3>
         <p class="position">Member</p>
-      </div>
-      <div class="card">
-        <img src="./img/team4.jpg" class="avatar" />
-        <h3 class="name">Nguyễn Duy Tú</h3>
-        <p class="position">KeyMember</p>
       </div>
     </div>
   </div>
