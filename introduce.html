@@ -3,7 +3,7 @@
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
-    <title>Về chúng tôi - Herbatech</title>
+    <title>Herbatech</title>
     <link rel="shortcut icon" href="img/Herbatech-logo.png" type="image/png" />
     <link rel="stylesheet" href="fontawesome-free-6.1.1-web/css/all.min.css" />
     <link rel="stylesheet" href="./CSS/vendor/boostrap.css" />
@@ -31,25 +31,39 @@
         <li class="relative group">
           <a href="#" class="hover:text-[#20CFCF]">Giải pháp</a>
           <div class="absolute top-full left-1/2 -translate-x-1/2 bg-white shadow-md rounded-md mt-2 py-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
-            <a href="#" class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]">Chú thích dữ liệu</a>
-            <a href="#" class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]">Công cụ thu thập dữ liệu</a>
-            <a href="#" class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]">Nhận diện hình ảnh</a>
-            <a href="#" class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]">Kiểm thử</a>
+            <a href="dataAnnotation.html" class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]">Chú thích dữ liệu</a>
+            <a href="dataCollection.html" class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]">Công cụ thu thập dữ liệu</a>
+            <a href="imageRecognition.html" class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]">Nhận diện hình ảnh</a>
+            <a href="testing.html" class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]">Kiểm thử</a>
           </div>
         </li>
-        <li><a href="#" class="hover:text-[#20CFCF]">Tuyển dụng</a></li>
+        <li><a href="recruitment.html" class="hover:text-[#20CFCF]">Tuyển dụng</a></li>
       </ul>
     </nav>
 
     <!-- CTA bên phải -->
-    <div class="hidden md:flex items-center gap-3">
-      <span class="text-sm text-gray-600">Herbatech luôn sẵn sàng!</span>
-      <a href="./contact.html" class="bg-[#20CFCF] text-white px-5 py-2 rounded-md font-semibold hover:bg-[#333] transition">
-        Liên hệ ngay
-      </a>
-    </div>
+    <div class="hidden md:flex items-center gap-4">
+  <a href="./contact.html" class="bg-[#20CFCF] text-white px-5 py-2 rounded-md font-semibold hover:bg-[#1ab2b2] transition" data-i18n="contact_button">
+    Liên hệ
+  </a>
 
-  </div>
+  <!-- Language Selector 
+  <div class="relative group">
+    <button class="flex items-center gap-1 px-2 py-1 rounded-md border bg-white hover:bg-gray-100">
+      <img src="./img/logo/vn.png" id="current-flag" class="w-5 h-5" alt="Lang" />
+      <i class="fas fa-chevron-down text-xs"></i>
+    </button>
+    <div class="absolute right-0 mt-2 bg-white border rounded-md shadow-lg w-40 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+      <a href="#" onclick="setLanguage('en')" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-gray-100">
+        <img src="./img/logo/gb.png" class="w-5 h-5" /> English
+      </a>
+      <a href="#" onclick="setLanguage('vi')" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-gray-100">
+        <img src="./img/logo/vn.png" class="w-5 h-5" /> Tiếng Việt
+      </a>
+      <a href="#" onclick="setLanguage('kr')" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-gray-100">
+        <img src="./img/logo/kr.png" class="w-5 h-5" /> 한국어
+      </a>
+    </div>-->
 </header>
 
     <!-- MAIN CONTENT -->
@@ -65,8 +79,8 @@
         <p class="text-gray-700 text-base md:text-lg leading-relaxed">
           Chúng tôi dẫn đầu trong hành trình xử lý thông tin dữ liệu, từ thu thập dữ liệu quy mô lớn đến xử lý bằng công nghệ hiện đại. Với đội ngũ kỹ sư công nghệ thông tin và chuyên gia vận hành, Herbatech mang lại các giải pháp hiệu quả, chính xác và phù hợp với xu hướng phát triển của xã hội hiện đại.
         </p>
-        <a href="./contact.html" class="inline-block mt-8 px-6 py-3 bg-[#20CFCF] text-white font-semibold rounded-full hover:bg-[#1ab2b2] transition">
-          Liên hệ với chúng tôi
+        <a href="https://drive.google.com/drive/folders/1miY0L9Er270_Bv1f9R8IXr3FzImHetHR" target="_blank" class="inline-block mt-8 px-6 py-3 bg-[#20CFCF] text-white font-semibold rounded-full hover:bg-[#1ab2b2] transition">
+          Tham gia với chúng tôi
         </a>
       </div>
 
@@ -101,40 +115,40 @@
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
       <!-- Member 1 -->
       <div class="card">
-        <img src="./img/huyba.png" alt="Lai Huy Ba" class="avatar" />
+        <img src="./img/nhansu/huyba.png" alt="Lai Huy Ba" class="avatar" />
         <h3 class="name">Lại Huy Ba</h3>
         <p class="position">CEO</p>
       </div>
       <!-- Member 2 -->
       <div class="card">
-        <img src="./img/vungocthai.jpg" class="avatar" />
+        <img src="./img/nhansu/vungocthai.jpg" class="avatar" />
         <h3 class="name">Vũ Ngọc Thái</h3>
         <p class="position">Project manager</p>
       </div>
       <!-- Member 3 -->
       <div class="card">
-        <img src="./img/khahieu.jpg" class="avatar" />
+        <img src="./img/nhansu/khahieu.jpg" class="avatar" />
         <h3 class="name">Nguyễn Khả Hiếu</h3>
         <p class="position">Project Manager</p>
       </div>
       <!-- Member 4 -->
       <div class="card">
-        <img src="./img/thudo.jpg" class="avatar" />
+        <img src="./img/nhansu/thudo.jpg" class="avatar" />
         <h3 class="name">Đỗ Hoài Thu</h3>
         <p class="position">Member</p>
       </div>
       <div class="card">
-        <img src="./img/lannguyen.png" class="avatar" />
+        <img src="./img/nhansu/lannguyen.png" class="avatar" />
         <h3 class="name">Nguyễn Thị Lân</h3>
         <p class="position">Member</p>
       </div>
       <div class="card">
-        <img src="./img/thaokieu1.png" class="avatar" />
+        <img src="./img/nhansu/thaokieu.png" class="avatar" />
         <h3 class="name">Kiều Thị Thảo</h3>
         <p class="position">Member</p>
       </div>
       <div class="card">
-        <img src="./img/huyendo.jpg" class="avatar" />
+        <img src="./img/nhansu/huyendo.jpg" class="avatar" />
         <h3 class="name">Đỗ Thúy Huyền</h3>
         <p class="position">Member</p>
       </div>

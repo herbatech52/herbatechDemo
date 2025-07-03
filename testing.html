@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+ <head>
+    <meta charset="UTF-8" />
+    <title>Herbatech</title>
+    <link rel="shortcut icon" href="img/Herbatech-logo.png" type="image/png" />
+    <link rel="stylesheet" href="fontawesome-free-6.1.1-web/css/all.min.css" />
+    <link rel="stylesheet" href="./CSS/vendor/boostrap.css" />
+    <link rel="stylesheet" href="./CSS/vendor/Resert CSS.css" />
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <link rel="stylesheet" href="./CSS/vendor/home.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+   <header class="w-full bg-white py-4 px-8 shadow-sm">
+  <div class="max-w-7xl mx-auto grid grid-cols-[auto_1fr_auto] items-center gap-6">
+    
+    <!-- Logo -->
+    <div>
+      <a href="./index.html">
+        <img src="./img/Herbatech-logo.png" alt="Logo" class="h-10 object-contain" />
+      </a>
+    </div>
+
+    <!-- Navigation (menu giữa) -->
+    <nav>
+      <ul class="flex justify-center items-center gap-10 font-medium text-[#1f1f1f] text-base">
+        <li><a href="index.html" class="hover:text-[#20CFCF]">Trang chủ</a></li>
+        <li><a href="./introduce.html" class="hover:text-[#20CFCF]">Về chúng tôi</a></li>
+        <li class="relative group">
+          <a href="#" class="hover:text-[#20CFCF]">Giải pháp</a>
+          <div class="absolute top-full left-1/2 -translate-x-1/2 bg-white shadow-md rounded-md mt-2 py-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+            <a href="dataAnnotation.html" class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]">Chú thích dữ liệu</a>
+            <a href="dataCollection.html" class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]">Công cụ thu thập dữ liệu</a>
+            <a href="imageRecognition.html" class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]">Nhận diện hình ảnh</a>
+            <a href="testing.html" class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]">Kiểm thử</a>
+          </div>
+        </li>
+        <li><a href="recruitment.html" class="hover:text-[#20CFCF]">Tuyển dụng</a></li>
+      </ul>
+    </nav>
+
+    <!-- CTA bên phải -->
+    <div class="hidden md:flex items-center gap-4">
+  <a href="./contact.html" class="bg-[#20CFCF] text-white px-5 py-2 rounded-md font-semibold hover:bg-[#1ab2b2] transition" data-i18n="contact_button">
+    Liên hệ
+  </a>
+</div>
+
+</header> 
+
+
+
+  <!-- FOOTER -->
+  <footer class="bg-[#1f1f1f] text-white py-12 mt-12">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div>
+        <img src="./img/Herbatech-logo.png" alt="Herbatech Logo" class="w-32 mb-4" />
+        <p class="text-sm text-gray-400">Take the risk or lose the chance</p>
+      </div>
+      <div>
+        <h3 class="font-semibold mb-2">Sản phẩm</h3>
+        <ul class="text-sm space-y-1 text-gray-300">
+          <li><a href="#" class="hover:text-white">Data</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-semibold mb-2">Công ty</h3>
+        <ul class="text-sm space-y-1 text-gray-300">
+          <li><a href="./introduce.html" class="hover:text-white">Về chúng tôi</a></li>
+          <li><a href="./contact.html" class="hover:text-white">Liên hệ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-semibold mb-2">Mạng xã hội</h3>
+        <ul class="text-sm space-y-2 text-gray-300">
+          <li class="flex items-center gap-2">
+            <i class="fab fa-facebook-f"></i>
+            <a href="https://www.facebook.com/HerbaTechnology" class="hover:text-white">Facebook</a>
+          </li>
+          <li class="flex items-center gap-2">
+            <i class="fab fa-linkedin-in"></i>
+            <a href="#" class="hover:text-white">MS Teams</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-10 text-center text-xs text-gray-500">
+      © 2025 Herbatech CO., LTD
+    </div>
+  </footer>
+  </body>
+
+</html>

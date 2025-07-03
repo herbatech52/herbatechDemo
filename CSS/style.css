@@ -5,6 +5,7 @@ body {
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     font-size: 14px;
+    color: #20CFCF;
 }
 
 /* HEADER*/
@@ -80,9 +81,7 @@ body {
     width: 100%;
 }
 
-.s-bars {
-    display: none;
-}
+
 
 /* NAVBAR SHADOW ON SCROLL */
 #navbar {
@@ -98,12 +97,6 @@ body {
 
 #navbar.scrolled {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* SLIDER */
-.s-slider {
-    margin-left: 30px;
-    margin-right: 30px;
 }
 
 /* Đội ngũ nhân sự */
@@ -167,26 +160,6 @@ body {
     }
 }
 
-/* Nút điều hướng mũi tên slider */
-.arrow-btn {
-  background: #f2f2f2;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 9999px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  transition: background 0.3s ease;
-  color: #1f1f1f;
-}
-
-.arrow-btn:hover {
-  background: #e0e0e0;
-}
-
-/* Ẩn thanh cuộn slider */
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.hide-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+.counter {
+  color: #20CFCF;
 }
