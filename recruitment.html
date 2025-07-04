@@ -10,15 +10,21 @@
   <link href="./CSS/vendor/boostrap.css" rel="stylesheet"/>
   <link href="./CSS/vendor/Resert CSS.css" rel="stylesheet"/>
   <link href="./CSS/style.css" rel="stylesheet"/>
-  <link href="./CSS/vendor/home.css" rel="stylesheet"/>
-  <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet"/>
-  <script src="https://cdn.tailwindcss.com">
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/rellax@1.12.1/rellax.min.js">
-  </script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link href="./CSS/style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js" defer></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/rellax@1.12.1/rellax.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="https://cdn.tailwindcss.com"></script>
  </head>
- <body class="bg-white text-gray-800">
-  <header class="w-full bg-white py-4 px-8 shadow-sm">
+
+ <body>
+  <div class="fixed inset-0 -z-10" id="particles-js"></div>
+  <header class="fixed top-0 left-0 w-full z-50 bg-white bg-opacity-40 backdrop-blur-md text-[#1f1f1f] px-8 py-4 transition duration-300" id="navbar">
    <div class="max-w-7xl mx-auto grid grid-cols-[auto_1fr_auto] items-center gap-6">
     <!-- Logo -->
     <div>
@@ -30,18 +36,15 @@
     <nav>
      <ul class="flex justify-center items-center gap-10 font-medium text-[#1f1f1f] text-base">
       <li>
-       <a class="hover:text-[#20CFCF]" href="index.html">
-        Trang chủ
-       </a>
+       <a class="hover:text-[#20CFCF]" href="index.html">TRANG CHỦ</a>
       </li>
       <li>
-       <a class="hover:text-[#20CFCF]" href="./introduce.html">
-        Về chúng tôi
+       <a class="hover:text-[#20CFCF]" href="./introduce.html">VỀ CHÚNG TÔI
        </a>
       </li>
       <li class="relative group">
        <a class="hover:text-[#20CFCF]" href="#">
-        Giải pháp
+        GIẢI PHÁP
        </a>
        <div class="absolute top-full left-1/2 -translate-x-1/2 bg-white shadow-md rounded-md mt-2 py-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
         <a class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]" href="dataAnnotation.html">
@@ -60,16 +63,34 @@
       </li>
       <li>
        <a class="hover:text-[#20CFCF]" href="recruitment.html">
-        Tuyển dụng
+        TUYỂN DỤNG
        </a>
       </li>
      </ul>
     </nav>
+
     <!-- CTA -->
     <div class="hidden md:flex items-center gap-4">
      <a class="bg-[#20CFCF] text-white px-5 py-2 rounded-md font-semibold hover:bg-[#1ab2b2] transition" data-i18n="contact_button" href="./contact.html">
-      Liên hệ
-     </a>
+      Liên hệ</a>
+     <!-- Language Selector 
+  <div class="relative group">
+    <button class="flex items-center gap-1 px-2 py-1 rounded-md border bg-white hover:bg-gray-100">
+      <img src="./img/logo/vn.png" id="current-flag" class="w-5 h-5" alt="Lang" />
+      <i class="fas fa-chevron-down text-xs"></i>
+    </button>
+    <div class="absolute right-0 mt-2 bg-white border rounded-md shadow-lg w-40 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+      <a href="#" onclick="setLanguage('en')" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-gray-100">
+        <img src="./img/logo/gb.png" class="w-5 h-5" /> English
+      </a>
+      <a href="#" onclick="setLanguage('vi')" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-gray-100">
+        <img src="./img/logo/vn.png" class="w-5 h-5" /> Tiếng Việt
+      </a>
+      <a href="#" onclick="setLanguage('kr')" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-gray-100">
+        <img src="./img/logo/kr.png" class="w-5 h-5" /> 한국어
+      </a>
+    </div>
+  </div>-->
     </div>
    </div>
   </header>
@@ -152,6 +173,43 @@
    <div class="absolute inset-0 bg-[url('/img/bg-stars.png')] opacity-10 pointer-events-none">
    </div>
   </section>
+
+<!-- Văn hóa tổ chức -->
+<section class="py-16 bg-gradient-to-b from-white via-[#f5faff] to-white">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-center text-3xl font-bold text-[#20CFCF] mb-10">Văn hóa tổ chức <span class="text-red-500">(Đang update)</span></h2> 
+
+    <div class="relative">
+      <div class="swiper cultureSwiper overflow-visible">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide w-[300px] md:w-[380px]">
+            <img src="./img/herbatech-team.png" class="rounded-xl shadow object-cover w-full h-[420px]" alt="Văn hóa 1"/>
+          </div>
+          <div class="swiper-slide w-[300px] md:w-[380px]">
+            <img src="./img/herbatech-team.png" class="rounded-xl shadow object-cover w-full h-[420px]" alt="Văn hóa 2"/>
+          </div>
+          <div class="swiper-slide w-[300px] md:w-[380px]">
+            <img src="./img/herbatech-team.png" class="rounded-xl shadow object-cover w-full h-[420px]" alt="Văn hóa 3"/>
+          </div>
+          <div class="swiper-slide w-[300px] md:w-[380px]">
+            <img src="./img/herbatech-team.png" class="rounded-xl shadow object-cover w-full h-[420px]" alt="Văn hóa 3"/>
+          </div>
+          <div class="swiper-slide w-[300px] md:w-[380px]">
+            <img src="./img/herbatech-team.png" class="rounded-xl shadow object-cover w-full h-[420px]" alt="Văn hóa 3"/>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mũi tên điều hướng -->
+      <div class="swiper-button-prev !w-8 !h-8 -left-8 top-1/2 -translate-y-1/2 text-[#20CFCF] z-30"></div>
+      <div class="swiper-button-next !w-8 !h-8 -right-8 top-1/2 -translate-y-1/2 text-[#20CFCF] z-30"></div>
+    </div>
+  </div>
+</section>
+
+
+
+<!--FOOTER-->
   <footer class="bg-[#1f1f1f] text-white py-12 mt-12">
    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
     <div>

@@ -1,3 +1,5 @@
+// main.js (đã sửa)
+
 //con số ấn tượng
 function animateCounter(el) {
   const target = parseInt(el.getAttribute('data-target'), 10);
@@ -37,12 +39,11 @@ function initCounters() {
   });
 }
 
+// --- Gộp DOMContentLoaded ---
 document.addEventListener('DOMContentLoaded', () => {
   initCounters();
-});
 
-
- // Scroll-triggered animation
+  // Scroll-triggered animation
   const fadeElements = document.querySelectorAll(".fade-in-up");
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -56,17 +57,18 @@ document.addEventListener('DOMContentLoaded', () => {
   // Lightbox
   const lightboxOverlay = document.getElementById("lightboxOverlay");
   const lightboxImage = document.getElementById("lightboxImage");
-
-  document.querySelectorAll(".lightbox-trigger").forEach(img => {
-    img.addEventListener("click", () => {
-      lightboxImage.src = img.src;
-      lightboxOverlay.classList.remove("hidden");
+  if (lightboxOverlay && lightboxImage) {
+    document.querySelectorAll(".lightbox-trigger").forEach(img => {
+      img.addEventListener("click", () => {
+        lightboxImage.src = img.src;
+        lightboxOverlay.classList.remove("hidden");
+      });
     });
-  });
 
-  lightboxOverlay.addEventListener("click", () => {
-    lightboxOverlay.classList.add("hidden");
-  });
+    lightboxOverlay.addEventListener("click", () => {
+      lightboxOverlay.classList.add("hidden");
+    });
+  }
 
   window.addEventListener('scroll', function () {
     const navbar = document.getElementById('navbar');
@@ -77,59 +79,119 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-//introduce
-  const faders = document.querySelectorAll('.fade-in-up');
-      const appearOnScroll = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) entry.target.classList.add('show');
+  // Tabs (Our Mission / Vision / Value)
+  const tabButtons = document.querySelectorAll('#tab-buttons button');
+  const tabPanes = document.querySelectorAll('.tab-pane');
+
+  if (tabButtons.length && tabPanes.length) {
+    const defaultTab = tabButtons[0].getAttribute('data-tab');
+
+    tabButtons.forEach((btn) => {
+      const tab = btn.getAttribute('data-tab');
+      const pane = document.querySelector(`.tab-pane[data-tab="${tab}"]`);
+      if (tab === defaultTab) {
+        btn.classList.add('bg-gradient-to-r', 'from-[#20CFCF]', 'to-[#1ab2b2]', 'text-white');
+        pane?.classList.remove('hidden');
+      } else {
+        btn.classList.remove('bg-gradient-to-r', 'from-[#20CFCF]', 'to-[#1ab2b2]', 'text-white');
+        pane?.classList.add('hidden');
+      }
+    });
+
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tab = btn.getAttribute('data-tab');
+
+        tabButtons.forEach(b => b.classList.remove('bg-gradient-to-r', 'from-[#20CFCF]', 'to-[#1ab2b2]', 'text-white'));
+        btn.classList.add('bg-gradient-to-r', 'from-[#20CFCF]', 'to-[#1ab2b2]', 'text-white');
+
+        tabPanes.forEach(pane => {
+          if (pane.getAttribute('data-tab') === tab) {
+            pane.classList.remove('hidden');
+          } else {
+            pane.classList.add('hidden');
+          }
         });
-      }, { threshold: 0.2 });
+      });
+    });
+  }
 
-      faders.forEach(el => appearOnScroll.observe(el));
+  // AOS
+  AOS.init({ duration: 1000, once: true });
 
-// AOS: Scroll animation
-AOS.init({ duration: 1000, once: true });
+  // VanillaTilt
+  VanillaTilt.init(document.querySelectorAll(".tilt-card"), {
+    max: 15,
+    speed: 400,
+    glare: true,
+    "max-glare": 0.2,
+  });
 
-// VanillaTilt: 3D Tilt
-VanillaTilt.init(document.querySelectorAll(".tilt-card"), {
-  max: 15,
-  speed: 400,
-  glare: true,
-  "max-glare": 0.2,
+  // Particles
+  particlesJS("particles-js", {
+    "particles": {
+      "number": { "value": 40 },
+      "color": { "value": "#20CFCF" },
+      "shape": { "type": "circle" },
+      "opacity": { "value": 0.3 },
+      "size": { "value": 4 },
+      "line_linked": { "enable": true, "distance": 120, "color": "#20CFCF", "opacity": 0.4, "width": 1 },
+      "move": { "enable": true, "speed": 2 }
+    },
+    "interactivity": {
+      "detect_on": "canvas",
+      "events": { "onhover": { "enable": true, "mode": "repulse" } },
+      "modes": { "repulse": { "distance": 100 } }
+    }
+  });
+
+  // Swiper
+  new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    grabCursor: true,
+    simulateTouch: true,
+    allowTouchMove: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 }
+    }
+  });
 });
 
-// Particles.js: Nền động
-particlesJS("particles-js", {
-  "particles": {
-    "number": { "value": 40 },
-    "color": { "value": "#20CFCF" },
-    "shape": { "type": "circle" },
-    "opacity": { "value": 0.3 },
-    "size": { "value": 4 },
-    "line_linked": { "enable": true, "distance": 120, "color": "#20CFCF", "opacity": 0.4, "width": 1 },
-    "move": { "enable": true, "speed": 2 }
-  },
-  "interactivity": {
-    "detect_on": "canvas",
-    "events": { "onhover": { "enable": true, "mode": "repulse" } },
-    "modes": { "repulse": { "distance": 100 } }
+//animation hand robot & human
+window.addEventListener("scroll", () => {
+  const section = document.getElementById("hand-scroll-section");
+  const left = document.getElementById("leftHand");
+  const right = document.getElementById("rightHand");
+
+  if (!section || !left || !right) return;
+
+  const rect = section.getBoundingClientRect();
+  const inView = rect.top < window.innerHeight * 0.8 && rect.bottom > 0;
+
+  if (inView) {
+    left.classList.remove("-translate-x-full");
+    right.classList.remove("translate-x-full");
+  } else {
+    left.classList.add("-translate-x-full");
+    right.classList.add("translate-x-full");
   }
 });
 
-//phản hồi khách hàng
-new Swiper(".mySwiper", {
-  slidesPerView: 1,
-  spaceBetween: 30,
+//vuốt slider tuyển dụng
+new Swiper(".cultureSwiper", {
+  slidesPerView: "auto",
+  centeredSlides: true,
+  spaceBetween: 24,
   loop: true,
-  grabCursor: true,          
-  simulateTouch: true,       
-  allowTouchMove: true,     
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  breakpoints: {
-    768: { slidesPerView: 2 },
-    1024: { slidesPerView: 3 }
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev"
   }
 });
