@@ -1,210 +1,127 @@
-
 <!DOCTYPE html>
 <html lang="vi">
   <head>
-    <meta charset="UTF-8" />
-    <title>Herbatech</title>
-    <link rel="shortcut icon" href="img/Herbatech-logo.png" type="image/png" />
-    <link rel="stylesheet" href="fontawesome-free-6.1.1-web/css/all.min.css" />
-    <link rel="stylesheet" href="./CSS/vendor/boostrap.css" />
-    <link rel="stylesheet" href="./CSS/vendor/Resert CSS.css" />
-    <link rel="stylesheet" href="./CSS/style.css" />
-    <link rel="stylesheet" href="./CSS/vendor/home.css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
+  <meta charset="utf-8"/>
+  <title>
+   Herbatech
+  </title>
+  <link href="img/logo/Herbatech_logo.png" rel="shortcut icon" type="image/png"/>
+  <link href="fontawesome-free-6.1.1-web/css/all.min.css" rel="stylesheet"/>
+  <link href="./CSS/vendor/boostrap.css" rel="stylesheet"/>
+  <link href="./CSS/vendor/Resert CSS.css" rel="stylesheet"/>
+  <link href="./CSS/style.css" rel="stylesheet"/>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link href="./CSS/style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js" defer></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/rellax@1.12.1/rellax.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+ </head>
   <body>
-   <header class="w-full bg-white py-4 px-8 shadow-sm">
-  <div class="max-w-7xl mx-auto grid grid-cols-[auto_1fr_auto] items-center gap-6">
+    <div class="fixed inset-0 -z-10" id="particles-js"></div>
+    <header class="fixed top-0 left-0 w-full z-50 bg-white bg-opacity-40 backdrop-blur-md text-[#1f1f1f] px-8 py-4 transition duration-300" id="navbar">
+      <div class="max-w-7xl mx-auto grid grid-cols-[auto_1fr_auto] items-center gap-6">
+        <div>
+          <a href="./index.html">
+            <img src="./img/Herbatech-logo.png" alt="Logo" class="h-10 object-contain" />
+          </a>
+        </div>
+        <nav>
+          <ul class="flex justify-center items-center gap-10 font-medium text-[#1f1f1f] text-base">
+            <li><a href="index.html" class="hover:text-[#20CFCF]">Trang chủ</a></li>
+            <li><a href="./introduce.html" class="hover:text-[#20CFCF]">Về chúng tôi</a></li>
+            <li class="relative group">
+              <a href="#" class="hover:text-[#20CFCF]">Giải pháp</a>
+              <div class="absolute top-full left-1/2 -translate-x-1/2 bg-white shadow-md rounded-md mt-2 py-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+                <a href="dataAnnotation.html" class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]">Chú thích dữ liệu</a>
+                <a href="dataCollection.html" class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]">Công cụ thu thập dữ liệu</a>
+                <a href="imageRecognition.html" class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]">Nhận diện hình ảnh</a>
+                <a href="testing.html" class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]">Kiểm thử</a>
+              </div>
+            </li>
+            <li><a href="recruitment.html" class="hover:text-[#20CFCF]">Tuyển dụng</a></li>
+          </ul>
+        </nav>
+        <div class="hidden md:flex items-center gap-4">
+          <a href="./contact.html" class="bg-[#20CFCF] text-white px-5 py-2 rounded-md font-semibold hover:bg-[#1ab2b2] transition">
+            Liên hệ
+          </a>
+        </div>
+      </div>
+    </header>
+
+   <section class="bg-[#f9fafb] py-24 px-6">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
     
-    <!-- Logo -->
+    <!-- Left: Text -->
     <div>
-      <a href="./index.html">
-        <img src="./img/Herbatech-logo.png" alt="Logo" class="h-10 object-contain" />
-      </a>
+      <h2 class="text-3xl md:text-4xl text-gray-900 leading-snug mb-6">
+        Khai phá giá trị dữ liệu <br />
+          <span class="text-[#20CFCF]">Herba</span><span class="text-[#444444]">tech</span>
+      </h2>
+
+      <p class="text-gray-700 text-base md:text-lg leading-relaxed mb-6">
+        Trong làn sóng chuyển đổi số toàn cầu, Herbatech ra đời với sứ mệnh giúp tổ chức, doanh nghiệp
+        khai thác tối đa tiềm năng của dữ liệu. Được thành lập bởi những bộ óc trẻ đầy khát vọng,
+        chúng tôi tin rằng dữ liệu không chỉ là tài nguyên – mà còn là lợi thế cạnh tranh cốt lõi.
+      </p>
+
+      <p class="text-gray-700 text-base md:text-lg leading-relaxed">
+        Với đội ngũ kỹ sư công nghệ và chuyên gia vận hành giàu kinh nghiệm, Herbatech cung cấp giải pháp 
+        thu thập, xử lý và phân tích dữ liệu quy mô lớn. Chúng tôi tối ưu hoá quy trình bằng công nghệ tiên tiến,
+        từ phần cứng đến phần mềm, nhằm đem lại những hiểu biết sâu sắc và giá trị thực tiễn cho xã hội hiện đại.
+      </p>
     </div>
 
-    <!-- Navigation (menu giữa) -->
-    <nav>
-      <ul class="flex justify-center items-center gap-10 font-medium text-[#1f1f1f] text-base">
-        <li><a href="index.html" class="hover:text-[#20CFCF]">Trang chủ</a></li>
-        <li><a href="./introduce.html" class="hover:text-[#20CFCF]">Về chúng tôi</a></li>
-        <li class="relative group">
-          <a href="#" class="hover:text-[#20CFCF]">Giải pháp</a>
-          <div class="absolute top-full left-1/2 -translate-x-1/2 bg-white shadow-md rounded-md mt-2 py-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
-            <a href="dataAnnotation.html" class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]">Chú thích dữ liệu</a>
-            <a href="dataCollection.html" class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]">Công cụ thu thập dữ liệu</a>
-            <a href="imageRecognition.html" class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]">Nhận diện hình ảnh</a>
-            <a href="testing.html" class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]">Kiểm thử</a>
-          </div>
-        </li>
-        <li><a href="recruitment.html" class="hover:text-[#20CFCF]">Tuyển dụng</a></li>
-      </ul>
-    </nav>
+    <!-- Right: Image -->
+    <div class="rounded-xl overflow-hidden shadow-lg">
+      <img src="./img/cover.png" alt="Herbatech Office" class="w-full h-auto object-cover" />
+    </div>
 
-    <!-- CTA bên phải -->
-    <div class="hidden md:flex items-center gap-4">
-  <a href="./contact.html" class="bg-[#20CFCF] text-white px-5 py-2 rounded-md font-semibold hover:bg-[#1ab2b2] transition" data-i18n="contact_button">
-    Liên hệ
-  </a>
+  </div>
+</section>
 
-  <!-- Language Selector 
-  <div class="relative group">
-    <button class="flex items-center gap-1 px-2 py-1 rounded-md border bg-white hover:bg-gray-100">
-      <img src="./img/logo/vn.png" id="current-flag" class="w-5 h-5" alt="Lang" />
-      <i class="fas fa-chevron-down text-xs"></i>
-    </button>
-    <div class="absolute right-0 mt-2 bg-white border rounded-md shadow-lg w-40 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
-      <a href="#" onclick="setLanguage('en')" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-gray-100">
-        <img src="./img/logo/gb.png" class="w-5 h-5" /> English
-      </a>
-      <a href="#" onclick="setLanguage('vi')" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-gray-100">
-        <img src="./img/logo/vn.png" class="w-5 h-5" /> Tiếng Việt
-      </a>
-      <a href="#" onclick="setLanguage('kr')" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-gray-100">
-        <img src="./img/logo/kr.png" class="w-5 h-5" /> 한국어
-      </a>
-    </div>-->
-</header>
-
-    <!-- MAIN CONTENT -->
-    <section class="max-w-7xl mx-auto px-4 py-24 mt-20 bg-[#f9fafb] grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-      <!-- Left: Content -->
-      <div>
-        <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-snug">
-          Giới thiệu <span class="text-orange-500">Herbatech</span>
-        </h1>
-        <p class="text-gray-700 text-base md:text-lg leading-relaxed mb-6">
-          Trong bối cảnh chuyển mình số, Herbatech ra đời từ tầm nhìn của những bộ óc trẻ sáng tạo, với mong muốn khai thác sức mạnh của dữ liệu trong mọi lĩnh vực.
-        </p>
+    <!-- Mission -->
+    <section class="bg-white py-20 px-4 text-center fade-in-up">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800">Sứ mệnh của chúng tôi</h2>
         <p class="text-gray-700 text-base md:text-lg leading-relaxed">
-          Chúng tôi dẫn đầu trong hành trình xử lý thông tin dữ liệu, từ thu thập dữ liệu quy mô lớn đến xử lý bằng công nghệ hiện đại. Với đội ngũ kỹ sư công nghệ thông tin và chuyên gia vận hành, Herbatech mang lại các giải pháp hiệu quả, chính xác và phù hợp với xu hướng phát triển của xã hội hiện đại.
+          Tại Herbatech, chúng tôi hướng đến mục tiêu cung cấp một bộ giải pháp xử lý dữ liệu toàn diện, trao quyền cho các đối tác và tổ chức với những hiểu biết chính xác để vượt qua những thách thức phức tạp...
         </p>
-        <a href="https://drive.google.com/drive/folders/1miY0L9Er270_Bv1f9R8IXr3FzImHetHR" target="_blank" class="inline-block mt-8 px-6 py-3 bg-[#20CFCF] text-white font-semibold rounded-full hover:bg-[#1ab2b2] transition">
-          Tham gia với chúng tôi
-        </a>
-      </div>
-
-      <!-- Right: Image -->
-      <div class="rounded-xl overflow-hidden shadow-md">
-        <img
-          src="./img/cover.png"
-          alt="Herbatech About"
-          class="w-full h-auto object-cover"
-        />
       </div>
     </section>
 
-    
-<!-- Our Mission -->
-<section class="bg-white py-20 px-4 text-center">
-  <div class="max-w-4xl mx-auto">
-    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800">Sứ mệnh của chúng tôi</h2>
-    <p class="text-gray-700 text-base md:text-lg leading-relaxed">
-      Tại Herbatech, chúng tôi hướng đến mục tiêu cung cấp một bộ giải pháp xử lý dữ liệu toàn diện, 
-      trao quyền cho các đối tác và tổ chức với những hiểu biết chính xác để vượt qua những thách thức phức tạp.
-       Các dịch vụ dữ liệu của chúng tôi thúc đẩy sự đổi mới và đơn giản hóa việc ra quyết định trong nhiều ngành, 
-       thúc đẩy tiến bộ và mở ra các cơ hội tăng trưởng trong một thế giới đang phát triển nhanh chóng.
-    </p>
-  </div>
-</section>
+    <!-- Team -->
+    <section class="bg-[#f8fbff] py-20 px-4 text-center fade-in-up">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12 text-gray-800">Gặp gỡ nhóm chúng tôi</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <!-- Repeat member cards -->
+          <div class="card"><img src="./img/nhansu/huyba.png" class="avatar" /><h3 class="name">Lại Huy Ba</h3><p class="position">CEO</p></div>
+          <div class="card"><img src="./img/nhansu/vungocthai.jpg" class="avatar" /><h3 class="name">Vũ Ngọc Thái</h3><p class="position">Project manager</p></div>
+          <div class="card"><img src="./img/nhansu/khahieu.jpg" class="avatar" /><h3 class="name">Nguyễn Khả Hiếu</h3><p class="position">Project Manager</p></div>
+          <div class="card"><img src="./img/nhansu/thudo.jpg" class="avatar" /><h3 class="name">Đỗ Hoài Thu</h3><p class="position">Member</p></div>
+          <div class="card"><img src="./img/nhansu/lannguyen.png" class="avatar" /><h3 class="name">Nguyễn Thị Lân</h3><p class="position">Member</p></div>
+          <div class="card"><img src="./img/nhansu/thaokieu.png" class="avatar" /><h3 class="name">Kiều Thị Thảo</h3><p class="position">Member</p></div>
+          <div class="card"><img src="./img/nhansu/huyendo.jpg" class="avatar" /><h3 class="name">Đỗ Thúy Huyền</h3><p class="position">Member</p></div>
+        </div>
+      </div>
+    </section>
 
-<!-- Meet Our Team -->
-<section class="bg-[#f8fbff] py-20 px-4 text-center">
-  <div class="max-w-6xl mx-auto">
-    <h2 class="text-3xl md:text-4xl font-bold mb-12 text-gray-800">Gặp gỡ nhóm chúng tôi</h2>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-      <!-- Member 1 -->
-      <div class="card">
-        <img src="./img/nhansu/huyba.png" alt="Lai Huy Ba" class="avatar" />
-        <h3 class="name">Lại Huy Ba</h3>
-        <p class="position">CEO</p>
+    <!-- Footer -->
+    <footer class="bg-[#1f1f1f] text-white py-12 mt-12">
+      <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div><img src="./img/Herbatech-logo.png" class="w-32 mb-4" /><p class="text-sm text-gray-400">Take the risk or lose the chance</p></div>
+        <div><h3 class="font-semibold mb-2">Sản phẩm</h3><ul class="text-sm space-y-1 text-gray-300"><li><a href="#" class="hover:text-white">Data</a></li></ul></div>
+        <div><h3 class="font-semibold mb-2">Công ty</h3><ul class="text-sm space-y-1 text-gray-300"><li><a href="./introduce.html" class="hover:text-white">Về chúng tôi</a></li><li><a href="./contact.html" class="hover:text-white">Liên hệ</a></li></ul></div>
+        <div><h3 class="font-semibold mb-2">Mạng xã hội</h3><ul class="text-sm space-y-2 text-gray-300"><li class="flex items-center gap-2"><i class="fab fa-facebook-f"></i><a href="https://www.facebook.com/HerbaTechnology" class="hover:text-white">Facebook</a></li><li class="flex items-center gap-2"><i class="fab fa-linkedin-in"></i><a href="#" class="hover:text-white">Microsoft Teams</a></li></ul></div>
       </div>
-      <!-- Member 2 -->
-      <div class="card">
-        <img src="./img/nhansu/vungocthai.jpg" class="avatar" />
-        <h3 class="name">Vũ Ngọc Thái</h3>
-        <p class="position">Project manager</p>
-      </div>
-      <!-- Member 3 -->
-      <div class="card">
-        <img src="./img/nhansu/khahieu.jpg" class="avatar" />
-        <h3 class="name">Nguyễn Khả Hiếu</h3>
-        <p class="position">Project Manager</p>
-      </div>
-      <!-- Member 4 -->
-      <div class="card">
-        <img src="./img/nhansu/thudo.jpg" class="avatar" />
-        <h3 class="name">Đỗ Hoài Thu</h3>
-        <p class="position">Member</p>
-      </div>
-      <div class="card">
-        <img src="./img/nhansu/lannguyen.png" class="avatar" />
-        <h3 class="name">Nguyễn Thị Lân</h3>
-        <p class="position">Member</p>
-      </div>
-      <div class="card">
-        <img src="./img/nhansu/thaokieu.png" class="avatar" />
-        <h3 class="name">Kiều Thị Thảo</h3>
-        <p class="position">Member</p>
-      </div>
-      <div class="card">
-        <img src="./img/nhansu/huyendo.jpg" class="avatar" />
-        <h3 class="name">Đỗ Thúy Huyền</h3>
-        <p class="position">Member</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-    <!-- FOOTER -->
-  <footer class="bg-[#1f1f1f] text-white py-12 mt-12">
-    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
-      <div>
-        <img src="./img/Herbatech-logo.png" alt="Herbatech Logo" class="w-32 mb-4" />
-        <p class="text-sm text-gray-400">Take the risk or lose the chance</p>
-      </div>
-      <div>
-        <h3 class="font-semibold mb-2">Sản phẩm</h3>
-        <ul class="text-sm space-y-1 text-gray-300">
-          <li><a href="#" class="hover:text-white">Data</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="font-semibold mb-2">Công ty</h3>
-        <ul class="text-sm space-y-1 text-gray-300">
-          <li><a href="./introduce.html" class="hover:text-white">Về chúng tôi</a></li>
-          <li><a href="./contact.html" class="hover:text-white">Liên hệ</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="font-semibold mb-2">Mạng xã hội</h3>
-        <ul class="text-sm space-y-2 text-gray-300">
-          <li class="flex items-center gap-2">
-            <i class="fab fa-facebook-f"></i>
-            <a href="https://www.facebook.com/HerbaTechnology" class="hover:text-white">Facebook</a>
-          </li>
-          <li class="flex items-center gap-2">
-            <i class="fab fa-linkedin-in"></i>
-            <a href="#" class="hover:text-white">Microsoft Teams</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="mt-10 text-center text-xs text-gray-500">
-      © 2025 Herbatech CO., LTD
-    </div>
-</footer>
-
-  <!-- Navbar shadow scroll -->
-  <script>
-    const navbar = document.getElementById("navbar");
-    window.addEventListener("scroll", function () {
-      if (window.scrollY > 10) {
-        navbar.classList.add("scrolled");
-      } else {
-        navbar.classList.remove("scrolled");
-      }
-    });
-  </script>
+      <div class="mt-10 text-center text-xs text-gray-500">© 2025 Herbatech CO., LTD</div>
+    </footer>
+<script src="js/main.js"></script>
   </body>
 </html>
