@@ -2,13 +2,12 @@
 <html lang="vi">
  <head>
   <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
-   Herbatech
+   Tuyển dụng - Herbatech
   </title>
   <link href="img/logo/Herbatech_logo.png" rel="shortcut icon" type="image/png"/>
   <link href="fontawesome-free-6.1.1-web/css/all.min.css" rel="stylesheet"/>
-  <link href="./CSS/vendor/boostrap.css" rel="stylesheet"/>
-  <link href="./CSS/vendor/Resert CSS.css" rel="stylesheet"/>
   <link href="./CSS/style.css" rel="stylesheet"/>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <link href="./CSS/style.css" rel="stylesheet" />
@@ -21,192 +20,260 @@
   <script src="js/main.js" defer></script>
   <script src="https://cdn.tailwindcss.com"></script>
  </head>
-
  <body>
   <div class="fixed inset-0 -z-10" id="particles-js"></div>
-  <header class="fixed top-0 left-0 w-full z-50 bg-white bg-opacity-40 backdrop-blur-md text-[#1f1f1f] px-8 py-4 transition duration-300" id="navbar">
-   <div class="max-w-7xl mx-auto grid grid-cols-[auto_1fr_auto] items-center gap-6">
-    <!-- Logo -->
-    <div>
-     <a href="./index.html">
-      <img alt="Logo" class="h-10 object-contain" src="./img/Herbatech-logo.png"/>
-     </a>
-    </div>
-    <!-- Navigation -->
-    <nav>
-     <ul class="flex justify-center items-center gap-10 font-medium text-[#1f1f1f] text-base">
-      <li>
-       <a class="hover:text-[#20CFCF]" href="index.html">TRANG CHỦ</a>
-      </li>
-      <li>
-       <a class="hover:text-[#20CFCF]" href="./introduce.html">VỀ CHÚNG TÔI
-       </a>
-      </li>
-      <li class="relative group">
-       <a class="hover:text-[#20CFCF]" href="#">
-        GIẢI PHÁP
-       </a>
-       <div class="absolute top-full left-1/2 -translate-x-1/2 bg-white shadow-md rounded-md mt-2 py-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
-        <a class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]" href="dataAnnotation.html">
-         Chú thích dữ liệu
-        </a>
-        <a class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]" href="dataCollection.html">
-         Công cụ thu thập dữ liệu
-        </a>
-        <a class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]" href="imageRecognition.html">
-         Nhận diện hình ảnh
-        </a>
-        <a class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]" href="testing.html">
-         Kiểm thử
-        </a>
-       </div>
-      </li>
-      <li>
-       <a class="hover:text-[#20CFCF]" href="recruitment.html">
-        TUYỂN DỤNG
-       </a>
-      </li>
-     </ul>
-    </nav>
-
-    <!-- CTA -->
-    <div class="hidden md:flex items-center gap-4">
-     <a class="bg-[#20CFCF] text-white px-5 py-2 rounded-md font-semibold hover:bg-[#1ab2b2] transition" data-i18n="contact_button" href="./contact.html">
-      Liên hệ</a>
-     <!-- Language Selector 
-  <div class="relative group">
-    <button class="flex items-center gap-1 px-2 py-1 rounded-md border bg-white hover:bg-gray-100">
-      <img src="./img/logo/vn.png" id="current-flag" class="w-5 h-5" alt="Lang" />
-      <i class="fas fa-chevron-down text-xs"></i>
-    </button>
-    <div class="absolute right-0 mt-2 bg-white border rounded-md shadow-lg w-40 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
-      <a href="#" onclick="setLanguage('en')" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-gray-100">
-        <img src="./img/logo/gb.png" class="w-5 h-5" /> English
+  <header class="fixed top-0 left-0 w-full z-50 bg-white text-[#1f1f1f] px-6 py-4 transition duration-300">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <!-- Logo -->
+      <a href="./index.html">
+        <img alt="Logo" class="h-10 object-contain" src="./img/Herbatech-logo.png"/>
       </a>
-      <a href="#" onclick="setLanguage('vi')" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-gray-100">
-        <img src="./img/logo/vn.png" class="w-5 h-5" /> Tiếng Việt
-      </a>
-      <a href="#" onclick="setLanguage('kr')" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-gray-100">
-        <img src="./img/logo/kr.png" class="w-5 h-5" /> 한국어
-      </a>
-    </div>
-  </div>-->
-    </div>
-   </div>
-  </header>
 
-
-  <section class="bg-[#f4f8fc] text-white py-16 px-4 relative overflow-hidden scroll-section">
-   <div class="max-w-7xl mx-auto text-center mb-12">
-    <p class="text-lime-400 font-semibold tracking-widest uppercase mb-2">
-     Năng lực của chúng tôi
-    </p>
-    <h2 class="text-3xl md:text-5xl font-bold">
-     Đang update
-     <br/>
-     Đang update
-    </h2>
-   </div>
-   <div class="grid gap-8 items-center max-w-7xl mx-auto grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 px-4">
-    <!-- Box trái trên -->
-    <div class="md:col-span-1 flex flex-col gap-6">
-     <div class="p-6 rounded-2xl bg-white text-black space-y-2 w-full shadow-lg" data-aos="fade-up" data-aos-delay="0">
-      <i class="fas fa-cogs text-3xl text-gray-800">
-      </i>
-      <h3 class="text-xl font-bold">
-       Đang update
-      </h3>
-      <p class="text-sm">
-       Đang update
-       <br/>
-      Đang update
-      </p>
-     </div>
-     <div class="p-6 rounded-2xl bg-white text-black space-y-2 w-full shadow-lg" data-aos="fade-up" data-aos-delay="100">
-      <i class="fas fa-cogs text-3xl text-gray-800">
-      </i>
-      <h3 class="text-xl font-bold">
-       Đang update
-      </h3>
-      <p class="text-sm">
-       Đang update
-       <br/>
-       Đang update
-      </p>
-     </div>
-    </div>
-    <!-- Ảnh trung tâm -->
-    <div class="md:col-span-1 flex justify-center relative z-10">
-     <div class="rounded-full overflow-hidden w-72 h-72 border-4 border-lime-400 shadow-lg" data-aos="zoom-in" data-aos-delay="200">
-      <img alt="Team Member" class="w-full h-full object-cover" src="./img/nhansu/thaokieu.png"/>
-     </div>
-    </div>
-    <!-- Box phải trên -->
-    <div class="md:col-span-1 flex flex-col gap-6">
-     <div class="p-6 rounded-2xl bg-white text-black space-y-2 w-full shadow-lg" data-aos="fade-up" data-aos-delay="200">
-      <i class="fas fa-cogs text-3xl text-gray-800">
-      </i>
-      <h3 class="text-xl font-bold">
-       Đang update
-      </h3>
-      <p class="text-sm">
-       Đang update
-       <br/>
-       Đang update
-      </p>
-     </div>
-     <div class="p-6 rounded-2xl bg-white text-black space-y-2 w-full shadow-lg" data-aos="fade-up" data-aos-delay="300">
-      <i class="fas fa-cogs text-3xl text-gray-800">
-      </i>
-      <h3 class="text-xl font-bold">
-       Đang update
-      </h3>
-      <p class="text-sm">
-       Đang update,
-       <br/>
-       Đang update
-      </p>
-     </div>
-    </div>
-   </div>
-   <!-- Hình nền họa tiết -->
-   <div class="absolute inset-0 bg-[url('/img/bg-stars.png')] opacity-10 pointer-events-none">
-   </div>
-  </section>
-
-<!-- Văn hóa tổ chức -->
-<section class="py-16 bg-gradient-to-b from-white via-[#f5faff] to-white">
-  <div class="max-w-7xl mx-auto px-4">
-    <h2 class="text-center text-3xl font-bold text-[#20CFCF] mb-10">Văn hóa tổ chức <span class="text-red-500">(Đang update)</span></h2> 
-
-    <div class="relative">
-      <div class="swiper cultureSwiper overflow-visible">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide w-[300px] md:w-[380px]">
-            <img src="./img/herbatech-team.png" class="rounded-xl shadow object-cover w-full h-[420px]" alt="Văn hóa 1"/>
-          </div>
-          <div class="swiper-slide w-[300px] md:w-[380px]">
-            <img src="./img/herbatech-team.png" class="rounded-xl shadow object-cover w-full h-[420px]" alt="Văn hóa 2"/>
-          </div>
-          <div class="swiper-slide w-[300px] md:w-[380px]">
-            <img src="./img/herbatech-team.png" class="rounded-xl shadow object-cover w-full h-[420px]" alt="Văn hóa 3"/>
-          </div>
-          <div class="swiper-slide w-[300px] md:w-[380px]">
-            <img src="./img/herbatech-team.png" class="rounded-xl shadow object-cover w-full h-[420px]" alt="Văn hóa 3"/>
-          </div>
-          <div class="swiper-slide w-[300px] md:w-[380px]">
-            <img src="./img/herbatech-team.png" class="rounded-xl shadow object-cover w-full h-[420px]" alt="Văn hóa 3"/>
-          </div>
-        </div>
+      <!-- Hamburger menu (mobile) -->
+      <div class="md:hidden">
+        <button id="menu-toggle" class="text-2xl focus:outline-none">
+          <i class="fas fa-bars text-[#20CFCF]"></i>
+        </button>
       </div>
 
-      <!-- Mũi tên điều hướng -->
-      <div class="swiper-button-prev !w-8 !h-8 -left-8 top-1/2 -translate-y-1/2 text-[#20CFCF] z-30"></div>
-      <div class="swiper-button-next !w-8 !h-8 -right-8 top-1/2 -translate-y-1/2 text-[#20CFCF] z-30"></div>
+      <!-- Navigation -->
+      <nav id="main-menu" class="hidden md:flex items-center gap-10 font-medium text-base">
+        <a class="hover:text-[#20CFCF]" href="index.html">TRANG CHỦ</a>
+        <a class="hover:text-[#20CFCF]" href="./introduce.html">VỀ CHÚNG TÔI</a>
+        <div class="relative group">
+          <a class="hover:text-[#20CFCF]" href="#">GIẢI PHÁP</a>
+          <div class="absolute top-full left-1/2 -translate-x-1/2 bg-white shadow-md rounded-md mt-2 py-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+            <a class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]" href="dataAnnotation.html">Chú thích dữ liệu</a>
+            <a class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]" href="dataCollection.html">Công cụ thu thập dữ liệu</a>
+            <a class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]" href="imageRecognition.html">Nhận diện hình ảnh</a>
+            <a class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]" href="testing.html">Kiểm thử</a>
+          </div>
+        </div>
+        <a class="hover:text-[#20CFCF]" href="recruitment.html">TUYỂN DỤNG</a>
+        <a class="bg-[#20CFCF] text-white px-4 py-2 rounded-md font-semibold hover:bg-[#1ab2b2] transition" href="./contact.html">Liên hệ</a>
+      </nav>
+    </div>
+
+    <!-- Mobile menu content -->
+    <div id="mobile-menu" class="md:hidden hidden mt-4 px-4">
+  <ul class="flex flex-col gap-4 text-base font-medium">
+    <li><a href="index.html" class="block hover:text-[#20CFCF]">TRANG CHỦ</a></li>
+    <li><a href="./introduce.html" class="block hover:text-[#20CFCF]">VỀ CHÚNG TÔI</a></li>
+    <li>
+      <button id="submenu-toggle" class="w-full text-left font-medium hover:text-[#20CFCF] flex justify-between items-center">
+        GIẢI PHÁP
+        <i class="fas fa-chevron-down ml-2 text-sm"></i>
+      </button>
+      <ul id="submenu" class="pl-4 mt-2 space-y-2 text-sm hidden overflow-hidden transition-all duration-300">
+        <li><a href="dataAnnotation.html" class="block hover:text-[#20CFCF]">Chú thích dữ liệu</a></li>
+        <li><a href="dataCollection.html" class="block hover:text-[#20CFCF]">Công cụ thu thập</a></li>
+        <li><a href="imageRecognition.html" class="block hover:text-[#20CFCF]">Nhận diện hình ảnh</a></li>
+        <li><a href="testing.html" class="block hover:text-[#20CFCF]">Kiểm thử</a></li>
+      </ul>
+    </li>
+    <li><a href="recruitment.html" class="block hover:text-[#20CFCF]">TUYỂN DỤNG</a></li>
+    <li><a href="./contact.html" class="block bg-[#20CFCF] text-white px-4 py-2 rounded-md text-center">Liên hệ</a></li>
+  </ul>
+</div>
+</header>
+<!--BANNER-->
+<section class="relative w-full h-[90vh] bg-cover bg-center flex items-center justify-center" style="background-image: url('./img/bia.png');">
+  <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+  <div class="relative z-10 text-center px-6">
+    <h1 class="text-5xl md:text-7xl font-bold text-white mb-4 drop-shadow">
+      <span class="text-[#20CFCF]">Herba</span><span class="text-[#444444]">tech</span>
+    </h1>
+    <p class="text-xl md:text-2xl text-white font-medium drop-shadow">
+      Take the risk or lose the chance
+    </p>
+  </div>
+  <!-- Bo cong dạng sóng -->
+  <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-30">
+    <svg viewBox="0 0 1440 100" class="w-full h-[100px]" preserveAspectRatio="none">
+      <path d="M0,0 C480,100 960,0 1440,100 L1440,100 L0,100 Z" fill="#ffffff"></path>
+    </svg>
+  </div>
+  <!-- Nền động chuyển tiếp -->
+<div class="relative -mt-4 z-0">
+  <div id="transition-particles" class="absolute inset-0 h-[120px] -z-10"></div>
+</div>
+</section>
+
+<section class="flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto px-6 py-16 gap-12">
+  <!-- LEFT -->
+  <div class="md:w-1/2">
+    <h2 class="text-4xl md:text-5xl font-extrabold text-[#1f2937] mb-6">
+      Môi trường<br/>làm việc
+    </h2>
+    <p class="text-gray-600 text-base md:text-lg leading-relaxed mb-6">
+     Tại Herbatech, chúng tôi xây dựng một môi trường làm việc mở, thoải mái, năng động và lấy con người làm trung tâm — 
+     nơi mỗi thành viên không chỉ là một chuyên viên xử lý ảnh cho AI nhận diện, 
+     mà còn là một người kiến tạo giá trị cho xã hội bằng trí tuệ nhân tạo.
+      <br/><br/>
+      Lĩnh vực AI và xử lý ảnh đòi hỏi sự đổi mới và chính xác cao, vì vậy Herbatech đặc biệt chú trọng đến việc xây dựng văn hóa học hỏi liên tục, 
+      khuyến khích thử nghiệm, nghiên cứu và sáng tạo không ngừng. Tại đây, bạn sẽ được tiếp cận với các dự án thật, xử lý dữ liệu để máy nhận dạng tạo ra các sản phẩm: oto không người lái, Robot, …
+    </p>
+    <p class="font-bold text-gray-800">“AI không thay thế con người, nhưng con người biết ứng dụng AI sẽ thay đổi thế giới.”</p>
+  </div>
+
+  <div class="md:w-1/2 w-full">
+    <img src="./img/moitruong.png" alt="Môi trường làm việc Herbatech" class="w-full object-contain" />
+  </div>
+</section>
+
+
+  <section class="bg-[#f8fcff] py-20 px-6 text-center">
+  <div class="max-w-3xl mx-auto mb-12">
+    <h3 class="text-3xl md:text-4xl font-Poppins text-[#20CFCF] leading-snug">
+      Chúng tôi tin vào sức mạnh tập thể<br>và sự đóng góp của cá nhân
+    </h2>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto text-left">
+    <!-- Card 1 -->
+    <div class="bg-white p-6 rounded-2xl shadow-md flex items-start gap-4">
+      <i class="fas fa-lightbulb text-2xl text-[#20CFCF] mt-1"></i>
+      <div>
+        <h3 class="font-bold text-lg text-gray-800 mb-2">Tinh thần đổi mới</h3>
+        <p class="text-gray-600 text-sm">
+          Khuyến khích mọi ý tưởng mới, dám thử – dám sai – dám làm lại.
+        </p>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="bg-white p-6 rounded-2xl shadow-md flex items-start gap-4">
+      <i class="fas fa-bolt text-2xl text-[#20CFCF] mt-1"></i>
+      <div>
+        <h3 class="font-bold text-lg text-gray-800 mb-2">Hiệu suất vượt kỳ vọng</h3>
+        <p class="text-gray-600 text-sm">
+          Làm việc vì kết quả thực tế, đo lường rõ ràng, không dựa vào thâm niên.
+        </p>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="bg-white p-6 rounded-2xl shadow-md flex items-start gap-4">
+      <i class="fas fa-handshake text-2xl text-[#20CFCF] mt-1"></i>
+      <div>
+        <h3 class="font-bold text-lg text-gray-800 mb-2">Tính minh bạch & tin tưởng</h3>
+        <p class="text-gray-600 text-sm">
+          Giao tiếp cởi mở, tôn trọng lẫn nhau và luôn tin vào năng lực của đội ngũ.
+        </p>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="bg-white p-6 rounded-2xl shadow-md flex items-start gap-4">
+      <i class="fas fa-seedling text-2xl text-[#20CFCF] mt-1"></i>
+      <div>
+        <h3 class="font-bold text-lg text-gray-800 mb-2">Phát triển liên tục</h3>
+        <p class="text-gray-600 text-sm">
+          Mỗi nhân viên là một “phiên bản đang cập nhật”, luôn được hỗ trợ học hỏi và nâng cao năng lực.
+        </p>
+      </div>
+    </div>
+
+    <!-- Card 5 -->
+<div class="bg-white p-6 rounded-2xl shadow-md flex items-start gap-4 md:col-span-2 md:mx-auto md:w-1/2">
+  <i class="fas fa-heart text-2xl text-[#20CFCF] mt-1"></i>
+  <div>
+    <h3 class="font-bold text-lg text-gray-800 mb-2">Cân bằng & Nhân văn</h3>
+    <p class="text-gray-600 text-sm">
+      Làm việc để sống trọn vẹn – không chỉ vì công việc mà vì cuộc sống chất lượng.
+    </p>
+  </div>
+</div>
+</section>
+
+
+  <!-- Đội ngũ quản lý -->
+  <section class="py-12 bg-gradient-to-b from-white to-blue-50">
+  <div class="text-center mb-10">
+    <h2 class="text-3xl font-bold text-[#20CFCF]">Đội ngũ quản lý</h2>
+    <p class="text-gray-500 mt-2">Gặp gỡ những người dẫn dắt dự án của chúng tôi</p>
+  </div>
+
+  <div class="flex justify-center gap-6 px-4 flex-wrap">
+    <!-- Card 1 -->
+    <div class="bg-white rounded-2xl shadow-md p-6 text-center w-[300px]">
+      <img src="img/nhansu/thaivn.png" alt="Project manager" class="mx-auto mb-4 h-48 object-contain" />
+      <h3 class="font-bold text-lg text-[#20CFCF] mb-2">Vũ Ngọc Thái</h3>
+      <p class="text-gray-600 text-sm mb-4">Project Manager</p>
+      <a href="https://docs.google.com/forms/d/1lNQxHBPxJGSi0CNDcP45bRJa2jOdB8ROatxHgiqRtgY/edit" target="_blank" class="text-blue-600 font-medium inline-flex items-center hover:underline">
+        Đăng ký <span class="ml-1">→</span>
+      </a>
+    </div>
+
+<!-- Card 2 -->
+    <div class="bg-white rounded-2xl shadow-md p-6 text-center w-[300px]">
+      <img src="img/nhansu/lannt.png" alt="Project manager" class="mx-auto mb-4 h-48 object-contain" />
+      <h3 class="font-bold text-lg text-[#20CFCF] mb-2">Nguyễn Thị Lân</h3>
+      <p class="text-gray-600 text-sm mb-4">Project Manager</p>
+      <a href="https://docs.google.com/forms/d/1lNQxHBPxJGSi0CNDcP45bRJa2jOdB8ROatxHgiqRtgY/edit" target="_blank" class="text-blue-600 font-medium inline-flex items-center hover:underline">
+        Đăng ký <span class="ml-1">→</span>
+      </a>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="bg-white rounded-2xl shadow-md p-6 text-center w-[300px]">
+      <img src="img/nhansu/hieunk.png" alt="Project manager" class="mx-auto mb-4 h-48 object-contain" />
+      <h3 class="font-bold text-lg text-[#20CFCF] mb-2">Nguyễn Khả Hiếu</h3>
+      <p class="text-gray-600 text-sm mb-4">Project Manager</p>
+      <a href="https://docs.google.com/forms/d/1lNQxHBPxJGSi0CNDcP45bRJa2jOdB8ROatxHgiqRtgY/edit" target="_blank" class="text-blue-600 font-medium inline-flex items-center hover:underline">
+        Đăng ký <span class="ml-1">→</span>
+      </a>
     </div>
   </div>
 </section>
 
+  <!--Văn hóa tổ chức-->
+<section class="py-16 bg-gray-200">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-center text-3xl font-bold text-[#20CFCF] mb-10">Văn hóa tổ chức</h2>
+    <div class="relative">
+      <div class="max-w-4xl mx-auto">
+  <div class="swiper cultureSwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="./img/culture/1.jpg" class="w-full h-[450px] object-cover rounded-xl border-4 border-white" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/culture/2.jpg" class="w-full h-[450px] object-cover rounded-xl border-4 border-white" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/culture/3.jpg" class="w-full h-[450px] object-cover rounded-xl border-4 border-white" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/culture/4.jpg" class="w-full h-[450px] object-cover rounded-xl border-4 border-white" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/culture/5.jpg" class="w-full h-[450px] object-cover rounded-xl border-4 border-white" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/culture/6.jpg" class="w-full h-[450px] object-cover rounded-xl border-4 border-white" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/culture/7.jpg" class="w-full h-[450px] object-cover rounded-xl border-4 border-white" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/culture/8.jpg" class="w-full h-[450px] object-cover rounded-xl border-4 border-white" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/culture/9.jpg" class="w-full h-[450px] object-cover rounded-xl border-4 border-white" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/culture/10.jpg" class="w-full h-[450px] object-cover rounded-xl border-4 border-white" />
+          </div>
+        </div>
+  </div>
+
+        <div class="swiper-button-prev custom-arrow"></div>
+        <div class="swiper-button-next custom-arrow"></div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 <!--FOOTER-->

@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="vi">
-  <head>
+ <head>
   <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
-   Herbatech
+   Về chúng tôi - Herbatech
   </title>
   <link href="img/logo/Herbatech_logo.png" rel="shortcut icon" type="image/png"/>
   <link href="fontawesome-free-6.1.1-web/css/all.min.css" rel="stylesheet"/>
-  <link href="./CSS/vendor/boostrap.css" rel="stylesheet"/>
-  <link href="./CSS/vendor/Resert CSS.css" rel="stylesheet"/>
   <link href="./CSS/style.css" rel="stylesheet"/>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <link href="./CSS/style.css" rel="stylesheet" />
@@ -21,38 +20,62 @@
   <script src="js/main.js" defer></script>
   <script src="https://cdn.tailwindcss.com"></script>
  </head>
-  <body>
-    <div class="fixed inset-0 -z-10" id="particles-js"></div>
-    <header class="fixed top-0 left-0 w-full z-50 bg-white bg-opacity-40 backdrop-blur-md text-[#1f1f1f] px-8 py-4 transition duration-300" id="navbar">
-      <div class="max-w-7xl mx-auto grid grid-cols-[auto_1fr_auto] items-center gap-6">
-        <div>
-          <a href="./index.html">
-            <img src="./img/Herbatech-logo.png" alt="Logo" class="h-10 object-contain" />
-          </a>
-        </div>
-        <nav>
-          <ul class="flex justify-center items-center gap-10 font-medium text-[#1f1f1f] text-base">
-            <li><a href="index.html" class="hover:text-[#20CFCF]">TRANG CHỦ</a></li>
-            <li><a href="./introduce.html" class="hover:text-[#20CFCF]">VỀ CHÚNG TÔI</a></li>
-            <li class="relative group">
-              <a href="#" class="hover:text-[#20CFCF]">GIẢI PHÁP</a>
-              <div class="absolute top-full left-1/2 -translate-x-1/2 bg-white shadow-md rounded-md mt-2 py-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
-                <a href="dataAnnotation.html" class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]">Chú thích dữ liệu</a>
-                <a href="dataCollection.html" class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]">Công cụ thu thập dữ liệu</a>
-                <a href="imageRecognition.html" class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]">Nhận diện hình ảnh</a>
-                <a href="testing.html" class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]">Kiểm thử</a>
-              </div>
-            </li>
-            <li><a href="recruitment.html" class="hover:text-[#20CFCF]">TUYỂN DỤNG</a></li>
-          </ul>
-        </nav>
-        <div class="hidden md:flex items-center gap-4">
-          <a href="./contact.html" class="bg-[#20CFCF] text-white px-5 py-2 rounded-md font-semibold hover:bg-[#1ab2b2] transition">
-            Liên hệ
-          </a>
-        </div>
+ <body>
+  <div class="fixed inset-0 -z-10" id="particles-js"></div>
+  <header class="fixed top-0 left-0 w-full z-50 bg-white text-[#1f1f1f] px-6 py-4 transition duration-300">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <!-- Logo -->
+      <a href="./index.html">
+        <img alt="Logo" class="h-10 object-contain" src="./img/Herbatech-logo.png"/>
+      </a>
+
+      <!-- Hamburger menu (mobile) -->
+      <div class="md:hidden">
+        <button id="menu-toggle" class="text-2xl focus:outline-none">
+          <i class="fas fa-bars text-[#20CFCF]"></i>
+        </button>
       </div>
-    </header>
+
+      <!-- Navigation -->
+      <nav id="main-menu" class="hidden md:flex items-center gap-10 font-medium text-base">
+        <a class="hover:text-[#20CFCF]" href="index.html">TRANG CHỦ</a>
+        <a class="hover:text-[#20CFCF]" href="./introduce.html">VỀ CHÚNG TÔI</a>
+        <div class="relative group">
+          <a class="hover:text-[#20CFCF]" href="#">GIẢI PHÁP</a>
+          <div class="absolute top-full left-1/2 -translate-x-1/2 bg-white shadow-md rounded-md mt-2 py-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+            <a class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]" href="dataAnnotation.html">Chú thích dữ liệu</a>
+            <a class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]" href="dataCollection.html">Công cụ thu thập dữ liệu</a>
+            <a class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]" href="imageRecognition.html">Nhận diện hình ảnh</a>
+            <a class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]" href="testing.html">Kiểm thử</a>
+          </div>
+        </div>
+        <a class="hover:text-[#20CFCF]" href="recruitment.html">TUYỂN DỤNG</a>
+        <a class="bg-[#20CFCF] text-white px-4 py-2 rounded-md font-semibold hover:bg-[#1ab2b2] transition" href="./contact.html">Liên hệ</a>
+      </nav>
+    </div>
+
+    <!-- Mobile menu content -->
+    <div id="mobile-menu" class="md:hidden hidden mt-4 px-4">
+  <ul class="flex flex-col gap-4 text-base font-medium">
+    <li><a href="index.html" class="block hover:text-[#20CFCF]">TRANG CHỦ</a></li>
+    <li><a href="./introduce.html" class="block hover:text-[#20CFCF]">VỀ CHÚNG TÔI</a></li>
+    <li>
+      <button id="submenu-toggle" class="w-full text-left font-medium hover:text-[#20CFCF] flex justify-between items-center">
+        GIẢI PHÁP
+        <i class="fas fa-chevron-down ml-2 text-sm"></i>
+      </button>
+      <ul id="submenu" class="pl-4 mt-2 space-y-2 text-sm hidden overflow-hidden transition-all duration-300">
+        <li><a href="dataAnnotation.html" class="block hover:text-[#20CFCF]">Chú thích dữ liệu</a></li>
+        <li><a href="dataCollection.html" class="block hover:text-[#20CFCF]">Công cụ thu thập</a></li>
+        <li><a href="imageRecognition.html" class="block hover:text-[#20CFCF]">Nhận diện hình ảnh</a></li>
+        <li><a href="testing.html" class="block hover:text-[#20CFCF]">Kiểm thử</a></li>
+      </ul>
+    </li>
+    <li><a href="recruitment.html" class="block hover:text-[#20CFCF]">TUYỂN DỤNG</a></li>
+    <li><a href="./contact.html" class="block bg-[#20CFCF] text-white px-4 py-2 rounded-md text-center">Liên hệ</a></li>
+  </ul>
+</div>
+</header>
 
       <!-- BANNER -->
 <section class="relative w-full h-[90vh] bg-cover bg-center flex items-center justify-center" style="background-image: url('./img/f3af78af-15e9-4ebd-abb9-fb335531fe00_wm.jpg');">
@@ -63,6 +86,54 @@
       <path d="M0,0 C480,100 960,0 1440,100 L1440,100 L0,100 Z" fill="#ffffff"></path>
     </svg>
   </div></section>
+
+  <!-- CARD -->
+<div class="bg-[#20CFCF] rounded-2xl px-6 py-6 md:px-8 md:py-6 w-full max-w-3xl mx-auto flex flex-col md:flex-row items-center gap-4 text-white relative overflow-hidden">
+  <div class="flex-shrink-0">
+    <img src="./img/logo/Herbatech_logo.png" alt="Herbatech Icon" class="w-16 h-16 object-contain">
+  </div>
+  <div class="flex-1">
+    <h3 class="text-lg md:text-xl font-bold mb-1">Herbatech : Tên gọi và ý nghĩa</h3>
+    <p class="mb-2 text-sm md:text-base leading-relaxed">
+      Herbatech chứa đựng ước mơ và mục tiêu kiến tạo nên thật nhiều những điều tốt đẹp cho xã hội của tập thể những chiến binh herba.
+    </p>
+    <button id="openModal" class="inline-flex items-center font-semibold underline underline-offset-4 hover:text-yellow-300 text-sm">
+      Tìm hiểu thêm →
+    </button>
+  </div>
+
+  <div class="absolute inset-0 pointer-events-none">
+    <img src="./img/bg/line-pattern.svg" class="w-full h-full object-cover opacity-10" />
+  </div>
+</div>
+
+<!-- POPUP MODAL -->
+<div id="infoModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+  <div class="bg-white rounded-xl max-w-4xl w-full p-8 relative flex flex-col md:flex-row gap-6">
+    
+    <button id="closeModal" class="absolute top-4 right-6 text-2xl text-gray-400 hover:text-gray-800">&times;</button>
+
+    <div class="flex-shrink-0 flex justify-center md:block">
+      <img src="./img/logo/Herbatech_logo.png" alt="Logo" class="w-28 h-28 object-contain">
+    </div>
+
+    <div class="text-gray-800 space-y-3 text-sm md:text-base leading-relaxed">
+      <h2 class="text-xl md:text-2xl font-bold text-[#20CFCF]">Herbatech : Tên gọi và ý nghĩa</h2>
+      <p><span class="font-semibold">Tên công ty:</span> <span class="text-[#20CFCF] font-bold">Công ty TNHH Công nghệ Herba</span></p>
+      <p><span class="font-semibold">Viết tắt:</span> <span class="text-[#20CFCF] font-bold">Herbatech</span></p>
+      <p>
+        Biểu tượng của sự sống và phát triển: <strong>“Herba”</strong> tượng trưng cho sự sinh trưởng, sức sống, và sự tái sinh – giống như cách mà một doanh nghiệp công nghệ luôn đổi mới và phát triển không ngừng.
+      </p>
+      <p>
+        Tính tự nhiên và bền vững: Gợi nhớ đến thiên nhiên, sự trong lành, xanh – sạch – bền vững, phù hợp nếu công ty bạn hướng tới giải pháp thân thiện với môi trường hoặc con người.
+      </p>
+      <p>
+        Tinh thần mềm mại trong lĩnh vực công nghệ: Tên <strong>“Herba”</strong> mang nét nhẹ nhàng, không khô cứng  giúp công ty tạo dấu ấn nhân văn và gần gũi hơn.
+      </p>
+      <p>Khẩu hiệu (slogan): “Take the risk or lose the chance” – “Hãy mạo hiểm hoặc đánh mất cơ hội.” Thể hiện tinh thần đổi mới, dám nghĩ dám làm</p>
+    </div>
+  </div>
+</div>
 
   <!--Giới thiệu-->
 
@@ -88,7 +159,6 @@
     <div class="flex gap-6 mb-4 text-gray-700 font-semibold" id="tab-buttons">
       <button class="px-4 py-2 rounded-md transition active-tab bg-gradient-to-br from-[#20CFCF] to-[#1ab2b2] text-white" data-tab="mission">Sứ mệnh</button>
       <button class="px-4 py-2 rounded-md transition active-tab bg-gradient-to-br from-[#20CFCF] to-[#1ab2b2] text-white" data-tab="vision">Tầm nhìn</button>
-      <button class="px-4 py-2 rounded-md transition active-tab bg-gradient-to-br from-[#20CFCF] to-[#1ab2b2] text-white" data-tab="value">Giá trị</button>
     </div>
 
     <div class="text-gray-800 mb-6 border-l-2 pl-4 border-[#20CFCF]" id="tab-content">
@@ -105,26 +175,73 @@
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id vero neque asperiores quaerat harum animi doloribus. Sequi quis delectus aliquam corporis rem quasi iste explicabo. Officiis eligendi qui dolorem dolorum.
     </p>
   </div>
+</div>
+</section>
 
-  <div class="tab-pane hidden" data-tab="value">
-    <h3 class="text-xl font-bold mb-4">Giá trị cốt lõi</h3>
-    <p class="text-base md:text-lg leading-relaxed text-gray-700">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia sapiente rem consequatur? Obcaecati cum totam modi assumenda et veritatis, eum, labore, repellendus perferendis explicabo dolore perspiciatis accusantium voluptas aliquid provident?
+    <!-- Giá trị cốt lõi -->
+    <section class="bg-[#f8fcff] py-20 px-6 text-center">
+  <div class="max-w-3xl mx-auto mb-12">
+    <h3 class="text-3xl md:text-4xl font-Poppins text-[#20CFCF] leading-snug">
+      Giá trị cốt lõi
+    </h2>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto text-left">
+    <!-- Card 1 -->
+    <div class="bg-white p-6 rounded-2xl shadow-md flex items-start gap-4">
+      <i class="fas fa-lightbulb text-2xl text-[#20CFCF] mt-1"></i>
+      <div>
+        <h3 class="font-bold text-lg text-gray-800 mb-2">Tinh thần đổi mới</h3>
+        <p class="text-gray-600 text-sm">
+          Khuyến khích mọi ý tưởng mới, dám thử – dám sai – dám làm lại.
+        </p>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="bg-white p-6 rounded-2xl shadow-md flex items-start gap-4">
+      <i class="fas fa-bolt text-2xl text-[#20CFCF] mt-1"></i>
+      <div>
+        <h3 class="font-bold text-lg text-gray-800 mb-2">Hiệu suất vượt kỳ vọng</h3>
+        <p class="text-gray-600 text-sm">
+          Làm việc vì kết quả thực tế, đo lường rõ ràng, không dựa vào thâm niên.
+        </p>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="bg-white p-6 rounded-2xl shadow-md flex items-start gap-4">
+      <i class="fas fa-handshake text-2xl text-[#20CFCF] mt-1"></i>
+      <div>
+        <h3 class="font-bold text-lg text-gray-800 mb-2">Tính minh bạch & tin tưởng</h3>
+        <p class="text-gray-600 text-sm">
+          Giao tiếp cởi mở, tôn trọng lẫn nhau và luôn tin vào năng lực của đội ngũ.
+        </p>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="bg-white p-6 rounded-2xl shadow-md flex items-start gap-4">
+      <i class="fas fa-seedling text-2xl text-[#20CFCF] mt-1"></i>
+      <div>
+        <h3 class="font-bold text-lg text-gray-800 mb-2">Phát triển liên tục</h3>
+        <p class="text-gray-600 text-sm">
+          Mỗi nhân viên là một “phiên bản đang cập nhật”, luôn được hỗ trợ học hỏi và nâng cao năng lực.
+        </p>
+      </div>
+    </div>
+
+    <!-- Card 5 -->
+<div class="bg-white p-6 rounded-2xl shadow-md flex items-start gap-4 md:col-span-2 md:mx-auto md:w-1/2">
+  <i class="fas fa-heart text-2xl text-[#20CFCF] mt-1"></i>
+  <div>
+    <h3 class="font-bold text-lg text-gray-800 mb-2">Cân bằng & Nhân văn</h3>
+    <p class="text-gray-600 text-sm">
+      Làm việc để sống trọn vẹn – không chỉ vì công việc mà vì cuộc sống chất lượng.
     </p>
   </div>
 </div>
 </section>
-
-
-    <!-- Mission -->
-    <section class="bg-white py-20 px-4 text-center fade-in-up">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800">Sứ mệnh của chúng tôi</h2>
-        <p class="text-gray-700 text-base md:text-lg leading-relaxed">
-          Tại Herbatech, chúng tôi hướng đến mục tiêu cung cấp một bộ giải pháp xử lý dữ liệu toàn diện, trao quyền cho các đối tác và tổ chức với những hiểu biết chính xác để vượt qua những thách thức phức tạp...
-        </p>
-      </div>
-    </section>
 
     <!-- Team -->
     <section class="bg-[#f8fbff] py-20 px-4 text-center fade-in-up">
@@ -133,12 +250,12 @@
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
           <!-- Repeat member cards -->
           <div class="card"><img src="./img/nhansu/huyba.png" class="avatar" /><h3 class="name">Lại Huy Ba</h3><p class="position">CEO</p></div>
-          <div class="card"><img src="./img/nhansu/vungocthai.jpg" class="avatar" /><h3 class="name">Vũ Ngọc Thái</h3><p class="position">Project manager</p></div>
-          <div class="card"><img src="./img/nhansu/khahieu.jpg" class="avatar" /><h3 class="name">Nguyễn Khả Hiếu</h3><p class="position">Project Manager</p></div>
-          <div class="card"><img src="./img/nhansu/thudo.jpg" class="avatar" /><h3 class="name">Đỗ Hoài Thu</h3><p class="position">Member</p></div>
-          <div class="card"><img src="./img/nhansu/lannguyen.png" class="avatar" /><h3 class="name">Nguyễn Thị Lân</h3><p class="position">Member</p></div>
-          <div class="card"><img src="./img/nhansu/thaokieu.png" class="avatar" /><h3 class="name">Kiều Thị Thảo</h3><p class="position">Member</p></div>
-          <div class="card"><img src="./img/nhansu/huyendo.jpg" class="avatar" /><h3 class="name">Đỗ Thúy Huyền</h3><p class="position">Member</p></div>
+          <div class="card"><img src="./img/nhansu/vungocthai.jpg" class="avatar" /><h3 class="name">Vũ Ngọc Thái</h3><p class="position">Quản lý dự án</p></div>
+          <div class="card"><img src="./img/nhansu/khahieu.jpg" class="avatar" /><h3 class="name">Nguyễn Khả Hiếu</h3><p class="position">Quản lý dự án</p></div>
+          <div class="card"><img src="./img/nhansu/thudo.jpg" class="avatar" /><h3 class="name">Đỗ Hoài Thu</h3><p class="position">Chuyên viên chú thích dữ liệu</p></div>
+          <div class="card"><img src="./img/nhansu/lannguyen.png" class="avatar" /><h3 class="name">Nguyễn Thị Lân</h3><p class="position">Chuyên viên chú thích dữ liệu</p></div>
+          <div class="card"><img src="./img/nhansu/thaokieu.png" class="avatar" /><h3 class="name">Kiều Thị Thảo</h3><p class="position">Chuyên viên chú thích dữ liệu</p></div>
+          <div class="card"><img src="./img/nhansu/huyendo.jpg" class="avatar" /><h3 class="name">Đỗ Thúy Huyền</h3><p class="position">Chuyên viên chú thích dữ liệu</p></div>
         </div>
       </div>
     </section>

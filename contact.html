@@ -1,83 +1,93 @@
 
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-  <meta charset="UTF-8" />
-  <title>Herbatech</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" href="img/logo/Herbatech_logo.png" type="image/png" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
-  <link rel="stylesheet" href="fontawesome-free-6.1.1-web/css/all.min.css" />
-  <link rel="stylesheet" href="./CSS/style.css" />
+ <head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+   Herbatech
+  </title>
+  <link href="img/logo/Herbatech_logo.png" rel="shortcut icon" type="image/png"/>
+  <link href="fontawesome-free-6.1.1-web/css/all.min.css" rel="stylesheet"/>
+  <link href="./CSS/style.css" rel="stylesheet"/>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link href="./CSS/style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js" defer></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/rellax@1.12.1/rellax.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+  <script src="js/main.js" defer></script>
   <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-[#f4f8fc] text-gray-800">
-
-  <header class="w-full bg-white py-4 px-8 shadow-sm">
-  <div class="max-w-7xl mx-auto grid grid-cols-[auto_1fr_auto] items-center gap-6">
-    
-    <!-- Logo -->
-    <div>
+ </head>
+ <body>
+  <div class="fixed inset-0 -z-10" id="particles-js"></div>
+  <header class="fixed top-0 left-0 w-full z-50 bg-white text-[#1f1f1f] px-6 py-4 transition duration-300">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <!-- Logo -->
       <a href="./index.html">
-        <img src="./img/Herbatech-logo.png" alt="Logo" class="h-10 object-contain" />
+        <img alt="Logo" class="h-10 object-contain" src="./img/Herbatech-logo.png"/>
       </a>
-    </div>
 
-    <!-- Navigation (menu giữa) -->
-    <nav>
-      <ul class="flex justify-center items-center gap-10 font-medium text-[#1f1f1f] text-base">
-        <li><a href="index.html" class="hover:text-[#20CFCF]">Trang chủ</a></li>
-        <li><a href="./introduce.html" class="hover:text-[#20CFCF]">Về chúng tôi</a></li>
-        <li class="relative group">
-          <a href="#" class="hover:text-[#20CFCF]">Giải pháp</a>
+      <!-- Hamburger menu (mobile) -->
+      <div class="md:hidden">
+        <button id="menu-toggle" class="text-2xl focus:outline-none">
+          <i class="fas fa-bars text-[#20CFCF]"></i>
+        </button>
+      </div>
+
+      <!-- Navigation -->
+      <nav id="main-menu" class="hidden md:flex items-center gap-10 font-medium text-base">
+        <a class="hover:text-[#20CFCF]" href="index.html">TRANG CHỦ</a>
+        <a class="hover:text-[#20CFCF]" href="./introduce.html">VỀ CHÚNG TÔI</a>
+        <div class="relative group">
+          <a class="hover:text-[#20CFCF]" href="#">GIẢI PHÁP</a>
           <div class="absolute top-full left-1/2 -translate-x-1/2 bg-white shadow-md rounded-md mt-2 py-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
-            <a href="#" class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]">Chú thích dữ liệu</a>
-            <a href="#" class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]">Công cụ thu thập dữ liệu</a>
-            <a href="#" class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]">Nhận diện hình ảnh</a>
-            <a href="#" class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]">Kiểm thử</a>
+            <a class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]" href="dataAnnotation.html">Chú thích dữ liệu</a>
+            <a class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]" href="dataCollection.html">Công cụ thu thập dữ liệu</a>
+            <a class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]" href="imageRecognition.html">Nhận diện hình ảnh</a>
+            <a class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]" href="testing.html">Kiểm thử</a>
           </div>
-        </li>
-        <li><a href="recruitment.html" class="hover:text-[#20CFCF]">Tuyển dụng</a></li>
-      </ul>
-    </nav>
-
-    <!-- CTA bên phải -->
-    <div class="hidden md:flex items-center gap-4">
-  <a href="./contact.html" class="bg-[#20CFCF] text-white px-5 py-2 rounded-md font-semibold hover:bg-[#1ab2b2] transition" data-i18n="contact_button">
-    Liên hệ
-  </a>
-
-  <!-- Language Selector 
-  <div class="relative group">
-    <button class="flex items-center gap-1 px-2 py-1 rounded-md border bg-white hover:bg-gray-100">
-      <img src="./img/logo/vn.png" id="current-flag" class="w-5 h-5" alt="Lang" />
-      <i class="fas fa-chevron-down text-xs"></i>
-    </button>
-    <div class="absolute right-0 mt-2 bg-white border rounded-md shadow-lg w-40 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
-      <a href="#" onclick="setLanguage('en')" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-gray-100">
-        <img src="./img/logo/gb.png" class="w-5 h-5" /> English
-      </a>
-      <a href="#" onclick="setLanguage('vi')" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-gray-100">
-        <img src="./img/logo/vn.png" class="w-5 h-5" /> Tiếng Việt
-      </a>
-      <a href="#" onclick="setLanguage('kr')" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-gray-100">
-        <img src="./img/logo/kr.png" class="w-5 h-5" /> 한국어
-      </a>
+        </div>
+        <a class="hover:text-[#20CFCF]" href="recruitment.html">TUYỂN DỤNG</a>
+        <a class="bg-[#20CFCF] text-white px-4 py-2 rounded-md font-semibold hover:bg-[#1ab2b2] transition" href="./contact.html">Liên hệ</a>
+      </nav>
     </div>
-  </div>-->
 
+    <!-- Mobile menu content -->
+    <div id="mobile-menu" class="md:hidden hidden mt-4 px-4">
+  <ul class="flex flex-col gap-4 text-base font-medium">
+    <li><a href="index.html" class="block hover:text-[#20CFCF]">TRANG CHỦ</a></li>
+    <li><a href="./introduce.html" class="block hover:text-[#20CFCF]">VỀ CHÚNG TÔI</a></li>
+    <li>
+      <button id="submenu-toggle" class="w-full text-left font-medium hover:text-[#20CFCF] flex justify-between items-center">
+        GIẢI PHÁP
+        <i class="fas fa-chevron-down ml-2 text-sm"></i>
+      </button>
+      <ul id="submenu" class="pl-4 mt-2 space-y-2 text-sm hidden overflow-hidden transition-all duration-300">
+        <li><a href="dataAnnotation.html" class="block hover:text-[#20CFCF]">Chú thích dữ liệu</a></li>
+        <li><a href="dataCollection.html" class="block hover:text-[#20CFCF]">Công cụ thu thập</a></li>
+        <li><a href="imageRecognition.html" class="block hover:text-[#20CFCF]">Nhận diện hình ảnh</a></li>
+        <li><a href="testing.html" class="block hover:text-[#20CFCF]">Kiểm thử</a></li>
+      </ul>
+    </li>
+    <li><a href="recruitment.html" class="block hover:text-[#20CFCF]">TUYỂN DỤNG</a></li>
+    <li><a href="./contact.html" class="block bg-[#20CFCF] text-white px-4 py-2 rounded-md text-center">Liên hệ</a></li>
+  </ul>
+</div>
 </header>
 
   <!-- FORM -->
-  <section class="max-w-7xl mx-auto px-4 py-24 mt-20 grid grid-cols-1 md:grid-cols-2 gap-12">
+  <section class="text-black max-w-7xl mx-auto px-4 py-24 mt-20 grid grid-cols-1 md:grid-cols-2 gap-12">
     <!-- Left Info -->
     <div>
-      <h1 class="text-3xl font-bold text-blue-900 mb-4"><span class="text-[#20CFCF]">Herba</span><span class="text-[#444444]">tech</span></h1>
+      <h1 class="text-3xl font-bold mb-4"><span class="text-[#20CFCF]">Herba</span><span class="text-[#444444]">tech</span></h1>
       <p class="mb-6">Để có thêm thông tin về các dịch vụ của chúng tôi:</p>
       <ul class="space-y-4 text-sm">
-        <li><i class="fas fa-map-marker-alt mr-2 text-blue-600"></i>Địa chỉ: Tầng 4, liền kề 3 dự án Dolphin plaza, số 28 Trần Bình, Mai Dịch, Cầu Giấy, Hà Nội</li>
-        <li><i class="fas fa-phone mr-2 text-blue-600"></i>Hotline: 0967.671.592</li>
-        <li><i class="fas fa-envelope mr-2 text-blue-600"></i>Email: herbatechnology.hbt@gmail.com</li>
+        <li><i class="fas fa-map-marker-alt mr-2 text-[#20CFCF]"></i>Địa chỉ: Tầng 4, liền kề 3 dự án Dolphin plaza, số 28 Trần Bình, Mai Dịch, Cầu Giấy, Hà Nội</li>
+        <li><i class="fas fa-phone mr-2 text-[#20CFCF]"></i>Hotline: 0967.671.592</li>
+        <li><i class="fas fa-envelope mr-2 text-[#20CFCF]"></i>Email: herbatechnology.hbt@gmail.com</li>
 <div class="mt-4 w-full h-48 rounded overflow-hidden shadow">
   <iframe
     class="w-full h-full"
@@ -92,7 +102,7 @@
     </div>
 
     <!-- Form -->
-    <form class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-white p-6 rounded-lg shadow">
+    <form class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-100 p-6 rounded-lg shadow">
       <div>
         <label class="block text-sm font-semibold mb-1">Tên*</label>
         <input type="text" class="w-full border border-gray-300 rounded px-3 py-2" required />

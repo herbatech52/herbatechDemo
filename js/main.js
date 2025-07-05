@@ -1,10 +1,8 @@
-// main.js (đã sửa)
+// main.js (đã gộp DOMContentLoaded)
 
-//con số ấn tượng
 function animateCounter(el) {
   const target = parseInt(el.getAttribute('data-target'), 10);
   const isPercent = el.getAttribute('data-type') === "percent";
-
   const speed = 200;
   const increment = Math.ceil(target / speed);
   let count = 0;
@@ -24,7 +22,6 @@ function animateCounter(el) {
 
 function initCounters() {
   const counters = document.querySelectorAll('.counter');
-
   const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -33,10 +30,7 @@ function initCounters() {
       }
     });
   }, { threshold: 0.6 });
-
-  counters.forEach(counter => {
-    observer.observe(counter);
-  });
+  counters.forEach(counter => observer.observe(counter));
 }
 
 // --- Gộp DOMContentLoaded ---
@@ -64,25 +58,26 @@ document.addEventListener('DOMContentLoaded', () => {
         lightboxOverlay.classList.remove("hidden");
       });
     });
-
     lightboxOverlay.addEventListener("click", () => {
       lightboxOverlay.classList.add("hidden");
     });
   }
 
+  // Scroll effect for navbar
   window.addEventListener('scroll', function () {
     const navbar = document.getElementById('navbar');
-    if (window.scrollY > 50) {
-      navbar.classList.add('shadow-lg');
-    } else {
-      navbar.classList.remove('shadow-lg');
+    if (navbar) {
+      if (window.scrollY > 50) {
+        navbar.classList.add('shadow-lg');
+      } else {
+        navbar.classList.remove('shadow-lg');
+      }
     }
   });
 
-  // Tabs (Our Mission / Vision / Value)
+  // Tabs
   const tabButtons = document.querySelectorAll('#tab-buttons button');
   const tabPanes = document.querySelectorAll('.tab-pane');
-
   if (tabButtons.length && tabPanes.length) {
     const defaultTab = tabButtons[0].getAttribute('data-tab');
 
@@ -101,10 +96,8 @@ document.addEventListener('DOMContentLoaded', () => {
     tabButtons.forEach(btn => {
       btn.addEventListener('click', () => {
         const tab = btn.getAttribute('data-tab');
-
         tabButtons.forEach(b => b.classList.remove('bg-gradient-to-r', 'from-[#20CFCF]', 'to-[#1ab2b2]', 'text-white'));
         btn.classList.add('bg-gradient-to-r', 'from-[#20CFCF]', 'to-[#1ab2b2]', 'text-white');
-
         tabPanes.forEach(pane => {
           if (pane.getAttribute('data-tab') === tab) {
             pane.classList.remove('hidden');
@@ -162,36 +155,62 @@ document.addEventListener('DOMContentLoaded', () => {
       1024: { slidesPerView: 3 }
     }
   });
-});
 
-//animation hand robot & human
-window.addEventListener("scroll", () => {
+  new Swiper(".cultureSwiper", {
+    slidesPerView: "auto",
+    centeredSlides: true,
+    spaceBetween: 24,
+    loop: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev"
+    }
+  });
+
+  // Menu toggle
+  const toggleBtn = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const submenuToggle = document.getElementById('submenu-toggle');
+  const submenu = document.getElementById('submenu');
+
+  if (toggleBtn && mobileMenu) {
+    toggleBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  }
+  if (submenuToggle && submenu) {
+    submenuToggle.addEventListener('click', () => {
+      submenu.classList.toggle('hidden');
+    });
+  }
+
+  // Popup modal
+  const modal = document.getElementById("infoModal");
+  const open = document.getElementById("openModal");
+  const close = document.getElementById("closeModal");
+  if (open && modal && close) {
+    open.addEventListener("click", () => modal.classList.remove("hidden"));
+    close.addEventListener("click", () => modal.classList.add("hidden"));
+    window.addEventListener("click", (e) => {
+      if (e.target === modal) modal.classList.add("hidden");
+    });
+  }
+
+  // Hand scroll animation
   const section = document.getElementById("hand-scroll-section");
   const left = document.getElementById("leftHand");
   const right = document.getElementById("rightHand");
-
-  if (!section || !left || !right) return;
-
-  const rect = section.getBoundingClientRect();
-  const inView = rect.top < window.innerHeight * 0.8 && rect.bottom > 0;
-
-  if (inView) {
-    left.classList.remove("-translate-x-full");
-    right.classList.remove("translate-x-full");
-  } else {
-    left.classList.add("-translate-x-full");
-    right.classList.add("translate-x-full");
-  }
-});
-
-//vuốt slider tuyển dụng
-new Swiper(".cultureSwiper", {
-  slidesPerView: "auto",
-  centeredSlides: true,
-  spaceBetween: 24,
-  loop: true,
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev"
+  if (section && left && right) {
+    window.addEventListener("scroll", () => {
+      const rect = section.getBoundingClientRect();
+      const inView = rect.top < window.innerHeight * 0.8 && rect.bottom > 0;
+      if (inView) {
+        left.classList.remove("-translate-x-full");
+        right.classList.remove("translate-x-full");
+      } else {
+        left.classList.add("-translate-x-full");
+        right.classList.add("translate-x-full");
+      }
+    });
   }
 });

@@ -2,13 +2,12 @@
 <html lang="vi">
  <head>
   <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
    Herbatech
   </title>
   <link href="img/logo/Herbatech_logo.png" rel="shortcut icon" type="image/png"/>
   <link href="fontawesome-free-6.1.1-web/css/all.min.css" rel="stylesheet"/>
-  <link href="./CSS/vendor/boostrap.css" rel="stylesheet"/>
-  <link href="./CSS/vendor/Resert CSS.css" rel="stylesheet"/>
   <link href="./CSS/style.css" rel="stylesheet"/>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <link href="./CSS/style.css" rel="stylesheet" />
@@ -23,76 +22,60 @@
  </head>
  <body>
   <div class="fixed inset-0 -z-10" id="particles-js"></div>
-  <header class="fixed top-0 left-0 w-full z-50 bg-white bg-opacity-40 backdrop-blur-md text-[#1f1f1f] px-8 py-4 transition duration-300" id="navbar">
-   <div class="max-w-7xl mx-auto grid grid-cols-[auto_1fr_auto] items-center gap-6">
-    <!-- Logo -->
-    <div>
-     <a href="./index.html">
-      <img alt="Logo" class="h-10 object-contain" src="./img/Herbatech-logo.png"/>
-     </a>
-    </div>
-    <!-- Navigation -->
-    <nav>
-     <ul class="flex justify-center items-center gap-10 font-medium text-[#1f1f1f] text-base">
-      <li>
-       <a class="hover:text-[#20CFCF]" href="index.html">TRANG CHỦ</a>
-      </li>
-      <li>
-       <a class="hover:text-[#20CFCF]" href="./introduce.html">VỀ CHÚNG TÔI
-       </a>
-      </li>
-      <li class="relative group">
-       <a class="hover:text-[#20CFCF]" href="#">
-        GIẢI PHÁP
-       </a>
-       <div class="absolute top-full left-1/2 -translate-x-1/2 bg-white shadow-md rounded-md mt-2 py-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
-        <a class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]" href="dataAnnotation.html">
-         Chú thích dữ liệu
-        </a>
-        <a class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]" href="dataCollection.html">
-         Công cụ thu thập dữ liệu
-        </a>
-        <a class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]" href="imageRecognition.html">
-         Nhận diện hình ảnh
-        </a>
-        <a class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]" href="testing.html">
-         Kiểm thử
-        </a>
-       </div>
-      </li>
-      <li>
-       <a class="hover:text-[#20CFCF]" href="recruitment.html">
-        TUYỂN DỤNG
-       </a>
-      </li>
-     </ul>
-    </nav>
+  <header class="fixed top-0 left-0 w-full z-50 bg-white text-[#1f1f1f] px-6 py-4 transition duration-300">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <!-- Logo -->
+      <a href="./index.html">
+        <img alt="Logo" class="h-10 object-contain" src="./img/Herbatech-logo.png"/>
+      </a>
 
-    <!-- CTA -->
-    <div class="hidden md:flex items-center gap-4">
-     <a class="bg-[#20CFCF] text-white px-5 py-2 rounded-md font-semibold hover:bg-[#1ab2b2] transition" data-i18n="contact_button" href="./contact.html">
-      Liên hệ</a>
-     <!-- Language Selector 
-  <div class="relative group">
-    <button class="flex items-center gap-1 px-2 py-1 rounded-md border bg-white hover:bg-gray-100">
-      <img src="./img/logo/vn.png" id="current-flag" class="w-5 h-5" alt="Lang" />
-      <i class="fas fa-chevron-down text-xs"></i>
-    </button>
-    <div class="absolute right-0 mt-2 bg-white border rounded-md shadow-lg w-40 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
-      <a href="#" onclick="setLanguage('en')" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-gray-100">
-        <img src="./img/logo/gb.png" class="w-5 h-5" /> English
-      </a>
-      <a href="#" onclick="setLanguage('vi')" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-gray-100">
-        <img src="./img/logo/vn.png" class="w-5 h-5" /> Tiếng Việt
-      </a>
-      <a href="#" onclick="setLanguage('kr')" class="flex items-center gap-2 px-4 py-2 text-sm hover:bg-gray-100">
-        <img src="./img/logo/kr.png" class="w-5 h-5" /> 한국어
-      </a>
+      <!-- Hamburger menu (mobile) -->
+      <div class="md:hidden">
+        <button id="menu-toggle" class="text-2xl focus:outline-none">
+          <i class="fas fa-bars text-[#20CFCF]"></i>
+        </button>
+      </div>
+
+      <!-- Navigation -->
+      <nav id="main-menu" class="hidden md:flex items-center gap-10 font-medium text-base">
+        <a class="hover:text-[#20CFCF]" href="index.html">TRANG CHỦ</a>
+        <a class="hover:text-[#20CFCF]" href="./introduce.html">VỀ CHÚNG TÔI</a>
+        <div class="relative group">
+          <a class="hover:text-[#20CFCF]" href="#">GIẢI PHÁP</a>
+          <div class="absolute top-full left-1/2 -translate-x-1/2 bg-white shadow-md rounded-md mt-2 py-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+            <a class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]" href="dataAnnotation.html">Chú thích dữ liệu</a>
+            <a class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]" href="dataCollection.html">Công cụ thu thập dữ liệu</a>
+            <a class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]" href="imageRecognition.html">Nhận diện hình ảnh</a>
+            <a class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]" href="testing.html">Kiểm thử</a>
+          </div>
+        </div>
+        <a class="hover:text-[#20CFCF]" href="recruitment.html">TUYỂN DỤNG</a>
+        <a class="bg-[#20CFCF] text-white px-4 py-2 rounded-md font-semibold hover:bg-[#1ab2b2] transition" href="./contact.html">Liên hệ</a>
+      </nav>
     </div>
-  </div>-->
-    </div>
-   </div>
-  </header>
+
+    <!-- Mobile menu content -->
+    <div id="mobile-menu" class="md:hidden hidden mt-4 px-4">
+  <ul class="flex flex-col gap-4 text-base font-medium">
+    <li><a href="index.html" class="block hover:text-[#20CFCF]">TRANG CHỦ</a></li>
+    <li><a href="./introduce.html" class="block hover:text-[#20CFCF]">VỀ CHÚNG TÔI</a></li>
+    <li>
+      <button id="submenu-toggle" class="w-full text-left font-medium hover:text-[#20CFCF] flex justify-between items-center">
+        GIẢI PHÁP
+        <i class="fas fa-chevron-down ml-2 text-sm"></i>
+      </button>
+      <ul id="submenu" class="pl-4 mt-2 space-y-2 text-sm hidden overflow-hidden transition-all duration-300">
+        <li><a href="dataAnnotation.html" class="block hover:text-[#20CFCF]">Chú thích dữ liệu</a></li>
+        <li><a href="dataCollection.html" class="block hover:text-[#20CFCF]">Công cụ thu thập</a></li>
+        <li><a href="imageRecognition.html" class="block hover:text-[#20CFCF]">Nhận diện hình ảnh</a></li>
+        <li><a href="testing.html" class="block hover:text-[#20CFCF]">Kiểm thử</a></li>
+      </ul>
+    </li>
+    <li><a href="recruitment.html" class="block hover:text-[#20CFCF]">TUYỂN DỤNG</a></li>
+    <li><a href="./contact.html" class="block bg-[#20CFCF] text-white px-4 py-2 rounded-md text-center">Liên hệ</a></li>
+  </ul>
+</div>
+</header>
   <!-- VIDEO 
   <div class="relative w-full h-[600px] overflow-hidden">
    <video autoplay="" class="absolute inset-0 w-full h-full object-cover z-0" loop="" muted="" playsinline="">
@@ -137,12 +120,13 @@
   <div id="transition-particles" class="absolute inset-0 h-[120px] -z-10"></div>
 </div>
 </section>
+
 <!-- Chuyển tiếp mượt sau banner -->
 <div class="relative -mt-6 z-0">
   <div class="h-[80px] bg-gradient-to-t from-white to-transparent opacity-80"></div>
 </div>
 
-<section id="hand-scroll-section" class="relative h-[90vh] bg-gradient-to-b from-white via-[#f0faff] to-white overflow-hidden flex items-center justify-center px-6">
+<section id="hand-scroll-section" class="relative h-[50vh] bg-gradient-to-b from-white via-[#f0faff] to-white overflow-hidden flex items-center justify-center px-6">
   <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[120px] h-[120px] rounded-full bg-[#20CFCF]/20 blur-3xl z-0"></div>
   <img src="./img/design/AICore.png" alt="AI Core"
        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 z-10 drop-shadow-lg" />
@@ -270,7 +254,7 @@
         <p class="flex items-center gap-2"><span class="text-[#20CFCF] text-lg">↑</span> Đảm bảo sự hài lòng của khách hàng</p>
       </div>
 
-      <a href="https://docs.google.com/forms/d/1lNQxHBPxJGSi0CNDcP45bRJa2jOdB8ROatxHgiqRtgY/edit" target="_blank"> <button onclick="window.Location.href='https://docs.google.com/forms/d/1lNQxHBPxJGSi0CNDcP45bRJa2jOdB8ROatxHgiqRtgY/edit'" class="mt-6 px-6 py-3 bg-[#20CFCF] text-black rounded-full font-bold shadow hover:bg-[#1ab2b2] transition-all duration-300">
+      <a href="contact.html" target="_blank"> <button onclick="window.Location.href='https://docs.google.com/forms/d/1lNQxHBPxJGSi0CNDcP45bRJa2jOdB8ROatxHgiqRtgY/edit'" class="mt-6 px-6 py-3 bg-[#20CFCF] text-black rounded-full font-bold shadow hover:bg-[#1ab2b2] transition-all duration-300">
         Đăng ký ngay ↗
       </button></a>
     </div>
