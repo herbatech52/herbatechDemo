@@ -220,6 +220,21 @@ section h2 span.text-herba {
   -webkit-text-fill-color: transparent;
 }
 
+/*tuyendung*/
+.fade-up {
+      animation: fadeUp 1s ease-out;
+    }
+    @keyframes fadeUp {
+      0% {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
 /* ======================== */
 /*       RESPONSIVE         */
 /* ======================== */
