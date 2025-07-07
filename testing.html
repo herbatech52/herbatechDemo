@@ -1,55 +1,125 @@
-
 <!DOCTYPE html>
 <html lang="vi">
  <head>
-    <meta charset="UTF-8" />
-    <title>Herbatech</title>
-    <link rel="shortcut icon" href="img/logo/Herbatech_logo.png" type="image/png" />
-    <link rel="stylesheet" href="fontawesome-free-6.1.1-web/css/all.min.css" />
-    <link rel="stylesheet" href="./CSS/vendor/boostrap.css" />
-    <link rel="stylesheet" href="./CSS/vendor/Resert CSS.css" />
-    <link rel="stylesheet" href="./CSS/style.css" />
-    <link rel="stylesheet" href="./CSS/vendor/home.css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body>
-   <header class="w-full bg-white py-4 px-8 shadow-sm">
-  <div class="max-w-7xl mx-auto grid grid-cols-[auto_1fr_auto] items-center gap-6">
-    
-    <!-- Logo -->
-    <div>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+   Herbatech
+  </title>
+  <link href="img/logo/Herbatech_logo.png" rel="shortcut icon" type="image/png"/>
+  <link href="fontawesome-free-6.1.1-web/css/all.min.css" rel="stylesheet"/>
+  <link href="./CSS/style.css" rel="stylesheet"/>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link href="./CSS/style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js" defer></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/rellax@1.12.1/rellax.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+ </head>
+ <body>
+  <div class="fixed inset-0 -z-10" id="particles-js"></div>
+  <header class="fixed top-0 left-0 w-full z-50 bg-white text-[#1f1f1f] px-6 py-4 transition duration-300">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <!-- Logo -->
       <a href="./index.html">
-        <img src="./img/Herbatech-logo.png" alt="Logo" class="h-10 object-contain" />
+        <img alt="Logo" class="h-10 object-contain" src="./img/Herbatech-logo.png"/>
       </a>
+
+      <!-- Hamburger menu (mobile) -->
+      <div class="md:hidden">
+        <button id="menu-toggle" class="text-2xl focus:outline-none">
+          <i class="fas fa-bars text-[#20CFCF]"></i>
+        </button>
+      </div>
+
+      <!-- Navigation -->
+      <nav id="main-menu" class="hidden md:flex items-center gap-10 font-medium text-base">
+        <a class="hover:text-[#20CFCF]" href="index.html">TRANG CHỦ</a>
+        <a class="hover:text-[#20CFCF]" href="./introduce.html">VỀ CHÚNG TÔI</a>
+        <div class="relative group">
+          <a class="hover:text-[#20CFCF]" href="#">GIẢI PHÁP</a>
+          <div class="absolute top-full left-1/2 -translate-x-1/2 bg-white shadow-md rounded-md mt-2 py-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+            <a class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]" href="dataAnnotation.html">Chú thích dữ liệu</a>
+            <a class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]" href="imageRecognition.html">Nhận diện hình ảnh</a>
+            <a class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]" href="testing.html">Kiểm thử</a>
+          </div>
+        </div>
+        <a class="hover:text-[#20CFCF]" href="recruitment.html">TUYỂN DỤNG</a>
+        <a class="bg-[#20CFCF] text-white px-4 py-2 rounded-md font-semibold hover:bg-[#1ab2b2] transition" href="./contact.html">Liên hệ</a>
+      </nav>
     </div>
 
-    <!-- Navigation (menu giữa) -->
-    <nav>
-      <ul class="flex justify-center items-center gap-10 font-medium text-[#1f1f1f] text-base">
-        <li><a href="index.html" class="hover:text-[#20CFCF]">Trang chủ</a></li>
-        <li><a href="./introduce.html" class="hover:text-[#20CFCF]">Về chúng tôi</a></li>
-        <li class="relative group">
-          <a href="#" class="hover:text-[#20CFCF]">Giải pháp</a>
-          <div class="absolute top-full left-1/2 -translate-x-1/2 bg-white shadow-md rounded-md mt-2 py-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
-            <a href="dataAnnotation.html" class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]">Chú thích dữ liệu</a>
-            <a href="dataCollection.html" class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]">Công cụ thu thập dữ liệu</a>
-            <a href="imageRecognition.html" class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]">Nhận diện hình ảnh</a>
-            <a href="testing.html" class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]">Kiểm thử</a>
-          </div>
-        </li>
-        <li><a href="recruitment.html" class="hover:text-[#20CFCF]">Tuyển dụng</a></li>
+    <!-- Mobile menu content -->
+    <div id="mobile-menu" class="md:hidden hidden mt-4 px-4">
+  <ul class="flex flex-col gap-4 text-base font-medium">
+    <li><a href="index.html" class="block hover:text-[#20CFCF]">TRANG CHỦ</a></li>
+    <li><a href="./introduce.html" class="block hover:text-[#20CFCF]">VỀ CHÚNG TÔI</a></li>
+    <li>
+      <button id="submenu-toggle" class="w-full text-left font-medium hover:text-[#20CFCF] flex justify-between items-center">
+        GIẢI PHÁP
+        <i class="fas fa-chevron-down ml-2 text-sm"></i>
+      </button>
+      <ul id="submenu" class="pl-4 mt-2 space-y-2 text-sm hidden overflow-hidden transition-all duration-300">
+        <li><a href="dataAnnotation.html" class="block hover:text-[#20CFCF]">Chú thích dữ liệu</a></li>
+        <li><a href="imageRecognition.html" class="block hover:text-[#20CFCF]">Nhận diện hình ảnh</a></li>
+        <li><a href="testing.html" class="block hover:text-[#20CFCF]">Kiểm thử</a></li>
       </ul>
-    </nav>
-
-    <!-- CTA bên phải -->
-    <div class="hidden md:flex items-center gap-4">
-  <a href="./contact.html" class="bg-[#20CFCF] text-white px-5 py-2 rounded-md font-semibold hover:bg-[#1ab2b2] transition" data-i18n="contact_button">
-    Liên hệ
-  </a>
+    </li>
+    <li><a href="recruitment.html" class="block hover:text-[#20CFCF]">TUYỂN DỤNG</a></li>
+    <li><a href="./contact.html" class="block bg-[#20CFCF] text-white px-4 py-2 rounded-md text-center">Liên hệ</a></li>
+  </ul>
 </div>
+</header>
 
-</header> 
+<section class="w-full bg-gray-50 py-16">
+  <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+    
+    <!-- Text Content -->
+    <div class="md:w-1/2 text-center md:text-left">
+      <h2 class="text-3xl font-bold text-[#20CFCF] mb-4">Kiểm thử</h2>
+      <p class="text-gray-700 text-lg mb-6">
+        Đảm bảo mô hình hoạt động hiệu quả và an toàn trước khi triển khai thực tế.
+      </p>
 
+      <div class="mb-6">
+        <h3 class="text-[#20CFCF] font-semibold mb-2">Quy trình kiểm thử:</h3>
+        <ul class="list-disc list-inside text-gray-700 space-y-1">
+          <li>Kiểm tra dữ liệu gán nhãn: lỗi nhãn, nhãn trùng, nhãn sai</li>
+          <li>So sánh kết quả model vs thực tế</li>
+          <li>Kiểm thử mô hình trong các tình huống giả lập</li>
+        </ul>
+      </div>
+
+      <div class="mb-6">
+        <h3 class="text-[#20CFCF] font-semibold mb-2">Kịch bản kiểm thử mô phỏng:</h3>
+        <ul class="list-disc list-inside text-gray-700 space-y-1">
+          <li>Người đi bộ bất ngờ băng qua đường</li>
+          <li>Đèn giao thông hỏng hoặc bị che khuất</li>
+          <li>Va chạm từ điểm mù</li>
+          <li>Giao lộ không có tín hiệu điều khiển</li>
+        </ul>
+      </div>
+
+      <div class="mb-6">
+        <h3 class="text-[#20CFCF] font-semibold mb-2">Báo cáo kết quả:</h3>
+        <ul class="list-disc list-inside text-gray-700 space-y-1">
+          <li>Accuracy, Precision, Recall theo từng loại vật thể</li>
+          <li>Tốc độ xử lý real-time (FPS)</li>
+          <li>Báo cáo đề xuất cải tiến mô hình</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Image Content -->
+    <div class="md:w-1/2">
+      <img src="img/test.png" alt="Testing AI" class="w-full max-w-md mx-auto drop-shadow-lg" />
+    </div>
+  </div>
+</section>
 
 
   <!-- FOOTER -->
