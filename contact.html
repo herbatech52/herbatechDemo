@@ -6,11 +6,11 @@
   <title>
    Herbatech
   </title>
-  <link href="img/logo/Herbatech_logo.png" rel="shortcut icon" type="image/png"/>
+  <link href="img/logo/HerbatechLogo.png" rel="shortcut icon" type="image/png"/>
   <link href="fontawesome-free-6.1.1-web/css/all.min.css" rel="stylesheet"/>
-  <link href="./CSS/style.css" rel="stylesheet"/>
+  <link href="assets/css/style.css" rel="stylesheet"/>
+  <link href="dist/styles.css" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <link href="./CSS/style.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
   <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js" defer></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
@@ -18,7 +18,7 @@
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
   <script src="js/main.js" defer></script>
-  <script src="https://cdn.tailwindcss.com"></script>
+
  </head>
  <body>
   <div class="fixed inset-0 -z-10" id="particles-js"></div>
@@ -99,61 +99,50 @@
     </div>
 
     <!-- Form -->
-    <form class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-100 p-6 rounded-lg shadow">
-      <div>
-        <label class="block text-sm font-semibold mb-1">Tên*</label>
-        <input type="text" class="w-full border border-gray-300 rounded px-3 py-2" required />
-      </div>
-      <div>
-        <label class="block text-sm font-semibold mb-1">Họ*</label>
-        <input type="text" class="w-full border border-gray-300 rounded px-3 py-2" required />
-      </div>
-      <div>
-        <label class="block text-sm font-semibold mb-1">Vị trí*</label>
-        <input type="text" class="w-full border border-gray-300 rounded px-3 py-2" required />
-      </div>
-      <div>
-        <label class="block text-sm font-semibold mb-1">Công ty*</label>
-        <input type="text" class="w-full border border-gray-300 rounded px-3 py-2" required />
-      </div>
-      <div>
-        <label class="block text-sm font-semibold mb-1">Email doanh nghiệp*</label>
-        <input type="email" class="w-full border border-gray-300 rounded px-3 py-2" required />
-      </div>
-      <div>
-        <label class="block text-sm font-semibold mb-1">Số điện thoại*</label>
-        <input type="tel" class="w-full border border-gray-300 rounded px-3 py-2" required />
-      </div>
-      <div>
-        <label class="block text-sm font-semibold mb-1">Bạn tìm thấy chúng tôi qua?*</label>
-        <select class="w-full border border-gray-300 rounded px-3 py-2" required>
-          <option value="">Vui lòng chọn</option>
-          <option>Google</option>
-          <option>Facebook</option>
-          <option>Khác</option>
-        </select>
-      </div>
-      <div class="md:col-span-2">
-        <label class="block text-sm font-semibold mb-1">Để lại lời nhắn cho chúng tôi*</label>
-        <textarea rows="4" class="w-full border border-gray-300 rounded px-3 py-2" required></textarea>
-      </div>
-      <div class="md:col-span-2">
-        <label class="inline-flex items-center space-x-2">
-          <input type="checkbox" class="form-checkbox" />
-          <span class="text-sm">Tôi đồng ý nhận các thông tin liên lạc khác từ Herbatech.</span>
-        </label>
-        <br />
-        <label class="inline-flex items-center space-x-2 mt-2">
-          <input type="checkbox" class="form-checkbox" />
-          <span class="text-sm">Tôi đồng ý cho phép Herbatech lưu trữ và xử lý dữ liệu cá nhân của tôi.</span>
-        </label>
-      </div>
-      <div class="md:col-span-2 text-right">
-        <button type="submit" class="bg-blue-700 hover:bg-blue-800 text-white px-6 py-2 rounded font-semibold">
-          Gửi thông tin
-        </button>
-      </div>
-    </form>
+    <form id="contact-form" class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-100 p-6 rounded-lg shadow" method="POST" novalidate>
+  <div>
+    <label class="block text-sm font-semibold mb-1">Tên*</label>
+    <input name="first_name" type="text" class="w-full border border-gray-300 rounded px-3 py-2" required />
+  </div>
+  <div>
+    <label class="block text-sm font-semibold mb-1">Họ*</label>
+    <input name="last_name" type="text" class="w-full border border-gray-300 rounded px-3 py-2" required />
+  </div>
+  <div>
+    <label class="block text-sm font-semibold mb-1">Vị trí*</label>
+    <input name="title" type="text" class="w-full border border-gray-300 rounded px-3 py-2" required />
+  </div>
+  <div>
+    <label class="block text-sm font-semibold mb-1">Công ty*</label>
+    <input name="company" type="text" class="w-full border border-gray-300 rounded px-3 py-2" required />
+  </div>
+  <div>
+    <label class="block text-sm font-semibold mb-1">Email doanh nghiệp*</label>
+    <input name="work_email" type="email" class="w-full border border-gray-300 rounded px-3 py-2" required />
+  </div>
+  <div>
+    <label class="block text-sm font-semibold mb-1">Số điện thoại*</label>
+    <input name="phone" type="tel" class="w-full border border-gray-300 rounded px-3 py-2" required />
+  </div>
+  <div>
+    <label class="block text-sm font-semibold mb-1">Bạn tìm thấy chúng tôi qua?*</label>
+    <select name="hear_about" class="w-full border border-gray-300 rounded px-3 py-2" required>
+      <option value="">Vui lòng chọn</option>
+      <option>Google</option>
+      <option>Facebook</option>
+      <option>Khác</option>
+    </select>
+  </div>
+  <div class="md:col-span-2">
+    <label class="block text-sm font-semibold mb-1">Để lại lời nhắn cho chúng tôi*</label>
+    <textarea name="message" rows="4" class="w-full border border-gray-300 rounded px-3 py-2" required></textarea>
+  </div>
+  <div class="md:col-span-2 text-right">
+    <button type="submit" class="bg-blue-700 hover:bg-blue-800 text-white px-6 py-2 rounded font-semibold">
+      Gửi thông tin
+    </button>
+  </div>
+</form>
   </section>
 
   <!-- FOOTER -->
@@ -206,15 +195,87 @@
   </div>
 
 
-  <script>
-    const navbar = document.getElementById("navbar");
-    window.addEventListener("scroll", function () {
-      if (window.scrollY > 10) {
-        navbar.classList.add("scrolled");
-      } else {
-        navbar.classList.remove("scrolled");
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const EMAILJS_PUBLIC_KEY = 'LH0txEsvdVHtM87J2'; 
+    const EMAILJS_SERVICE_ID = 'service_dp6r61h'; 
+    const EMAILJS_TEMPLATE_ID_USER = 'ndt0409'; 
+    const EMAILJS_TEMPLATE_ID_COMPANY = 'Herbatech'; 
+    const COMPANY_INBOX = 'duyduy.codewriter@gmail.com'; 
+
+    if (window.emailjs && EMAILJS_PUBLIC_KEY !== 'LH0txEsvdVHtM87J2') {
+      emailjs.init(EMAILJS_PUBLIC_KEY); 
+    }
+
+    const form = document.getElementById('contact-form');
+    if (!form) return;
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      const payload = {
+        first_name: formData.get('first_name') || '',
+        last_name: formData.get('last_name') || '',
+        title: formData.get('title') || '',
+        company: formData.get('company') || '',
+        work_email: formData.get('work_email') || '',
+        phone: formData.get('phone') || '',
+        hear_about: formData.get('hear_about') || '',
+        message: formData.get('message') || ''
+      };
+
+      if (!payload.work_email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.work_email)) {
+        alert('Vui lòng nhập email hợp lệ.');
+        return;
+      }
+
+      try {
+        const subjectUser = `Cảm ơn ${payload.first_name} đã liên hệ Herbatech`;
+        const userHtml = `Cảm ơn bạn đã liên hệ với chúng tôi, ${payload.first_name} ${payload.last_name}. Chúng tôi đã nhận được thông tin và sẽ phản hồi sớm.`;
+
+        await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID_USER, {
+          subject: subjectUser,
+          message_html: userHtml,
+          to_email: payload.work_email,
+          from_email: 'duyduy.codewriter@gmail.com',
+          first_name: payload.first_name,
+          last_name: payload.last_name,
+          title: payload.title,
+          company: payload.company,
+          phone: payload.phone,
+          hear_about: payload.hear_about,
+          message: payload.message
+        });
+
+        const subjectCompany = `New Lead — ${payload.first_name} ${payload.last_name} (${payload.company})`;
+        const companyHtml = `Có một người đã điền form liên hệ: ${payload.first_name} ${payload.last_name}, Công ty: ${payload.company}. Nội dung lời nhắn: ${payload.message}`;
+
+        await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID_COMPANY, {
+          subject: subjectCompany,
+          message_html: companyHtml,
+          to_email: COMPANY_INBOX,
+          from_email: 'duyduy.codewriter@gmail.com',
+          submitter_email: payload.work_email,
+          submitter_name: payload.first_name + ' ' + payload.last_name,
+          first_name: payload.first_name,
+          last_name: payload.last_name,
+          title: payload.title,
+          company: payload.company,
+          phone: payload.phone,
+          hear_about: payload.hear_about,
+          message: payload.message
+        });
+
+        alert('Đã gửi email xác nhận cho bạn và thông báo tới Herbatech.');
+        form.reset(); // Reset form
+      } catch (err) {
+        console.error('Lỗi khi gửi email:', err);
+        alert('Gửi email thất bại. Vui lòng thử lại.');
       }
     });
-  </script>
+  });
+</script>
 </body>
 </html>

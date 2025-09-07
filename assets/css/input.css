@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+  QUAN TRỌNG: 
+  Hãy sao chép toàn bộ nội dung từ file `assets/css/style.css` cũ của bạn 
+  và dán vào đây để giữ lại các style tùy chỉnh.
+*/
+
+.custom-arrow {
+  color: #20CFCF;
+}
+.card {
+  /* style cho card đội ngũ */
+}
+.avatar {
+  /* style cho avatar đội ngũ */
+}
+/* ... các style khác từ file style.css cũ của bạn ... */

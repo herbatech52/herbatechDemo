@@ -3,33 +3,33 @@
  <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>
-   Herbatech
-  </title>
-  <link href="img/logo/Herbatech_logo.png" rel="shortcut icon" type="image/png"/>
-  <link href="fontawesome-free-6.1.1-web/css/all.min.css" rel="stylesheet"/>
-  <link href="./CSS/style.css" rel="stylesheet"/>
+  <title>Herbatech - Giải pháp AI hàng đầu</title>
+  <link href="assets/img/logo/HerbatechLogo.png" rel="shortcut icon" type="image/png"/>
+  <link href="assets/css/style.css" rel="stylesheet"/>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <link href="./CSS/style.css" rel="stylesheet" />
+  <link href="dist/styles.css" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js" defer></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/rellax@1.12.1/rellax.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
-  <script src="js/main.js" defer></script>
-  <script src="https://cdn.tailwindcss.com"></script>
- </head>
+  
+  <meta name="description" content="Giải pháp xử lý dữ liệu và AI toàn diện: gán nhãn, thu thập hình ảnh, kiểm thử">
+  <meta name="keywords" content="AI, Herbatech, dữ liệu, nhận diện hình ảnh, chú thích dữ liệu, testing, tuyển dụng">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://herbatech.com.vn/" />
+  <meta property="og:title" content="Herbatech - Giải pháp AI hàng đầu">
+  <meta property="og:description" content="Giải pháp xử lý dữ liệu và AI toàn diện: gán nhãn, thu thập hình ảnh, kiểm thử">
+  <meta property="og:image" content="https://herbatech.com.vn/assets/img/logo/Herbatech_logo.png">
+  <meta property="og:url" content="https://herbatech.com.vn/">
+  <meta property="og:type" content="website">
+</head>
  <body>
   <div class="fixed inset-0 -z-10" id="particles-js"></div>
   <header class="fixed top-0 left-0 w-full z-50 bg-white text-[#1f1f1f] px-6 py-4 transition duration-300">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
       <!-- Logo -->
       <a href="./index.html">
-        <img alt="Logo" class="h-10 object-contain" src="./img/Herbatech-logo.png"/>
+        <img alt="Logo" class="h-10 object-contain" src="assets/img/logo/Herbatech_logo.png"/>
       </a>
 
-      <!-- Hamburger menu (mobile) -->
+      <!-- Menu (mobile) -->
       <div class="md:hidden">
         <button id="menu-toggle" class="text-2xl focus:outline-none">
           <i class="fas fa-bars text-[#20CFCF]"></i>
@@ -41,7 +41,7 @@
         <a class="hover:text-[#20CFCF]" href="index.html">TRANG CHỦ</a>
         <a class="hover:text-[#20CFCF]" href="./introduce.html">VỀ CHÚNG TÔI</a>
         <div class="relative group">
-          <a class="hover:text-[#20CFCF]" href="#">GIẢI PHÁP</a>
+          <a class="hover:text-[#20CFCF]" href="javascript:void(0)">GIẢI PHÁP</a>
           <div class="absolute top-full left-1/2 -translate-x-1/2 bg-white shadow-md rounded-md mt-2 py-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
             <a class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]" href="dataAnnotation.html">Chú thích dữ liệu</a>
             <a class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]" href="imageRecognition.html">Nhận diện hình ảnh</a>
@@ -74,8 +74,9 @@
   </ul>
 </div>
 </header>
-  <!-- BANNER -->
-<section class="relative w-full h-[90vh] bg-cover bg-center flex items-center justify-center" style="background-image: url('./img/bia.png');">
+
+<!-- BANNER -->
+<section class="relative w-full h-[90vh] bg-cover bg-center flex items-center justify-center" style="background-image: url('assets/img/bia.png');">
   <div class="absolute inset-0 bg-black bg-opacity-40"></div>
   <div class="relative z-10 text-center px-6">
     <h1 class="text-5xl md:text-7xl font-bold text-white mb-4 drop-shadow">
@@ -85,19 +86,17 @@
       Take the risk or lose the chance
     </p>
   </div>
-  <!-- Bo cong dạng sóng -->
   <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-30">
     <svg viewBox="0 0 1440 100" class="w-full h-[100px]" preserveAspectRatio="none">
       <path d="M0,0 C480,100 960,0 1440,100 L1440,100 L0,100 Z" fill="#ffffff"></path>
     </svg>
   </div>
-  <!-- Nền động chuyển tiếp -->
+
 <div class="relative -mt-4 z-0">
   <div id="transition-particles" class="absolute inset-0 h-[120px] -z-10"></div>
 </div>
 </section>
 
-<!-- Chuyển tiếp mượt sau banner -->
 <div class="relative -mt-6 z-0">
   <div class="h-[80px] bg-gradient-to-t from-white to-transparent opacity-80"></div>
 </div>
@@ -107,7 +106,7 @@
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-center max-w-6xl mx-auto">
     <!-- card1 -->
     <div class="bg-[#fefaf4] rounded-2xl shadow p-4 w-full max-w-xs mx-auto hover:shadow-lg transition">
-      <img src="./img/car.png" alt="Chú thích dữ liệu" class="rounded-xl mb-4 w-full h-56 object-cover" />
+      <img src="assets/img/car.png" alt="Chú thích dữ liệu" class="rounded-xl mb-4 w-full h-56 object-cover" />
       <h3 class="font-bold text-[#1f1f1f] text-lg mb-2">Chú thích dữ liệu cho trí tuệ nhân tạo</h3>
       <p class="text-sm text-gray-700 mb-4">Đem đến những trải nghiệm tuyệt vời với dịch vụ chú thích dữ liệu chất lượng tốt với độ chính xác lên tới 98%.</p>
       <a href="dataAnnotation.html" class="text-[#20CFCF] text-sm font-medium hover:underline inline-flex items-center">
@@ -116,7 +115,7 @@
     </div>
     <!-- card2 -->
     <div class="bg-[#fefaf4] rounded-2xl shadow p-4 w-full max-w-xs mx-auto hover:shadow-lg transition">
-      <img src="./img/BPO.png" alt="Nhận diện hình ảnh" class="rounded-xl mb-4 w-full h-56 object-cover" />
+      <img src="assets/img/BPO.png" alt="Nhận diện hình ảnh" class="rounded-xl mb-4 w-full h-56 object-cover" />
       <h3 class="font-bold text-[#1f1f1f] text-lg mb-2">Thu thập dữ liệu hình ảnh</h3>
       <p class="text-sm text-gray-700 mb-4">Thu thập dữ liệu ảnh cho AI nhận diện: oto không người lái, Robot, và nhiều ứng dụng khác.</p>
       <a href="imageRecognition.html" class="text-[#20CFCF] text-sm font-medium hover:underline inline-flex items-center">
@@ -125,7 +124,7 @@
     </div>
     <!-- card3 -->
     <div class="bg-[#fefaf4] rounded-2xl shadow p-4 w-full max-w-xs mx-auto hover:shadow-lg transition">
-      <img src="./img/BPO.png" alt="Kiểm thử" class="rounded-xl mb-4 w-full h-56 object-cover" />
+      <img src="assets/img/BPO.png" alt="Kiểm thử" class="rounded-xl mb-4 w-full h-56 object-cover" />
       <h3 class="font-bold text-[#1f1f1f] text-lg mb-2">Kiểm thử</h3>
       <p class="text-sm text-gray-700 mb-4">Hiểu rõ yêu cầu phần mềm và xác định các kịch bản thử nghiệm cần thiết.</p>
       <a href="testing.html" class="text-[#20CFCF] text-sm font-medium hover:underline inline-flex items-center">
@@ -138,13 +137,13 @@
 
 <section id="hand-scroll-section" class="relative h-[50vh] bg-gradient-to-b from-white via-[#f0faff] to-white overflow-hidden flex items-center justify-center px-6">
   <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[120px] h-[120px] rounded-full bg-[#20CFCF]/20 blur-3xl z-0"></div>
-  <img src="./img/design/AICore.png" alt="AI Core"
+  <img src="assets/img/design/AICore.png" alt="AI Core"
        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 z-10 drop-shadow-lg" />
 
-  <img id="leftHand" src="./img/design/handRobot.png" alt="Robot Hand"
+  <img id="leftHand" src="assets/img/design/handRobot.png" alt="Robot Hand"
     class="absolute left-0 top-1/2 -translate-y-1/2 w-1/3 max-w-[280px] drop-shadow-2xl transition-transform duration-700 ease-out -translate-x-full z-20 rotate-[8deg]"/>
 
-  <img id="rightHand" src="./img/design/handHuman.png" alt="Human Hand"
+  <img id="rightHand" src="assets/img/design/handHuman.png" alt="Human Hand"
     class="absolute right-0 top-1/2 -translate-y-1/2 w-1/3 max-w-[280px] drop-shadow-2xl transition-transform duration-700 ease-out translate-x-full z-20 -rotate-[8deg]"/>
 
   <div class="z-30 max-w-4xl mx-auto text-center">
@@ -164,11 +163,11 @@
 <section class="py-20 px-6 md:px-12">
   <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
     <div class="relative w-full h-[500px]">
-      <img src="./img/design/tantam.jpg" alt="Creative"
+      <img src="assets/img/design/chuyennghiep.jpg" alt="Creative"
            class="absolute bottom-0 left-0 w-[200px] rounded-xl shadow-xl z-10" />
-      <img src="./img/herbatech-team.png" alt="Team"
+      <img src="assets/img/design/sangtao.jpg" alt="Team"
            class="absolute top-[30%] left-[25%] w-[280px] rounded-xl shadow-2xl z-20" />
-      <img src="./img/design/work1.jpg" alt="Working"
+      <img src="assets/img/design/tantam.jpg" alt="Working"
            class="absolute top-0 right-0 w-[180px] rounded-xl shadow-md z-10" />
     </div>
 
@@ -205,8 +204,8 @@
   <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
 
     <div class="relative">
-      <img src="./img/projects/project1.png" alt="Main Image" class="rounded-2xl w-full h-auto" />
-      <img src="./img/projects/project1.png" alt="Overlay Image"
+      <img src="assets/img/projects/project1.png" alt="Main Image" class="rounded-2xl w-full h-auto" />
+      <img src="assets/img/projects/project1.png" alt="Overlay Image"
            class="absolute bottom-[-40px] left-[40px] w-48 h-48 object-cover rounded-2xl border-4 border-white shadow-xl" />
     </div>
 
@@ -236,7 +235,7 @@
 
       <!-- Slide 1 -->
       <div class="swiper-slide bg-white rounded-2xl shadow-md p-6 text-center">
-        <img src="img/1658325343615.jpg" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover" />
+        <img src="assets/img/1658325343615.jpg" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover" />
         <h3 class="font-bold text-lg text-[#1f1f1f]">Dennis Jung</h3>
         <p class="text-sm italic text-gray-500 mb-2">Global Partnership Manager</p>
         <p class="text-gray-700 text-sm">Chúng tôi đã hợp tác ăn ý trong nhiều dự án... tận tâm.</p>
@@ -244,7 +243,7 @@
 
       <!-- Slide 2 -->
       <div class="swiper-slide bg-white rounded-2xl shadow-md p-6 text-center">
-        <img src="img/1658325343615.jpg" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover" />
+        <img src="assets/img/1658325343615.jpg" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover" />
         <h3 class="font-bold text-lg text-[#1f1f1f]">Scott</h3>
         <p class="text-sm italic text-gray-500 mb-2">CEO, Black Moth</p>
         <p class="text-gray-700 text-sm">Sự chỉn chu, chính xác và tốc độ là những điều...saddfsafdsa</p>
@@ -252,7 +251,7 @@
 
       <!-- Slide 3 -->
       <div class="swiper-slide bg-white rounded-2xl shadow-md p-6 text-center">
-        <img src="img/1658325343615.jpg" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover" />
+        <img src="assets/img/1658325343615.jpg" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover" />
         <h3 class="font-bold text-lg text-[#1f1f1f]">Katsunori Kurata</h3>
         <p class="text-sm italic text-gray-500 mb-2">CEO, SQC Inc</p>
         <p class="text-gray-700 text-sm">Các khách hàng và đối tác của chúng tôi rất hài lòng...</p>
@@ -260,7 +259,7 @@
 
       <!-- Slide 4 -->
       <div class="swiper-slide bg-white rounded-2xl shadow-md p-6 text-center">
-        <img src="img/1658325343615.jpg" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover" />
+        <img src="assets/img/1658325343615.jpg" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover" />
         <h3 class="font-bold text-lg text-[#1f1f1f]">Katsunori Kurata</h3>
         <p class="text-sm italic text-gray-500 mb-2">CEO, SQC Inc</p>
         <p class="text-gray-700 text-sm">Các khách hàng và đối tác của chúng tôi rất hài lòng...</p>
@@ -319,7 +318,7 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
      <!-- Card 1 -->
      <div class="bg-white rounded-xl p-8 shadow-md hover:shadow-xl transition group relative overflow-hidden">
-      <img alt="Chất lượng hàng đầu" class="w-16 h-16 mx-auto mb-4" src="./img/logo/medal.png"/>
+      <img alt="Chất lượng hàng đầu" class="w-16 h-16 mx-auto mb-4" src="assets/img/logo/medal.png"/>
       <h3 class="text-xl font-semibold mb-2 transform transition-transform duration-300 group-hover:-translate-y-4">
        Chất lượng hàng đầu
       </h3>
@@ -330,7 +329,7 @@
      </div>
      <!-- Card 2 -->
      <div class="bg-white rounded-xl p-8 shadow-md hover:shadow-xl transition group relative overflow-hidden">
-      <img alt="Tiêu chuẩn bảo mật" class="w-16 h-16 mx-auto mb-4" src="./img/logo/insurance.png"/>
+      <img alt="Tiêu chuẩn bảo mật" class="w-16 h-16 mx-auto mb-4" src="assets/img/logo/insurance.png"/>
       <h3 class="text-xl font-semibold mb-2 transform transition-transform duration-300 group-hover:-translate-y-4">
        Tiêu chuẩn bảo mật
       </h3>
@@ -340,7 +339,7 @@
      </div>
      <!-- Card 3 -->
      <div class="bg-white rounded-xl p-8 shadow-md hover:shadow-xl transition group relative overflow-hidden">
-      <img alt="Đội ngũ nhân sự nhiệt huyết" class="w-16 h-16 mx-auto mb-4" src="./img/logo/group.png"/>
+      <img alt="Đội ngũ nhân sự nhiệt huyết" class="w-16 h-16 mx-auto mb-4" src="assets/img/logo/group.png"/>
       <h3 class="text-xl font-semibold mb-2 transform transition-transform duration-300 group-hover:-translate-y-4">
        Đội ngũ nhân sự nhiệt huyết
       </h3>
@@ -356,7 +355,7 @@
   <footer class="bg-[#1f1f1f] text-white py-12 mt-12">
    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
     <div>
-     <img alt="Herbatech Logo" class="w-32 mb-4" src="./img/Herbatech-logo.png"/>
+     <img alt="Herbatech Logo" class="w-32 mb-4" src="assets/img/Herbatech-logo.png"/>
      <p class="text-sm text-gray-400">
       Take the risk or lose the chance
      </p>
@@ -386,10 +385,11 @@
       <li class="flex items-center gap-2">
        <i class="fab fa-facebook-f">
        </i>
-       <a class="hover:text-white" href="https://www.facebook.com/HerbaTechnology">Facebook</a>
+       <a class="hover:text-white" href="https://www.facebook.com/HerbaTechnology">Facebook</a>   
       </li>
       <li class="flex items-center gap-2">
-       <a class="hover:text-white" href="#"> MS Teams</a>
+       <i class="fab fa-microsoft"></i>
+       <a class="hover:text-white" href="https://teams.live.com/l/invite/FEAZnXfNrzqwXXuvhc"> MS Teams</a>
       </li>
      </ul>
     </div>
@@ -398,5 +398,13 @@
     &copy; 2025 Herbatech CO., LTD
    </div>
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js" defer></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/rellax@1.12.1/rellax.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+ </body>
+</html>
  </body>
 </html>
