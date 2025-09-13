@@ -1,45 +1,41 @@
 <!DOCTYPE html>
 <html lang="vi">
  <head>
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
    Herbatech
   </title>
-  <link href="img/logo/HerbatechLogo.png" rel="shortcut icon" type="image/png"/>
-  <link href="fontawesome-free-6.1.1-web/css/all.min.css" rel="stylesheet"/>
-  <link href="./CSS/style.css" rel="stylesheet"/>
+  <link href="assets/img/logo/HerbatechLogo.png" rel="shortcut icon" type="image/png"/>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <link href="./CSS/style.css" rel="stylesheet" />
+  <link href="dist/styles.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js" defer></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/rellax@1.12.1/rellax.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
-  <script src="js/main.js" defer></script>
- 
-  <title>Kiểm thử AI</title>
-  <meta name="description" content="Đảm bảo độ chính xác và hiệu quả cho mô hình AI với dịch vụ kiểm thử.">
+  
+  <meta name="description" content="Giải pháp xử lý dữ liệu và AI toàn diện: gán nhãn, thu thập hình ảnh, kiểm thử">
   <meta name="keywords" content="AI, Herbatech, dữ liệu, nhận diện hình ảnh, chú thích dữ liệu, testing, tuyển dụng">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://herbatech.com.vn/testing.html" />
-  <meta property="og:title" content="Kiểm thử AI">
-  <meta property="og:description" content="Đảm bảo độ chính xác và hiệu quả cho mô hình AI với dịch vụ kiểm thử.">
-  <meta property="og:image" content="https://herbatech.com.vn/img/logo/Herbatech_logo.png">
-  <meta property="og:url" content="https://herbatech.com.vn/testing.html">
+  <link rel="canonical" href="https://herbatech.com.vn/" />
+  <meta property="og:title" content="Herbatech - Giải pháp AI hàng đầu">
+  <meta property="og:description" content="Giải pháp xử lý dữ liệu và AI toàn diện: gán nhãn, thu thập hình ảnh, kiểm thử">
+  <meta property="og:image" content="https://herbatech.com.vn/assets/img/logo/Herbatech_logo.png">
+  <meta property="og:url" content="https://herbatech.com.vn/">
   <meta property="og:type" content="website">
+  <link rel="preload" as="image" href="assets/img/bia.png"/>
+
 </head>
  <body>
   <div class="fixed inset-0 -z-10" id="particles-js"></div>
   <header class="fixed top-0 left-0 w-full z-50 bg-white text-[#1f1f1f] px-6 py-4 transition duration-300">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
-      <!-- Logo -->
+      
       <a href="./index.html">
-        <img alt="Logo" class="h-10 object-contain" src="./img/Herbatech-logo.png"/>
+        <img alt="Logo" class="h-10 object-contain" src="assets/img/logo/Herbatech_logo.png"/>
       </a>
 
-      <!-- Hamburger menu (mobile) -->
       <div class="md:hidden">
         <button id="menu-toggle" class="text-2xl focus:outline-none">
           <i class="fas fa-bars text-[#20CFCF]"></i>
@@ -51,38 +47,121 @@
         <a class="hover:text-[#20CFCF]" href="index.html">TRANG CHỦ</a>
         <a class="hover:text-[#20CFCF]" href="./introduce.html">VỀ CHÚNG TÔI</a>
         <div class="relative group">
-          <a class="hover:text-[#20CFCF]" href="#">GIẢI PHÁP</a>
+          <a class="hover:text-[#20CFCF]" href="javascript:void(0)">GIẢI PHÁP</a>
           <div class="absolute top-full left-1/2 -translate-x-1/2 bg-white shadow-md rounded-md mt-2 py-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
             <a class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]" href="dataAnnotation.html">Chú thích dữ liệu</a>
-            <a class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]" href="imageRecognition.html">Thu thập dữ liệu hình ảnh</a>
+            <a class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]" href="imageRecognition.html">Nhận diện hình ảnh</a>
             <a class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]" href="testing.html">Kiểm thử</a>
           </div>
         </div>
         <a class="hover:text-[#20CFCF]" href="recruitment.html">TUYỂN DỤNG</a>
         <a class="bg-[#20CFCF] text-white px-4 py-2 rounded-md font-semibold hover:bg-[#1ab2b2] transition" href="./contact.html">Liên hệ</a>
       </nav>
+        </div>
+
+    <!-- Backdrop -->
+<div id="mobile-backdrop"
+     class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden z-[50]"></div>
+
+<!-- Drawer -->
+<aside id="mobile-drawer"
+       class="fixed top-0 right-0 h-full w-[80vw] max-w-[360px] bg-white shadow-2xl translate-x-full
+              transition-transform duration-300 ease-out z-[55] flex flex-col">
+
+  <!-- Header của drawer -->
+  <div class="px-5 py-4 bg-gradient-to-r from-[#0bbbc0] to-[#1ab2b2] text-white">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img src="assets/img/logo/Herbatech_logo.png" alt="Herbatech" class="h-8">
+      </div>
+      <button id="menu-close"
+              class="w-9 h-9 grid place-items-center rounded-md bg-white/10 hover:bg-white/20 transition"
+              aria-label="Đóng menu">
+        <i class="fas fa-xmark text-lg"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Nội dung -->
+  <nav class="flex-1 overflow-y-auto px-3 py-4">
+    <ul class="space-y-1 text-[16px]">
+      <li>
+        <a href="index.html"
+           class="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-gray-100 font-medium">
+          <i class="fas fa-house w-5 text-gray-500"></i> Trang chủ
+        </a>
+      </li>
+
+      <li>
+        <a href="./introduce.html"
+           class="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-gray-100 font-medium">
+          <i class="fas fa-building w-5 text-gray-500"></i> Về chúng tôi
+        </a>
+      </li>
+
+      <!-- Giải pháp (submenu) -->
+      <li class="pt-1">
+        <button id="submenu-toggle-mobile"
+                class="w-full flex items-center justify-between px-3 py-3 rounded-xl hover:bg-gray-100 font-medium">
+          <span class="flex items-center gap-3">
+            <i class="fas fa-lightbulb w-5 text-gray-500"></i> Giải pháp
+          </span>
+          <i id="submenu-caret-mobile" class="fas fa-chevron-down text-sm transition-transform"></i>
+        </button>
+
+        <ul id="submenu-mobile"
+            class="mt-1 ml-8 border-l pl-3 space-y-1 hidden">
+          <li>
+            <a href="dataAnnotation.html"
+               class="block px-3 py-2 rounded-lg hover:bg-gray-100 text-[15px]">
+              Chú thích dữ liệu
+            </a>
+          </li>
+          <li>
+            <a href="imageRecognition.html"
+               class="block px-3 py-2 rounded-lg hover:bg-gray-100 text-[15px]">
+              Nhận diện hình ảnh
+            </a>
+          </li>
+          <li>
+            <a href="testing.html"
+               class="block px-3 py-2 rounded-lg hover:bg-gray-100 text-[15px]">
+              Kiểm thử
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="recruitment.html"
+           class="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-gray-100 font-medium">
+          <i class="fas fa-users w-5 text-gray-500"></i> Tuyển dụng
+        </a>
+      </li>
+    </ul>
+
+    <!-- CTA -->
+    <div class="pt-4">
+      <a href="./contact.html"
+         class="block text-center px-4 py-3 rounded-xl font-semibold text-white
+                bg-gradient-to-r from-[#20CFCF] to-[#1ab2b2] hover:opacity-90 transition">
+        Liên hệ
+      </a>
     </div>
 
-    <!-- Mobile menu content -->
-    <div id="mobile-menu" class="md:hidden hidden mt-4 px-4">
-  <ul class="flex flex-col gap-4 text-base font-medium">
-    <li><a href="index.html" class="block hover:text-[#20CFCF]">TRANG CHỦ</a></li>
-    <li><a href="./introduce.html" class="block hover:text-[#20CFCF]">VỀ CHÚNG TÔI</a></li>
-    <li>
-      <button id="submenu-toggle" class="w-full text-left font-medium hover:text-[#20CFCF] flex justify-between items-center">
-        GIẢI PHÁP
-        <i class="fas fa-chevron-down ml-2 text-sm"></i>
-      </button>
-      <ul id="submenu" class="pl-4 mt-2 space-y-2 text-sm hidden overflow-hidden transition-all duration-300">
-        <li><a href="dataAnnotation.html" class="block hover:text-[#20CFCF]">Chú thích dữ liệu</a></li>
-        <li><a href="imageRecognition.html" class="block hover:text-[#20CFCF]">Thu thập dữ liệu hình ảnh</a></li>
-        <li><a href="testing.html" class="block hover:text-[#20CFCF]">Kiểm thử</a></li>
-      </ul>
-    </li>
-    <li><a href="recruitment.html" class="block hover:text-[#20CFCF]">TUYỂN DỤNG</a></li>
-    <li><a href="./contact.html" class="block bg-[#20CFCF] text-white px-4 py-2 rounded-md text-center">Liên hệ</a></li>
-  </ul>
-</div>
+    <!-- Socials -->
+    <div class="mt-6 flex items-center gap-4 px-3 text-gray-500">
+      <a href="#" class="hover:text-[#20CFCF]" aria-label="Facebook"><i class="fab fa-facebook text-xl"></i></a>
+      <a href="#" class="hover:text-[#20CFCF]" aria-label="MS Teams"><i class="fas fa-square text-xl"></i></a>
+    </div>
+  </nav>
+
+  <!-- Footer nhỏ trong drawer -->
+  <div class="px-5 py-3 border-t text-xs text-gray-500">
+    © 2025 Herbatech CO., LTD
+  </div>
+</aside>
+
 </header>
 
 <section class="w-full bg-gray-50 pt-[100px] py-16">
@@ -170,6 +249,10 @@
       © 2025 Herbatech CO., LTD
     </div>
   </footer>
-  </body>
-
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/menu.js" defer></script>
+ </body>
 </html>

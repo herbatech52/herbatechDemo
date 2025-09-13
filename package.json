@@ -1,25 +1,26 @@
 {
-  "name": "cty-herbatech",
+  "name": "herbatech-site",
   "version": "1.0.0",
-  "description": "",
-  "main": "tailwind.config.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rimraf dist",
+    "build:css": "tailwindcss -i ./assets/css/input.css -o ./dist/styles.css --minify", 
+    "copy:assets": "cpy \"assets/**/*\" dist/assets --parents",
+    "copy:root": "cpy \"favicon.*\" \"robots.txt\" \"sitemap.xml\" dist/ --flat --no-overwrite --cwd .", 
+    "copy:html": "cpy \"*.html\" dist/",              
+    "build:js": "esbuild assets/js/*.js --minify --bundle --format=iife --outdir=dist/assets/js",
+    "minify:html": "html-minifier-terser --input-dir dist --output-dir dist --file-ext html --collapse-whitespace --remove-comments --remove-attribute-quotes --remove-redundant-attributes --remove-empty-attributes --minify-css true --minify-js true --use-short-doctype",
+    "build": "run-s clean build:css copy:assets copy:root copy:html build:js minify:html"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/herbatech52/herbatechDemo.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/herbatech52/herbatechDemo/issues"
-  },
-  "homepage": "https://github.com/herbatech52/herbatechDemo#readme",
   "devDependencies": {
-    "autoprefixer": "^10.4.21",
-    "postcss": "^8.5.6",
-    "tailwindcss": "^3.4.17"
+    "autoprefixer": "^10.4.20",
+    "cpy-cli": "^5.0.0",
+    "cssnano": "^6.0.1",
+    "esbuild": "^0.23.0",
+    "html-minifier-terser": "^7.2.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.40",
+    "rimraf": "^5.0.7",
+    "tailwindcss": "^3.4.10"
   }
 }

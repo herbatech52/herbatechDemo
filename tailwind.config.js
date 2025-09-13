@@ -1,11 +1,10 @@
-/** @type {import('tailwindcss').Config} */
+/**** Tailwind config (scan all HTML + JS) ****/
 module.exports = {
   content: [
     "./*.html",
-    "./**/*.html"
+    "./**/*.html",
+    "./assets/js/**/*.js"
   ],
-  theme: {
-    extend: {},
-  },
+  theme: { extend: {} },
   plugins: [],
-}
+};
