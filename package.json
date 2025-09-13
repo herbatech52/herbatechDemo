@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "clean": "rimraf dist",
-    "build:css": "tailwindcss -i ./assets/css/input.css -o ./dist/styles.css --minify", 
+    "build:css": "tailwindcss -i ./assets/css/input.css -o ./dist/styles.css --minify",
     "copy:assets": "cpy \"assets/**/*\" dist/assets --parents",
-    "copy:root": "cpy \"favicon.*\" \"robots.txt\" \"sitemap.xml\" dist/ --flat --no-overwrite --cwd .", 
-    "copy:html": "cpy \"*.html\" dist/",              
+    "copy:root": "cpy \"favicon.*\" \"robots.txt\" \"sitemap.xml\" dist/ --flat --no-overwrite --cwd .",
+    "copy:html": "cpy \"*.html\" dist/",
     "build:js": "esbuild assets/js/*.js --minify --bundle --format=iife --outdir=dist/assets/js",
     "minify:html": "html-minifier-terser --input-dir dist --output-dir dist --file-ext html --collapse-whitespace --remove-comments --remove-attribute-quotes --remove-redundant-attributes --remove-empty-attributes --minify-css true --minify-js true --use-short-doctype",
     "build": "run-s clean build:css copy:assets copy:root copy:html build:js minify:html"

@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="vi">
- <head>
+
+<head>
   <link rel="preconnect" href="https://unpkg.com" crossorigin>
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-  <meta charset="utf-8"/>
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Về Herbatech</title>
-  <link href="assets/img/logo/HerbatechLogo.png" rel="shortcut icon" type="image/png"/>
-  <link href="dist/styles.css" rel="stylesheet"/>
+  <link href="assets/img/logo/HerbatechLogo.png" rel="shortcut icon" type="image/png" />
+  <link href="dist/styles.css" rel="stylesheet" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
   <meta name="description" content="Tìm hiểu về sứ mệnh, giá trị và đội ngũ Herbatech.">
   <meta name="keywords" content="AI, Herbatech, dữ liệu, nhận diện hình ảnh, xử lý dữ liệu, testing, tuyển dụng">
   <meta name="robots" content="index, follow">
@@ -22,318 +23,224 @@
   <meta property="og:image" content="https://herbatech.com.vn/assets/img/logo/Herbatech_logo.png">
   <meta property="og:url" content="https://herbatech.com.vn/introduce.html">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="vi_VN"/>
+  <meta property="og:locale" content="vi_VN" />
 
 </head>
- <body>
+
+<body>
   <div class="fixed inset-0 -z-10" id="particles-js"></div>
-  <header class="fixed top-0 left-0 w-full z-50 bg-white text-[#1f1f1f] px-6 py-4 transition duration-300">
-    <div class="max-w-7xl mx-auto flex justify-between items-center">
+  <!-- include header -->
+  <div id="header"></div>
 
-      <a href="./index.html">
-        <img alt="Logo" class="h-10 object-contain" src="assets/img/Herbatech-logo.png"/>
-      </a>
-
-      <div class="md:hidden">
-        <button id="menu-toggle" class="text-2xl focus:outline-none">
-          <i class="fas fa-bars text-[#20CFCF]"></i>
-        </button>
-      </div>
-
-      <nav id="main-menu" class="hidden md:flex items-center gap-10 font-medium text-base">
-  <a class="hover:text-[#20CFCF]" href="index.html">TRANG CHỦ</a>
-  <a class="hover:text-[#20CFCF]" href="./introduce.html">VỀ CHÚNG TÔI</a>
-  <div class="relative group">
-    <a class="hover:text-[#20CFCF]" href="javascript:void(0)">GIẢI PHÁP</a>
-    <div class="absolute top-full left-1/2 -translate-x-1/2 bg-white shadow-md rounded-md mt-2 py-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
-      <a class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]" href="dataAnnotation.html">xử lý dữ liệu</a>
-      <a class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]" href="imageRecognition.html">Thu thập dữ liệu hình ảnh</a>
-      <a class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]" href="testing.html">Kiểm thử</a>
+  <section class="relative w-full h-[90vh] bg-cover bg-center flex items-center justify-center"
+    style="background-image: url('assets/img/f3af78af-15e9-4ebd-abb9-fb335531fe00_wm.jpg');">
+    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+    <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-30">
+      <svg viewBox="0 0 1440 100" class="w-full h-[100px]" preserveAspectRatio="none">
+        <path d="M0,0 C480,100 960,0 1440,100 L1440,100 L0,100 Z" fill="#ffffff"></path>
+      </svg>
     </div>
-  </div>
-  <a class="hover:text-[#20CFCF]" href="recruitment.html">TUYỂN DỤNG</a>
-  <a class="bg-[#20CFCF] text-white px-4 py-2 rounded-md font-semibold hover:bg-[#1ab2b2] transition" href="./contact.html">Liên hệ</a>
-</nav>
-
-<div id="mobile-backdrop"
-     class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden z-[50]"></div>
-
-<aside id="mobile-drawer"
-       class="fixed top-0 right-0 h-full w-[80vw] max-w-[360px] bg-white shadow-2xl translate-x-full
-              transition-transform duration-300 ease-out z-[55] flex flex-col">
-  <div class="px-5 py-4 bg-gradient-to-r from-[#0bbbc0] to-[#1ab2b2] text-white">
-    <div class="flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <img src="assets/img/logo/Herbatech_logo.png" alt="Herbatech" class="h-8">
-        <span class="font-semibold tracking-wide">Menu</span>
-      </div>
-      <button id="menu-close"
-              class="w-9 h-9 grid place-items-center rounded-md bg-white/10 hover:bg-white/20 transition"
-              aria-label="Đóng menu">
-        <i class="fas fa-xmark text-lg"></i>
-      </button>
-    </div>
-  </div>
-
-  <nav class="flex-1 overflow-y-auto px-3 py-4">
-    <ul class="space-y-1 text-[16px]">
-      <li>
-        <a href="index.html"
-           class="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-gray-100 font-medium">
-          <i class="fas fa-house w-5 text-gray-500"></i> Trang chủ
-        </a>
-      </li>
-
-      <li>
-        <a href="./introduce.html"
-           class="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-gray-100 font-medium">
-          <i class="fas fa-building w-5 text-gray-500"></i> Về chúng tôi
-        </a>
-      </li>
-
-      <li class="pt-1">
-        <button id="submenu-toggle-mobile"
-                class="w-full flex items-center justify-between px-3 py-3 rounded-xl hover:bg-gray-100 font-medium">
-          <span class="flex items-center gap-3">
-            <i class="fas fa-lightbulb w-5 text-gray-500"></i> Giải pháp
-          </span>
-          <i id="submenu-caret-mobile" class="fas fa-chevron-down text-sm transition-transform"></i>
-        </button>
-
-        <ul id="submenu-mobile"
-            class="mt-1 ml-8 border-l pl-3 space-y-1 hidden">
-          <li>
-            <a href="dataAnnotation.html"
-               class="block px-3 py-2 rounded-lg hover:bg-gray-100 text-[15px]">
-              Chú thích dữ liệu
-            </a>
-          </li>
-          <li>
-            <a href="imageRecognition.html"
-               class="block px-3 py-2 rounded-lg hover:bg-gray-100 text-[15px]">
-              Nhận diện hình ảnh
-            </a>
-          </li>
-          <li>
-            <a href="testing.html"
-               class="block px-3 py-2 rounded-lg hover:bg-gray-100 text-[15px]">
-              Kiểm thử
-            </a>
-          </li>
-        </ul>
-      </li>
-
-      <li>
-        <a href="recruitment.html"
-           class="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-gray-100 font-medium">
-          <i class="fas fa-users w-5 text-gray-500"></i> Tuyển dụng
-        </a>
-      </li>
-    </ul>
-
-    <!-- CTA -->
-    <div class="pt-4">
-      <a href="./contact.html"
-         class="block text-center px-4 py-3 rounded-xl font-semibold text-white
-                bg-gradient-to-r from-[#20CFCF] to-[#1ab2b2] hover:opacity-90 transition">
-        Liên hệ
-      </a>
-    </div>
-
-    <!-- Socials -->
-    <div class="mt-6 flex items-center gap-4 px-3 text-gray-500">
-      <a href="#" class="hover:text-[#20CFCF]" aria-label="Facebook"><i class="fab fa-facebook text-xl"></i></a>
-      <a href="#" class="hover:text-[#20CFCF]" aria-label="MS Teams"><i class="fas fa-square text-xl"></i></a>
-    </div>
-  </nav>
-
-  <div class="px-5 py-3 border-t text-xs text-gray-500">
-    © 2025 Herbatech CO., LTD
-  </div>
-</aside>
-</header>
-
-<section class="relative w-full h-[90vh] bg-cover bg-center flex items-center justify-center" style="background-image: url('assets/img/f3af78af-15e9-4ebd-abb9-fb335531fe00_wm.jpg');">
-  <div class="absolute inset-0 bg-black bg-opacity-40"></div>
-  <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-30">
-    <svg viewBox="0 0 1440 100" class="w-full h-[100px]" preserveAspectRatio="none">
-      <path d="M0,0 C480,100 960,0 1440,100 L1440,100 L0,100 Z" fill="#ffffff"></path>
-    </svg>
-  </div></section>
+  </section>
 
   <!-- CARD -->
-<div class="bg-[#20CFCF] rounded-2xl px-6 py-6 md:px-8 md:py-6 w-full max-w-3xl mx-auto flex flex-col md:flex-row items-center gap-4 text-white relative overflow-hidden">
-  <div class="flex-shrink-0">
-    <img src="assets/img/logo/Herbatech_logo.png" alt="Herbatech Icon" class="w-16 h-16 object-contain">
-  </div>
-  <div class="flex-1">
-    <h3 class="text-lg md:text-xl font-bold mb-1">Herbatech : Tên gọi và ý nghĩa</h3>
-    <p class="mb-2 text-sm md:text-base leading-relaxed">
-      Herbatech chứa đựng ước mơ và mục tiêu kiến tạo nên thật nhiều những điều tốt đẹp cho xã hội của tập thể những chiến binh herba.
-    </p>
-    <button id="openModal" class="inline-flex items-center font-semibold underline underline-offset-4 hover:text-yellow-300 text-sm">
-      Tìm hiểu thêm →
-    </button>
-  </div>
-
-  <div class="absolute inset-0 pointer-events-none">
-    <img src="assets/img/bg/line-pattern.svg" class="w-full h-full object-cover opacity-10" / loading="lazy" alt="Team member">
-  </div>
-</div>
-
-<!-- POPUP MODAL -->
-<div id="infoModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-  <div class="bg-white rounded-xl max-w-4xl w-full p-8 relative flex flex-col md:flex-row gap-6">
-    
-    <button id="closeModal" class="absolute top-4 right-6 text-2xl text-gray-400 hover:text-gray-800">&times;</button>
-
-    <div class="flex-shrink-0 flex justify-center md:block">
-      <img src="assets/img/logo/Herbatech_logo.png" alt="Logo" class="w-28 h-28 object-contain">
+  <div
+    class="bg-[#20CFCF] rounded-2xl px-6 py-6 md:px-8 md:py-6 w-full max-w-3xl mx-auto flex flex-col md:flex-row items-center gap-4 text-white relative overflow-hidden">
+    <div class="flex-shrink-0">
+      <img src="assets/img/logo/Herbatech_logo.png" alt="Herbatech Icon" class="w-16 h-16 object-contain">
+    </div>
+    <div class="flex-1">
+      <h3 class="text-lg md:text-xl font-bold mb-1">Herbatech : Tên gọi và ý nghĩa</h3>
+      <p class="mb-2 text-sm md:text-base leading-relaxed">
+        Herbatech chứa đựng ước mơ và mục tiêu kiến tạo nên thật nhiều những điều tốt đẹp cho xã hội của tập thể những
+        chiến binh herba.
+      </p>
+      <button id="openModal"
+        class="inline-flex items-center font-semibold underline underline-offset-4 hover:text-yellow-300 text-sm">
+        Tìm hiểu thêm →
+      </button>
     </div>
 
-    <div class="text-gray-800 space-y-3 text-sm md:text-base leading-relaxed">
-      <h2 class="text-xl md:text-2xl font-bold text-[#20CFCF]">Herbatech : Tên gọi và ý nghĩa</h2>
-      <p><span class="font-semibold">Tên công ty:</span> <span class="text-[#20CFCF] font-bold">Công ty TNHH Công nghệ Herba</span></p>
-      <p><span class="font-semibold">Viết tắt:</span> <span class="text-[#20CFCF] font-bold">Herbatech</span></p>
-      <p>
-        Biểu tượng của sự sống và phát triển: <strong>“Herba”</strong> tượng trưng cho sự sinh trưởng, sức sống, và sự tái sinh – giống như cách mà một doanh nghiệp công nghệ luôn đổi mới và phát triển không ngừng.
-      </p>
-      <p>
-        Tính tự nhiên và bền vững: Gợi nhớ đến thiên nhiên, sự trong lành, xanh – sạch – bền vững, phù hợp nếu công ty bạn hướng tới giải pháp thân thiện với môi trường hoặc con người.
-      </p>
-      <p>
-        Tinh thần mềm mại trong lĩnh vực công nghệ: Tên <strong>“Herba”</strong> mang nét nhẹ nhàng, không khô cứng  giúp công ty tạo dấu ấn nhân văn và gần gũi hơn.
-      </p>
-      <p>Khẩu hiệu (slogan): “Take the risk or lose the chance” – “Hãy mạo hiểm hoặc đánh mất cơ hội.” Thể hiện tinh thần đổi mới, dám nghĩ dám làm</p>
+    <div class="absolute inset-0 pointer-events-none">
+      <img src="assets/img/bg/line-pattern.svg" class="w-full h-full object-cover opacity-10" loading="lazy"
+        alt="Team member">
     </div>
   </div>
-</div>
+
+  <!-- POPUP MODAL -->
+  <div id="infoModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+    <div class="bg-white rounded-xl max-w-4xl w-full p-8 relative flex flex-col md:flex-row gap-6">
+
+      <button id="closeModal" class="absolute top-4 right-6 text-2xl text-gray-400 hover:text-gray-800">&times;</button>
+
+      <div class="flex-shrink-0 flex justify-center md:block">
+        <img src="assets/img/logo/Herbatech_logo.png" alt="Logo" class="w-28 h-28 object-contain">
+      </div>
+
+      <div class="text-gray-800 space-y-3 text-sm md:text-base leading-relaxed">
+        <h2 class="text-xl md:text-2xl font-bold text-[#20CFCF]">Herbatech : Tên gọi và ý nghĩa</h2>
+        <p><span class="font-semibold">Tên công ty:</span> <span class="text-[#20CFCF] font-bold">Công ty TNHH Công nghệ
+            Herba</span></p>
+        <p><span class="font-semibold">Viết tắt:</span> <span class="text-[#20CFCF] font-bold">Herbatech</span></p>
+        <p>
+          Biểu tượng của sự sống và phát triển: <strong>“Herba”</strong> tượng trưng cho sự sinh trưởng, sức sống, và sự
+          tái sinh – giống như cách mà một doanh nghiệp công nghệ luôn đổi mới và phát triển không ngừng.
+        </p>
+        <p>
+          Tính tự nhiên và bền vững: Gợi nhớ đến thiên nhiên, sự trong lành, xanh – sạch – bền vững, phù hợp nếu công ty
+          bạn hướng tới giải pháp thân thiện với môi trường hoặc con người.
+        </p>
+        <p>
+          Tinh thần mềm mại trong lĩnh vực công nghệ: Tên <strong>“Herba”</strong> mang nét nhẹ nhàng, không khô cứng
+          giúp công ty tạo dấu ấn nhân văn và gần gũi hơn.
+        </p>
+        <p>Khẩu hiệu (slogan): “Take the risk or lose the chance” – “Hãy mạo hiểm hoặc đánh mất cơ hội.” Thể hiện tinh
+          thần đổi mới, dám nghĩ dám làm</p>
+      </div>
+    </div>
+  </div>
 
   <!--Giới thiệu-->
 
-<section class="flex flex-col md:flex-row items-center justify-center px-8 py-16 max-w-7xl mx-auto">
-  <div class="relative w-full md:w-1/2 mb-12 md:mb-0">
-    <div class="absolute left-[-60px] top-[50px] bg-gradient-to-br from-[#20CFCF] to-[#1ab2b2] text-white py-4 px-2 rounded-md text-center font-semibold rotate-180 writing-mode-vertical" style="writing-mode: vertical-rl; transform: rotate(180deg);">
-      Công ty TNHH Công nghệ Herba
-    </div>
-    <img src="assets/img/cover.png" alt="Team" class="rounded-xl shadow-lg w-full" / loading="lazy">
-  </div>
-  <div class="w-full md:w-1/2 md:pl-12">
-    <p class="text-sm font-medium mb-2">
-      <i class="fa fa-circle text-[#20CFCF] mr-1"></i>
-      Khai phá giá trị dữ liệu 
-    </p>
-    <h2 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
-      <span class="text-[#20CFCF]">Herba</span><span class="text-[#444444]">tech</span>
-    </h2>
-    <p class="text-gray-700 mb-6 text-base md:text-lg">
-      HerbaTech được thành lập vào tháng 4 năm 2021 tại Hà Nội, với sứ mệnh đồng hành cùng doanh nghiệp trong hiện đại hóa công nghệ, đặc biệt về xử lý dữ liệu, phát triển ứng dụng và AI.
-
-Ngay từ đầu, công ty tập trung vào gia công dữ liệu hình ảnh cho mô hình AI, tham gia các dự án như nhận diện khuôn mặt, phương tiện, hình ảnh y tế, đồng thời cung cấp phần mềm tùy biến và cộng tác viên CNTT cho các dự án lớn.
-
-Đến năm 2025, với đội ngũ từ 50–200 người, HerbaTech đã khẳng định vị thế tại Hà Nội và mở rộng hợp tác ra các tỉnh thành và quốc tế, bao gồm các đối tác từ Hàn Quốc, Nhật Bản, Hoa Kỳ.
-
-Dù còn trẻ, công ty định hướng xây dựng môi trường chuyên nghiệp, sáng tạo, đặt con người làm trung tâm và chú trọng phát triển cơ hội thực tế cho sinh viên, người trẻ trong ngành công nghệ số.
-    </p>
-
-    <div class="flex gap-6 mb-4 text-gray-700 font-semibold" id="tab-buttons">
-      <button class="px-4 py-2 rounded-md transition active-tab bg-gradient-to-br from-[#20CFCF] to-[#1ab2b2] text-white" data-tab="mission">Sứ mệnh</button>
-      <button class="px-4 py-2 rounded-md transition active-tab bg-gradient-to-br from-[#20CFCF] to-[#1ab2b2] text-white" data-tab="vision">Tầm nhìn</button>
-    </div>
-
-    <div class="text-gray-800 mb-6 border-l-2 pl-4 border-[#20CFCF]" id="tab-content">
-  <div class="tab-pane" data-tab="mission">
-    <h3 class="text-xl font-bold mb-4">Sứ mệnh của chúng tôi</h3>
-    <p class="text-base md:text-lg leading-relaxed text-gray-700">
-      Đồng hành cùng các tổ chức và doanh nghiệp trong quá trình hiện đại hóa bằng công nghệ.
-
-Cung cấp các giải pháp về xử lý dữ liệu, phát triển ứng dụng và trí tuệ nhân tạo (AI).
-
-Tạo điều kiện cho người trẻ tiếp cận công nghệ thực tiễn, phát triển kỹ năng và năng lực cá nhân.
-    </p>
-  </div>
-
-  <div class="tab-pane hidden" data-tab="vision">
-    <h3 class="text-xl font-bold mb-4">Tầm nhìn của chúng tôi</h3>
-    <p class="text-base md:text-lg leading-relaxed text-gray-700">
-      Trở thành đơn vị hàng đầu trong lĩnh vực xử lý dữ liệu và giải pháp công nghệ số tại Việt Nam.
-
-Mở rộng hợp tác với các đối tác trong và ngoài nước, đặc biệt ở các quốc gia phát triển về AI.
-
-Xây dựng một môi trường làm việc chuyên nghiệp, sáng tạo, lấy con người làm trung tâm phát triển lâu dài.</p>
-  </div>
-</div>
-</section>
-
-    <!-- Giá trị cốt lõi -->
-    <section class="bg-[#f8fcff] py-20 px-6 text-center">
-  <div class="max-w-3xl mx-auto mb-12">
-    <h3 class="text-3xl md:text-4xl font-bold text-[#20CFCF] leading-snug">
-      GIÁ TRỊ CỐT LÕI
-    </h3>
-  </div>
-
-  <div class="flex flex-col items-center justify-center w-full px-6">
-
-    <div class="w-full max-w-6xl flex flex-col md:flex-row items-center justify-center gap-12" data-aos="fade-up" data-aos-delay="100">
-      <img src="assets/img/tinhthan.png"/ loading="lazy" alt="Team member">
-      <div class="text-right md:w-1/2">
-        <p class="text-gray-300 text-6xl font-bold">01</p>
-        <h2 class="text-[#20CFCF] text-2xl font-bold mt-2">Tinh thần đổi mới</h2>
-        <p class="text-gray-700 mt-4">
-          Khuyến khích mọi ý tưởng mới, dám thử – dám sai – dám làm lại.
-        </p>
+  <section class="flex flex-col md:flex-row items-center justify-center px-8 py-16 max-w-7xl mx-auto">
+    <div class="relative w-full md:w-1/2 mb-12 md:mb-0">
+      <div
+        class="absolute left-[-60px] top-[50px] bg-gradient-to-br from-[#20CFCF] to-[#1ab2b2] text-white py-4 px-2 rounded-md text-center font-semibold rotate-180 writing-mode-vertical"
+        style="writing-mode: vertical-rl; transform: rotate(180deg);">
+        Công ty TNHH Công nghệ Herba
       </div>
+      <img src="assets/img/cover.png" alt="Team" class="rounded-xl shadow-lg w-full" / loading="lazy">
     </div>
+    <div class="w-full md:w-1/2 md:pl-12">
+      <p class="text-sm font-medium mb-2">
+        <i class="fa fa-circle text-[#20CFCF] mr-1"></i>
+        Khai phá giá trị dữ liệu
+      </p>
+      <h2 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
+        <span class="text-[#20CFCF]">Herba</span><span class="text-[#444444]">tech</span>
+      </h2>
+      <p class="text-gray-700 mb-6 text-base md:text-lg">
+        HerbaTech được thành lập vào tháng 4 năm 2021 tại Hà Nội, với sứ mệnh đồng hành cùng doanh nghiệp trong hiện đại
+        hóa công nghệ, đặc biệt về xử lý dữ liệu, phát triển ứng dụng và AI.
 
-    <div class="w-full max-w-6xl flex flex-col-reverse md:flex-row items-center justify-center gap-12 mt-20" data-aos="fade-up" data-aos-delay="200">
-      <div class="md:w-1/2 text-left">
-        <p class="text-gray-300 text-6xl font-bold">02</p>
-        <h2 class="text-[#20CFCF] text-2xl font-bold mt-2">Tính minh bạch & tin tưởng</h2>
-        <p class="text-gray-700 mt-4">
-          Giao tiếp cởi mở, tôn trọng lẫn nhau và luôn tin vào năng lực của đội ngũ.
-        </p>
+        Ngay từ đầu, công ty tập trung vào gia công dữ liệu hình ảnh cho mô hình AI, tham gia các dự án như nhận diện
+        khuôn mặt, phương tiện, hình ảnh y tế, đồng thời cung cấp phần mềm tùy biến và cộng tác viên CNTT cho các dự án
+        lớn.
+
+        Đến năm 2025, với đội ngũ từ 50–200 người, HerbaTech đã khẳng định vị thế tại Hà Nội và mở rộng hợp tác ra các
+        tỉnh thành và quốc tế, bao gồm các đối tác từ Hàn Quốc, Nhật Bản, Hoa Kỳ.
+
+        Dù còn trẻ, công ty định hướng xây dựng môi trường chuyên nghiệp, sáng tạo, đặt con người làm trung tâm và chú
+        trọng phát triển cơ hội thực tế cho sinh viên, người trẻ trong ngành công nghệ số.
+      </p>
+
+      <div class="flex gap-6 mb-4 text-gray-700 font-semibold" id="tab-buttons">
+        <button
+          class="px-4 py-2 rounded-md transition active-tab bg-gradient-to-br from-[#20CFCF] to-[#1ab2b2] text-white"
+          data-tab="mission">Sứ mệnh</button>
+        <button
+          class="px-4 py-2 rounded-md transition active-tab bg-gradient-to-br from-[#20CFCF] to-[#1ab2b2] text-white"
+          data-tab="vision">Tầm nhìn</button>
       </div>
-      <img src="assets/img/minhbach1.png"/ loading="lazy" alt="Team member">
-    </div>
 
-    <div class="w-full max-w-6xl flex flex-col md:flex-row items-center justify-center gap-12 mt-20" data-aos="fade-up" data-aos-delay="300">
-      <img src="assets/img/hieusuat.png"/ loading="lazy" alt="Team member">
-      <div class="md:w-1/2 text-right">
-        <p class="text-gray-300 text-6xl font-bold">03</p>
-        <h2 class="text-[#20CFCF] text-2xl font-bold mt-2">Hiệu suất vượt kỳ vọng</h2>
-        <p class="text-gray-700 mt-4">
-          Làm việc vì kết quả thực tế, đo lường rõ ràng, không dựa vào thâm niên.
-        </p>
+      <div class="text-gray-800 mb-6 border-l-2 pl-4 border-[#20CFCF]" id="tab-content">
+        <div class="tab-pane" data-tab="mission">
+          <h3 class="text-xl font-bold mb-4">Sứ mệnh của chúng tôi</h3>
+          <p class="text-base md:text-lg leading-relaxed text-gray-700">
+            Đồng hành cùng các tổ chức và doanh nghiệp trong quá trình hiện đại hóa bằng công nghệ.
+
+            Cung cấp các giải pháp về xử lý dữ liệu, phát triển ứng dụng và trí tuệ nhân tạo (AI).
+
+            Tạo điều kiện cho người trẻ tiếp cận công nghệ thực tiễn, phát triển kỹ năng và năng lực cá nhân.
+          </p>
+        </div>
+
+        <div class="tab-pane hidden" data-tab="vision">
+          <h3 class="text-xl font-bold mb-4">Tầm nhìn của chúng tôi</h3>
+          <p class="text-base md:text-lg leading-relaxed text-gray-700">
+            Trở thành đơn vị hàng đầu trong lĩnh vực xử lý dữ liệu và giải pháp công nghệ số tại Việt Nam.
+
+            Mở rộng hợp tác với các đối tác trong và ngoài nước, đặc biệt ở các quốc gia phát triển về AI.
+
+            Xây dựng một môi trường làm việc chuyên nghiệp, sáng tạo, lấy con người làm trung tâm phát triển lâu dài.
+          </p>
+        </div>
       </div>
+  </section>
+
+  <!-- Giá trị cốt lõi -->
+  <section class="bg-[#f8fcff] py-20 px-6 text-center">
+    <div class="max-w-3xl mx-auto mb-12">
+      <h3 class="text-3xl md:text-4xl font-bold text-[#20CFCF] leading-snug">
+        GIÁ TRỊ CỐT LÕI
+      </h3>
     </div>
 
-    <div class="w-full max-w-6xl flex flex-col-reverse md:flex-row items-center justify-center gap-12 mt-20" data-aos="fade-up" data-aos-delay="400">
-      <div class="md:w-1/2 text-left">
-        <p class="text-gray-300 text-6xl font-bold">04</p>
-        <h2 class="text-[#20CFCF] text-2xl font-bold mt-2">Phát triển liên tục</h2>
-        <p class="text-gray-700 mt-4">
-          Mỗi nhân viên là một “phiên bản đang cập nhật”, luôn được hỗ trợ học hỏi và nâng cao năng lực.
-        </p>
+    <div class="flex flex-col items-center justify-center w-full px-6">
+
+      <div class="w-full max-w-6xl flex flex-col md:flex-row items-center justify-center gap-12" data-aos="fade-up"
+        data-aos-delay="100">
+        <img src="assets/img/tinhthan.png" loading="lazy" alt="Team member">
+        <div class="text-right md:w-1/2">
+          <p class="text-gray-300 text-6xl font-bold">01</p>
+          <h2 class="text-[#20CFCF] text-2xl font-bold mt-2">Tinh thần đổi mới</h2>
+          <p class="text-gray-700 mt-4">
+            Khuyến khích mọi ý tưởng mới, dám thử – dám sai – dám làm lại.
+          </p>
+        </div>
       </div>
-      <img src="assets/img/phattrien.png" / loading="lazy" alt="Team member">
-    </div>
 
-    <div class="w-full max-w-6xl flex flex-col md:flex-row items-center justify-center gap-12 mt-20" data-aos="fade-up" data-aos-delay="500">
-      <img src="assets/img/canbang.png" / loading="lazy" alt="Team member">
-      <div class="md:w-1/2 text-right">
-        <p class="text-gray-300 text-6xl font-bold">05</p>
-        <h2 class="text-[#20CFCF] text-2xl font-bold mt-2">Cân bằng & Nhân văn</h2>
-        <p class="text-gray-700 mt-4">
-          Làm việc để sống trọn vẹn – không chỉ vì công việc mà vì cuộc sống chất lượng.
-        </p>
+      <div class="w-full max-w-6xl flex flex-col-reverse md:flex-row items-center justify-center gap-12 mt-20"
+        data-aos="fade-up" data-aos-delay="200">
+        <div class="md:w-1/2 text-left">
+          <p class="text-gray-300 text-6xl font-bold">02</p>
+          <h2 class="text-[#20CFCF] text-2xl font-bold mt-2">Tính minh bạch & tin tưởng</h2>
+          <p class="text-gray-700 mt-4">
+            Giao tiếp cởi mở, tôn trọng lẫn nhau và luôn tin vào năng lực của đội ngũ.
+          </p>
+        </div>
+        <img src="assets/img/minhbach1.png" / loading="lazy" alt="Team member">
       </div>
+
+      <div class="w-full max-w-6xl flex flex-col md:flex-row items-center justify-center gap-12 mt-20"
+        data-aos="fade-up" data-aos-delay="300">
+        <img src="assets/img/hieusuat.png" / loading="lazy" alt="Team member">
+        <div class="md:w-1/2 text-right">
+          <p class="text-gray-300 text-6xl font-bold">03</p>
+          <h2 class="text-[#20CFCF] text-2xl font-bold mt-2">Hiệu suất vượt kỳ vọng</h2>
+          <p class="text-gray-700 mt-4">
+            Làm việc vì kết quả thực tế, đo lường rõ ràng, không dựa vào thâm niên.
+          </p>
+        </div>
+      </div>
+
+      <div class="w-full max-w-6xl flex flex-col-reverse md:flex-row items-center justify-center gap-12 mt-20"
+        data-aos="fade-up" data-aos-delay="400">
+        <div class="md:w-1/2 text-left">
+          <p class="text-gray-300 text-6xl font-bold">04</p>
+          <h2 class="text-[#20CFCF] text-2xl font-bold mt-2">Phát triển liên tục</h2>
+          <p class="text-gray-700 mt-4">
+            Mỗi nhân viên là một “phiên bản đang cập nhật”, luôn được hỗ trợ học hỏi và nâng cao năng lực.
+          </p>
+        </div>
+        <img src="assets/img/phattrien.png" / loading="lazy" alt="Team member">
+      </div>
+
+      <div class="w-full max-w-6xl flex flex-col md:flex-row items-center justify-center gap-12 mt-20"
+        data-aos="fade-up" data-aos-delay="500">
+        <img src="assets/img/canbang.png" / loading="lazy" alt="Team member">
+        <div class="md:w-1/2 text-right">
+          <p class="text-gray-300 text-6xl font-bold">05</p>
+          <h2 class="text-[#20CFCF] text-2xl font-bold mt-2">Cân bằng & Nhân văn</h2>
+          <p class="text-gray-700 mt-4">
+            Làm việc để sống trọn vẹn – không chỉ vì công việc mà vì cuộc sống chất lượng.
+          </p>
+        </div>
+      </div>
+
     </div>
+  </section>
 
-  </div>
-</section>
-
-<section class="bg-[#f8fcff] py-20 px-6 text-center">
+  <section class="bg-[#f8fcff] py-20 px-6 text-center">
     <div class="max-w-3xl mx-auto mb-12">
       <h3 class="text-3xl md:text-4xl font-Poppins text-[#20CFCF] leading-snug">
         Chúng tôi tin vào sức mạnh tập thể<br>và sự đóng góp của cá nhân
@@ -342,8 +249,10 @@ Xây dựng một môi trường làm việc chuyên nghiệp, sáng tạo, lấ
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto text-left">
 
       <!-- Card 1 -->
-      <div class="bg-white p-6 rounded-2xl shadow-md flex items-start gap-4" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
-        <i class="fas fa-lightbulb text-2xl text-[#20CFCF] mt-1 transition-transform duration-300 hover:scale-110 hover:rotate-3"></i>
+      <div class="bg-white p-6 rounded-2xl shadow-md flex items-start gap-4" data-aos="fade-up" data-aos-delay="100"
+        data-aos-duration="800">
+        <i
+          class="fas fa-lightbulb text-2xl text-[#20CFCF] mt-1 transition-transform duration-300 hover:scale-110 hover:rotate-3"></i>
         <div>
           <h3 class="font-bold text-lg text-gray-800 mb-2">Tinh thần đồng đội</h3>
           <p class="text-gray-600 text-sm">
@@ -353,8 +262,10 @@ Xây dựng một môi trường làm việc chuyên nghiệp, sáng tạo, lấ
       </div>
 
       <!-- Card 2 -->
-      <div class="bg-white p-6 rounded-2xl shadow-md flex items-start gap-4" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
-        <i class="fas fa-bolt text-2xl text-[#20CFCF] mt-1 transition-transform duration-300 hover:scale-110 hover:rotate-3"></i>
+      <div class="bg-white p-6 rounded-2xl shadow-md flex items-start gap-4" data-aos="fade-up" data-aos-delay="200"
+        data-aos-duration="800">
+        <i
+          class="fas fa-bolt text-2xl text-[#20CFCF] mt-1 transition-transform duration-300 hover:scale-110 hover:rotate-3"></i>
         <div>
           <h3 class="font-bold text-lg text-gray-800 mb-2">Tôn trọng cá nhân</h3>
           <p class="text-gray-600 text-sm">
@@ -364,8 +275,10 @@ Xây dựng một môi trường làm việc chuyên nghiệp, sáng tạo, lấ
       </div>
 
       <!-- Card 3 -->
-      <div class="bg-white p-6 rounded-2xl shadow-md flex items-start gap-4" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
-        <i class="fas fa-handshake text-2xl text-[#20CFCF] mt-1 transition-transform duration-300 hover:scale-110 hover:rotate-3"></i>
+      <div class="bg-white p-6 rounded-2xl shadow-md flex items-start gap-4" data-aos="fade-up" data-aos-delay="300"
+        data-aos-duration="800">
+        <i
+          class="fas fa-handshake text-2xl text-[#20CFCF] mt-1 transition-transform duration-300 hover:scale-110 hover:rotate-3"></i>
         <div>
           <h3 class="font-bold text-lg text-gray-800 mb-2">Chủ động đóng góp</h3>
           <p class="text-gray-600 text-sm">
@@ -375,8 +288,10 @@ Xây dựng một môi trường làm việc chuyên nghiệp, sáng tạo, lấ
       </div>
 
       <!-- Card 4 -->
-      <div class="bg-white p-6 rounded-2xl shadow-md flex items-start gap-4" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
-        <i class="fas fa-seedling text-2xl text-[#20CFCF] mt-1 transition-transform duration-300 hover:scale-110 hover:rotate-3"></i>
+      <div class="bg-white p-6 rounded-2xl shadow-md flex items-start gap-4" data-aos="fade-up" data-aos-delay="400"
+        data-aos-duration="800">
+        <i
+          class="fas fa-seedling text-2xl text-[#20CFCF] mt-1 transition-transform duration-300 hover:scale-110 hover:rotate-3"></i>
         <div>
           <h3 class="font-bold text-lg text-gray-800 mb-2">Trách nhiệm chung</h3>
           <p class="text-gray-600 text-sm">
@@ -386,8 +301,10 @@ Xây dựng một môi trường làm việc chuyên nghiệp, sáng tạo, lấ
       </div>
 
       <!-- Card 5 -->
-      <div class="bg-white p-6 rounded-2xl shadow-md flex items-start gap-4 md:col-span-2 md:mx-auto md:w-1/2" data-aos="fade-up" data-aos-delay="500" data-aos-duration="800">
-        <i class="fas fa-heart text-2xl text-[#20CFCF] mt-1 transition-transform duration-300 hover:scale-110 hover:rotate-3"></i>
+      <div class="bg-white p-6 rounded-2xl shadow-md flex items-start gap-4 md:col-span-2 md:mx-auto md:w-1/2"
+        data-aos="fade-up" data-aos-delay="500" data-aos-duration="800">
+        <i
+          class="fas fa-heart text-2xl text-[#20CFCF] mt-1 transition-transform duration-300 hover:scale-110 hover:rotate-3"></i>
         <div>
           <h3 class="font-bold text-lg text-gray-800 mb-2">Trao quyền và phát triển</h3>
           <p class="text-gray-600 text-sm">
@@ -399,116 +316,79 @@ Xây dựng một môi trường làm việc chuyên nghiệp, sáng tạo, lấ
     </div>
   </section>
 
-    <!-- Team -->
-    <section class="bg-[#f8fbff] py-20 px-4 text-center fade-in-up">
-      <div class="max-w-6xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold mb-12 text-[#20CFCF]">Đội ngũ tài năng</h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-          <!-- Repeat member cards -->
-          <div class="card"><img src="assets/img/nhansu/huyba.jpg"
-     alt="Huy Ba"
-     class="w-48 h-48 rounded-full object-cover"
-     width="192" height="192"
-     loading="lazy" decoding="async"><h3 class="name">Lại Huy Ba</h3><p class="position">CEO</p></div>
-          <div class="card"><img src="assets/img/nhansu/thaivn.jpg"
-     alt="Vũ Ngọc Thái"
-     class="w-48 h-48 rounded-full object-cover"
-     width="192" height="192"
-     loading="lazy" decoding="async"><h3 class="name">Vũ Ngọc Thái</h3><p class="position">Quản lý dự án</p></div>
-          <div class="card"><img src="assets/img/nhansu/khahieu.jpg"
-     alt="Nguyễn Khả Hiếu"
-     class="w-48 h-48 rounded-full object-cover"
-     width="192" height="192"
-     loading="lazy" decoding="async"><h3 class="name">Nguyễn Khả Hiếu</h3><p class="position">Quản lý dự án</p></div>
-          <div class="card"><img src="assets/img/nhansu/thudo.jpg"
-     alt="Đỗ Hoài Thu"
-     class="w-48 h-48 rounded-full object-cover"
-     width="192" height="192"
-     loading="lazy" decoding="async"><h3 class="name">Đỗ Hoài Thu</h3><p class="position">Chuyên viên xử lý dữ liệu</p></div>
-          <div class="card"><img src="assets/img/nhansu/lannguyen.jpg"
-     alt="Nguyễn Thị Lân"
-     class="w-48 h-48 rounded-full object-cover"
-     width="192" height="192"
-     loading="lazy" decoding="async"><h3 class="name">Nguyễn Thị Lân</h3><p class="position">Chuyên viên xử lý dữ liệu</p></div>
-          <div class="card"><img src="assets/img/nhansu/thaokieu.jpg"
-     alt="Kiều Thị Thảo"
-     class="w-48 h-48 rounded-full object-cover"
-     width="192" height="192"
-     loading="lazy" decoding="async"><h3 class="name">Kiều Thị Thảo</h3><p class="position">Chuyên viên xử lý dữ liệu</p></div>
-          <div class="card"><img src="assets/img/nhansu/huyendo.jpg"
-     alt="Đỗ Thúy Huyền"
-     class="w-48 h-48 rounded-full object-cover"
-     width="192" height="192"
-     loading="lazy" decoding="async"><h3 class="name">Đỗ Thúy Huyền</h3><p class="position">Chuyên viên xử lý dữ liệu</p></div>
-          <div class="card"><img src="assets/img/nhansu/thaovu.jpg"
-     alt="Vũ Thu Thảo"
-     class="w-48 h-48 rounded-full object-cover"
-     width="192" height="192"
-     loading="lazy" decoding="async"><h3 class="name">Vũ Thu Thảo</h3><p class="position">Chuyên viên xử lý dữ liệu</p></div>
+  <!-- Team -->
+  <section class="bg-[#f8fbff] py-20 px-4 text-center fade-in-up">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold mb-12 text-[#20CFCF]">Đội ngũ tài năng</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <!-- Repeat member cards -->
+        <div class="card"><img src="assets/img/nhansu/huyba.jpg" alt="Huy Ba"
+            class="w-48 h-48 rounded-full object-cover" width="192" height="192" loading="lazy" decoding="async">
+          <h3 class="name">Lại Huy Ba</h3>
+          <p class="position">CEO</p>
         </div>
-      </div>
-    </section>
-
-    <!--Văn hóa tổ chức-->
-<section class="py-16 bg-gray-200">
-  <div class="max-w-7xl mx-auto px-4">
-    <h2 class="text-center text-3xl font-bold text-[#20CFCF] mb-10">Văn hóa tổ chức</h2>
-    <div class="relative">
-      <div class="max-w-4xl mx-auto">
-  <div class="swiper cultureSwiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img src="assets/img/culture/1.jpg" class="w-full h-[450px] object-cover rounded-xl border-4 border-white" / loading="lazy" alt="Team member">
-          </div>
-          <div class="swiper-slide">
-            <img src="assets/img/culture/2.jpg" class="w-full h-[450px] object-cover rounded-xl border-4 border-white" / loading="lazy" alt="Team member">
-          </div>
-          <div class="swiper-slide">
-            <img src="assets/img/culture/3.jpg" class="w-full h-[450px] object-cover rounded-xl border-4 border-white" / loading="lazy" alt="Team member">
-          </div>
-          <div class="swiper-slide">
-            <img src="assets/img/culture/4.jpg" class="w-full h-[450px] object-cover rounded-xl border-4 border-white" / loading="lazy" alt="Team member">
-          </div>
-          <div class="swiper-slide">
-            <img src="assets/img/culture/5.jpg" class="w-full h-[450px] object-cover rounded-xl border-4 border-white" / loading="lazy" alt="Team member">
-          </div>
-          <div class="swiper-slide">
-            <img src="assets/img/culture/6.jpg" class="w-full h-[450px] object-cover rounded-xl border-4 border-white" / loading="lazy" alt="Team member">
-          </div>
-          <div class="swiper-slide">
-            <img src="assets/img/culture/7.jpg" class="w-full h-[450px] object-cover rounded-xl border-4 border-white" / loading="lazy" alt="Team member">
-          </div>
-          <div class="swiper-slide">
-            <img src="assets/img/culture/8.jpg" class="w-full h-[450px] object-cover rounded-xl border-4 border-white" / loading="lazy" alt="Team member">
-          </div>
-          <div class="swiper-slide">
-            <img src="assets/img/culture/9.jpg" class="w-full h-[450px] object-cover rounded-xl border-4 border-white" / loading="lazy" alt="Team member">
-          </div>
-          <div class="swiper-slide">
-            <img src="assets/img/culture/10.jpg" class="w-full h-[450px] object-cover rounded-xl border-4 border-white" / loading="lazy" alt="Team member">
-          </div>
+        <div class="card"><img src="assets/img/nhansu/thaivn.jpg" alt="Vũ Ngọc Thái"
+            class="w-48 h-48 rounded-full object-cover" width="192" height="192" loading="lazy" decoding="async">
+          <h3 class="name">Vũ Ngọc Thái</h3>
+          <p class="position">Quản lý dự án</p>
         </div>
-  </div>
-
-        <div class="swiper-button-prev custom-arrow"></div>
-        <div class="swiper-button-next custom-arrow"></div>
+        <div class="card"><img src="assets/img/nhansu/khahieu.jpg" alt="Nguyễn Khả Hiếu"
+            class="w-48 h-48 rounded-full object-cover" width="192" height="192" loading="lazy" decoding="async">
+          <h3 class="name">Nguyễn Khả Hiếu</h3>
+          <p class="position">Quản lý dự án</p>
+        </div>
+        <div class="card"><img src="assets/img/nhansu/thudo.jpg" alt="Đỗ Hoài Thu"
+            class="w-48 h-48 rounded-full object-cover" width="192" height="192" loading="lazy" decoding="async">
+          <h3 class="name">Đỗ Hoài Thu</h3>
+          <p class="position">Chuyên viên xử lý dữ liệu</p>
+        </div>
+        <div class="card"><img src="assets/img/nhansu/lannguyen.jpg" alt="Nguyễn Thị Lân"
+            class="w-48 h-48 rounded-full object-cover" width="192" height="192" loading="lazy" decoding="async">
+          <h3 class="name">Nguyễn Thị Lân</h3>
+          <p class="position">Chuyên viên xử lý dữ liệu</p>
+        </div>
+        <div class="card"><img src="assets/img/nhansu/thaokieu.jpg" alt="Kiều Thị Thảo"
+            class="w-48 h-48 rounded-full object-cover" width="192" height="192" loading="lazy" decoding="async">
+          <h3 class="name">Kiều Thị Thảo</h3>
+          <p class="position">Chuyên viên xử lý dữ liệu</p>
+        </div>
+        <div class="card"><img src="assets/img/nhansu/huyendo.jpg" alt="Đỗ Thúy Huyền"
+            class="w-48 h-48 rounded-full object-cover" width="192" height="192" loading="lazy" decoding="async">
+          <h3 class="name">Đỗ Thúy Huyền</h3>
+          <p class="position">Chuyên viên xử lý dữ liệu</p>
+        </div>
+        <div class="card"><img src="assets/img/nhansu/ndt.jpg" alt="Nguyễn Duy Tú"
+            class="w-48 h-48 rounded-full object-cover" width="192" height="192" loading="lazy" decoding="async">
+          <h3 class="name">Nguyễn Duy Tú</h3>
+          <p class="position">Chuyên viên xử lý dữ liệu</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-    <!-- Footer -->
-    <footer class="bg-[#1f1f1f] text-white py-12 mt-12">
-      <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
-        <div><img src="assets/img/Herbatech-logo.png" class="w-32 mb-4" / alt="Team member"><p class="text-sm text-gray-400">Take the risk or lose the chance</p></div>
-        <div><h3 class="font-semibold mb-2">Sản phẩm</h3><ul class="text-sm space-y-1 text-gray-300"><li><a href="#" class="hover:text-white">Data</a></li></ul></div>
-        <div><h3 class="font-semibold mb-2">Công ty</h3><ul class="text-sm space-y-1 text-gray-300"><li><a href="./introduce.html" class="hover:text-white">Về chúng tôi</a></li><li><a href="./contact.html" class="hover:text-white">Liên hệ</a></li></ul></div>
-        <div><h3 class="font-semibold mb-2">Mạng xã hội</h3><ul class="text-sm space-y-2 text-gray-300"><li class="flex items-center gap-2"><i class="fab fa-facebook-f"></i><a href="https://www.facebook.com/HerbaTechnology" class="hover:text-white">Facebook</a></li><li class="flex items-center gap-2"><i class="fab fa-microsoft"></i><a href="#" class="hover:text-white">MS Teams</a></li></ul></div>
+  <!--Văn hóa tổ chức-->
+  <section class="py-16 bg-gray-200">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-center text-3xl font-bold text-[#20CFCF] mb-10">Văn hóa tổ chức</h2>
+      <div class="relative">
+        <div class="max-w-4xl mx-auto">
+          <div class="swiper cultureSwiper">
+            <div class="swiper-wrapper" id="culture-slides"></div>
+            <div class="swiper-button-prev custom-arrow"></div>
+            <div class="swiper-button-next custom-arrow"></div>
+          </div>
+        </div>
       </div>
-      <div class="mt-10 text-center text-xs text-gray-500">© 2025 Herbatech CO., LTD</div>
-    </footer>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
-    <script src="assets/js/main.js" defer></script>
-  </body>
+    </div>
+  </section>
+
+  <!-- include footer -->
+  <div id="footer"></div>
+  <script src="include.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/slides.js" defer></script>
+</body>
+
 </html>

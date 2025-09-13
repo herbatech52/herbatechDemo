@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
   const EMAILJS_SERVICE_ID = 'service_dp6r61h';
-  const TEMPLATE_COMPANY   = 'ndt0409';
-  const TEMPLATE_USER      = 'Herbatech';
-  const COMPANY_INBOX      = 'duyduy.codewriter@gmail.com'; 
+  const TEMPLATE_COMPANY = 'ndt0409';
+  const TEMPLATE_USER = 'Herbatech';
+  const COMPANY_INBOX = 'duyduy.codewriter@gmail.com';
 
   emailjs.init({ publicKey: 'LH0txEsvdVHtM87J2' });
 
@@ -17,40 +17,39 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const payload = {
       first_name: get('first_name'),
-      last_name:  get('last_name'),
-      title:      get('title'),
-      company:    get('company'),
+      last_name: get('last_name'),
+      title: get('title'),
+      company: get('company'),
       work_email: get('work_email'),
-      phone:      get('phone'),
+      phone: get('phone'),
       hear_about: get('hear_about'),
-      message:    get('message')
+      message: get('message')
     };
 
     if (!payload.first_name || !payload.last_name || !payload.work_email) {
-  alert('Vui lòng nhập đủ Họ/Tên và Email.');
-  return;
-}
+      alert('Vui lòng nhập đủ Họ/Tên và Email.');
+      return;
+    }
 
-// Làm sạch email: bỏ khoảng trắng lạ (NBSP), chuẩn hoá Unicode
-const clean = (s) => (s || "")
-  .toString()
-  .trim()
-  .replace(/\u00A0/g, " ")   // NBSP -> space
-  .normalize("NFKC");
+    const clean = (s) => (s || "")
+      .toString()
+      .trim()
+      .replace(/\u00A0/g, " ")
+      .normalize("NFKC");
 
-payload.work_email = clean(payload.work_email);
+    payload.work_email = clean(payload.work_email);
 
-const emailInput  = document.querySelector('input[name="work_email"]');
-const okByBrowser = emailInput ? emailInput.checkValidity() : true;
-const okByRegex   = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(payload.work_email);
+    const emailInput = document.querySelector('input[name="work_email"]');
+    const okByBrowser = emailInput ? emailInput.checkValidity() : true;
+    const okByRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(payload.work_email);
 
-if (!okByBrowser || !okByRegex) {
-  alert('Email không hợp lệ.');
-  return;
-}
+    if (!okByBrowser || !okByRegex) {
+      alert('Email không hợp lệ.');
+      return;
+    }
 
     submitBtn.disabled = true;
-    submitBtn.classList.add('opacity-60','cursor-not-allowed');
+    submitBtn.classList.add('opacity-60', 'cursor-not-allowed');
 
     try {
       await emailjs.send(EMAILJS_SERVICE_ID, TEMPLATE_COMPANY, {
@@ -72,7 +71,7 @@ if (!okByBrowser || !okByRegex) {
       alert('Gửi thất bại. Vui lòng thử lại sau.');
     } finally {
       submitBtn.disabled = false;
-      submitBtn.classList.remove('opacity-60','cursor-not-allowed');
+      submitBtn.classList.remove('opacity-60', 'cursor-not-allowed');
     }
   });
 });

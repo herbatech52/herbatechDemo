@@ -1,388 +1,212 @@
 <!DOCTYPE html>
 <html lang="vi">
- <head>
-  <link rel="preconnect" href="https://unpkg.com" crossorigin>
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-  <meta charset="utf-8"/>
+
+<head>
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tuyển dụng Herbatech</title>
-  <link href="assets/img/logo/HerbatechLogo.png" rel="shortcut icon" type="image/png"/>
+
+  <title>Tuyển dụng Herbatech - Cơ hội nghề nghiệp AI & Dữ liệu</title>
+  <meta name="description"
+    content="Gia nhập Herbatech để phát triển sự nghiệp trong lĩnh vực AI, dữ liệu, machine learning và công nghệ mới.">
+  <link rel="canonical" href="https://herbatech.com.vn/recruitment" />
+
+  <meta property="og:site_name" content="Herbatech" />
+  <meta property="og:title" content="Tuyển dụng Herbatech - Cơ hội nghề nghiệp AI & Dữ liệu" />
+  <meta property="og:description"
+    content="Herbatech tìm kiếm nhân tài cùng phát triển giải pháp AI và dữ liệu toàn diện." />
+  <meta property="og:url" content="https://herbatech.com.vn/recruitment" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://herbatech.com.vn/assets/img/design/tuyendung.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Tuyển dụng Herbatech - Cơ hội nghề nghiệp AI & Dữ liệu" />
+  <meta name="twitter:description"
+    content="Herbatech tìm kiếm nhân tài cùng phát triển giải pháp AI và dữ liệu toàn diện." />
+  <meta name="twitter:image" content="https://herbatech.com.vn/assets/img/design/tuyendung.jpg" />
+
+  <link href="assets/img/logo/HerbatechLogo.png" rel="shortcut icon" type="image/png" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <link href="dist/styles.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-  
-  <meta name="description" content="Giải pháp xử lý dữ liệu và AI toàn diện: gán nhãn, thu thập hình ảnh, kiểm thử">
-  <meta name="keywords" content="AI, Herbatech, dữ liệu, nhận diện hình ảnh, chú thích dữ liệu, testing, tuyển dụng">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://herbatech.com.vn/" />
-  <meta property="og:title" content="Herbatech - Giải pháp AI hàng đầu">
-  <meta property="og:description" content="Giải pháp xử lý dữ liệu và AI toàn diện: gán nhãn, thu thập hình ảnh, kiểm thử">
-  <meta property="og:image" content="https://herbatech.com.vn/assets/img/logo/Herbatech_logo.png">
-  <meta property="og:url" content="https://herbatech.com.vn/">
-  <meta property="og:type" content="website">
-  <link rel="preload" as="image" href="assets/img/bia.png"/>
-
+  <link href="dist/styles.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
- <body>
+
+<body>
   <div class="fixed inset-0 -z-10" id="particles-js"></div>
-  <header class="fixed top-0 left-0 w-full z-50 bg-white text-[#1f1f1f] px-6 py-4 transition duration-300">
-    <div class="max-w-7xl mx-auto flex justify-between items-center">
-      
-      <a href="./index.html">
-        <img alt="Logo" class="h-10 object-contain" src="assets/img/logo/Herbatech_logo.png"/>
-      </a>
+  <!-- include header -->
+  <div id="header"></div>
 
-      <div class="md:hidden">
-        <button id="menu-toggle" class="text-2xl focus:outline-none">
-          <i class="fas fa-bars text-[#20CFCF]"></i>
-        </button>
-      </div>
-
-      <!-- Navigation -->
-      <nav id="main-menu" class="hidden md:flex items-center gap-10 font-medium text-base">
-        <a class="hover:text-[#20CFCF]" href="index.html">TRANG CHỦ</a>
-        <a class="hover:text-[#20CFCF]" href="./introduce.html">VỀ CHÚNG TÔI</a>
-        <div class="relative group">
-          <a class="hover:text-[#20CFCF]" href="javascript:void(0)">GIẢI PHÁP</a>
-          <div class="absolute top-full left-1/2 -translate-x-1/2 bg-white shadow-md rounded-md mt-2 py-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
-            <a class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]" href="dataAnnotation.html">Chú thích dữ liệu</a>
-            <a class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]" href="imageRecognition.html">Nhận diện hình ảnh</a>
-            <a class="block px-4 py-2 text-sm hover:bg-[#f0f9ff]" href="testing.html">Kiểm thử</a>
-          </div>
-        </div>
-        <a class="hover:text-[#20CFCF]" href="recruitment.html">TUYỂN DỤNG</a>
-        <a class="bg-[#20CFCF] text-white px-4 py-2 rounded-md font-semibold hover:bg-[#1ab2b2] transition" href="./contact.html">Liên hệ</a>
-      </nav>
-        </div>
-
-    <!-- Backdrop -->
-<div id="mobile-backdrop"
-     class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden z-[50]"></div>
-
-<!-- Drawer -->
-<aside id="mobile-drawer"
-       class="fixed top-0 right-0 h-full w-[80vw] max-w-[360px] bg-white shadow-2xl translate-x-full
-              transition-transform duration-300 ease-out z-[55] flex flex-col">
-
-  <!-- Header của drawer -->
-  <div class="px-5 py-4 bg-gradient-to-r from-[#0bbbc0] to-[#1ab2b2] text-white">
-    <div class="flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <img src="assets/img/logo/Herbatech_logo.png" alt="Herbatech" class="h-8">
-      </div>
-      <button id="menu-close"
-              class="w-9 h-9 grid place-items-center rounded-md bg-white/10 hover:bg-white/20 transition"
-              aria-label="Đóng menu">
-        <i class="fas fa-xmark text-lg"></i>
-      </button>
-    </div>
-  </div>
-
-  <!-- Nội dung -->
-  <nav class="flex-1 overflow-y-auto px-3 py-4">
-    <ul class="space-y-1 text-[16px]">
-      <li>
-        <a href="index.html"
-           class="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-gray-100 font-medium">
-          <i class="fas fa-house w-5 text-gray-500"></i> Trang chủ
-        </a>
-      </li>
-
-      <li>
-        <a href="./introduce.html"
-           class="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-gray-100 font-medium">
-          <i class="fas fa-building w-5 text-gray-500"></i> Về chúng tôi
-        </a>
-      </li>
-
-      <li class="pt-1">
-        <button id="submenu-toggle-mobile"
-                class="w-full flex items-center justify-between px-3 py-3 rounded-xl hover:bg-gray-100 font-medium">
-          <span class="flex items-center gap-3">
-            <i class="fas fa-lightbulb w-5 text-gray-500"></i> Giải pháp
-          </span>
-          <i id="submenu-caret-mobile" class="fas fa-chevron-down text-sm transition-transform"></i>
-        </button>
-
-        <ul id="submenu-mobile"
-            class="mt-1 ml-8 border-l pl-3 space-y-1 hidden">
-          <li>
-            <a href="dataAnnotation.html"
-               class="block px-3 py-2 rounded-lg hover:bg-gray-100 text-[15px]">
-              Chú thích dữ liệu
-            </a>
-          </li>
-          <li>
-            <a href="imageRecognition.html"
-               class="block px-3 py-2 rounded-lg hover:bg-gray-100 text-[15px]">
-              Nhận diện hình ảnh
-            </a>
-          </li>
-          <li>
-            <a href="testing.html"
-               class="block px-3 py-2 rounded-lg hover:bg-gray-100 text-[15px]">
-              Kiểm thử
-            </a>
-          </li>
-        </ul>
-      </li>
-
-      <li>
-        <a href="recruitment.html"
-           class="flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-gray-100 font-medium">
-          <i class="fas fa-users w-5 text-gray-500"></i> Tuyển dụng
-        </a>
-      </li>
-    </ul>
-
-    <div class="pt-4">
-      <a href="./contact.html"
-         class="block text-center px-4 py-3 rounded-xl font-semibold text-white
-                bg-gradient-to-r from-[#20CFCF] to-[#1ab2b2] hover:opacity-90 transition">
-        Liên hệ
+  <section class="relative w-full h-screen bg-cover bg-center flex items-center justify-center"
+    style="background-image: url('assets/img/design/tuyendung.jpg'); background-position: center 65%;">
+    <div class="absolute inset-0 bg-black/50"></div>
+    <div class="relative z-10 text-center px-6">
+      <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">
+        Gia nhập cùng <span class="text-[#20CFCF]">Herbatech</span>
+      </h1>
+      <p class="text-lg md:text-2xl text-gray-200 mb-6">
+        Xây dựng sự nghiệp – Chinh phục tương lai
+      </p>
+      <a href="#job-list"
+        class="bg-[#20CFCF] text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-[#1ab2b2] transition">
+        Xem vị trí tuyển dụng
       </a>
     </div>
+  </section>
 
-    <div class="mt-6 flex items-center gap-4 px-3 text-gray-500">
-      <a href="#" class="hover:text-[#20CFCF]" aria-label="Facebook"><i class="fab fa-facebook text-xl"></i></a>
-      <a href="#" class="hover:text-[#20CFCF]" aria-label="MS Teams"><i class="fas fa-square text-xl"></i></a>
+  <!-- ===== VĂN HÓA & PHÚC LỢI ===== -->
+  <section class="bg-[#f8fcff] py-16">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-10 text-[#20CFCF]">Văn hóa & Phúc lợi</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-xl p-6 shadow hover:shadow-lg transition">
+          <i class="fas fa-users text-3xl text-[#20CFCF] mb-4"></i>
+          <h3 class="font-bold text-lg mb-2">Tinh thần đồng đội</h3>
+          <p class="text-gray-600">Cùng nhau hợp tác, hỗ trợ để đạt được mục tiêu chung.</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow hover:shadow-lg transition">
+          <i class="fas fa-heart text-3xl text-[#20CFCF] mb-4"></i>
+          <h3 class="font-bold text-lg mb-2">Chế độ đãi ngộ</h3>
+          <p class="text-gray-600">Lương thưởng cạnh tranh, bảo hiểm đầy đủ, team building định kỳ.</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow hover:shadow-lg transition">
+          <i class="fas fa-lightbulb text-3xl text-[#20CFCF] mb-4"></i>
+          <h3 class="font-bold text-lg mb-2">Phát triển bản thân</h3>
+          <p class="text-gray-600">Cơ hội đào tạo và thăng tiến rõ ràng cho mọi thành viên.</p>
+        </div>
+      </div>
     </div>
-  </nav>
+  </section>
 
-  <div class="px-5 py-3 border-t text-xs text-gray-500">
-    © 2025 Herbatech CO., LTD
-  </div>
-</aside>
-
-</header>
-
-<section class="relative w-full h-screen bg-cover bg-center flex items-center justify-center" style="background-image: url('assets/img/design/tuyendung.jpg'); background-position: center 65%;">
-  <div class="absolute inset-0 bg-black/50"></div>
-  <div class="relative z-10 text-center px-6">
-    <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">
-      Gia nhập cùng <span class="text-[#20CFCF]">Herbatech</span>
-    </h1>
-    <p class="text-lg md:text-2xl text-gray-200 mb-6">
-      Xây dựng sự nghiệp – Chinh phục tương lai
-    </p>
-    <a href="#job-list" class="bg-[#20CFCF] text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-[#1ab2b2] transition">
-      Xem vị trí tuyển dụng
-    </a>
-  </div>
-</section>
-
-<!-- ===== VĂN HÓA & PHÚC LỢI ===== -->
-<section class="bg-[#f8fcff] py-16">
-  <div class="max-w-6xl mx-auto px-6 text-center">
-    <h2 class="text-3xl font-bold mb-10 text-[#20CFCF]">Văn hóa & Phúc lợi</h2>
+  <!-- ===== DANH SÁCH VỊ TRÍ ===== -->
+  <section id="job-list" class="max-w-7xl mx-auto px-6 py-16">
+    <h2 class="text-3xl font-bold mb-10 text-[#20CFCF] text-center">Vị trí đang tuyển</h2>
     <div class="grid md:grid-cols-3 gap-8">
-      <div class="bg-white rounded-xl p-6 shadow hover:shadow-lg transition">
-        <i class="fas fa-users text-3xl text-[#20CFCF] mb-4"></i>
-        <h3 class="font-bold text-lg mb-2">Tinh thần đồng đội</h3>
-        <p class="text-gray-600">Cùng nhau hợp tác, hỗ trợ để đạt được mục tiêu chung.</p>
-      </div>
-      <div class="bg-white rounded-xl p-6 shadow hover:shadow-lg transition">
-        <i class="fas fa-heart text-3xl text-[#20CFCF] mb-4"></i>
-        <h3 class="font-bold text-lg mb-2">Chế độ đãi ngộ</h3>
-        <p class="text-gray-600">Lương thưởng cạnh tranh, bảo hiểm đầy đủ, team building định kỳ.</p>
-      </div>
-      <div class="bg-white rounded-xl p-6 shadow hover:shadow-lg transition">
-        <i class="fas fa-lightbulb text-3xl text-[#20CFCF] mb-4"></i>
-        <h3 class="font-bold text-lg mb-2">Phát triển bản thân</h3>
-        <p class="text-gray-600">Cơ hội đào tạo và thăng tiến rõ ràng cho mọi thành viên.</p>
+      <div class="bg-white rounded-lg shadow p-6 flex flex-col">
+        <h3 class="font-bold text-xl mb-2">Nhân viên xử lý dữ liệu ảnh</h3>
+        <p class="text-gray-600 flex-grow">Tham gia vào các dự án AI, xử lý và gắn nhãn dữ liệu hình ảnh.</p>
+        <a href="./annotation.html"
+          class="mt-4 bg-[#20CFCF] text-white px-4 py-2 rounded hover:bg-[#1ab2b2] text-center">Ứng tuyển</a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ===== DANH SÁCH VỊ TRÍ ===== -->
-<section id="job-list" class="max-w-7xl mx-auto px-6 py-16">
-  <h2 class="text-3xl font-bold mb-10 text-[#20CFCF] text-center">Vị trí đang tuyển</h2>
-  <div class="grid md:grid-cols-3 gap-8">
-    <div class="bg-white rounded-lg shadow p-6 flex flex-col">
-      <h3 class="font-bold text-xl mb-2">Nhân viên xử lý dữ liệu ảnh</h3>
-      <p class="text-gray-600 flex-grow">Tham gia vào các dự án AI, xử lý và gắn nhãn dữ liệu hình ảnh.</p>
-      <a href="./annotation.html" class="mt-4 bg-[#20CFCF] text-white px-4 py-2 rounded hover:bg-[#1ab2b2] text-center">Ứng tuyển</a>
-    </div>
-  </div>
-</section>
-
-<!-- ===== QUY TRÌNH TUYỂN DỤNG ===== -->
-<section class="bg-[#f8fcff] py-16">
-  <div class="max-w-5xl mx-auto px-6 text-center">
-    <h2 class="text-3xl font-bold mb-10 text-[#20CFCF]">Quy trình tuyển dụng</h2>
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="p-6 bg-white rounded-xl shadow">
-        <span class="block text-2xl font-bold mb-2 text-[#20CFCF]">01</span>
-        <p>Training</p>
-      </div>
-      <div class="p-6 bg-white rounded-xl shadow">
-        <span class="block text-2xl font-bold mb-2 text-[#20CFCF]">02</span>
-        <p>Thử việc</p>
-      </div>
-      <div class="p-6 bg-white rounded-xl shadow">
-        <span class="block text-2xl font-bold mb-2 text-[#20CFCF]">03</span>
-        <p>Chính thức</p>
+  <!-- ===== QUY TRÌNH TUYỂN DỤNG ===== -->
+  <section class="bg-[#f8fcff] py-16">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-10 text-[#20CFCF]">Quy trình tuyển dụng</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="p-6 bg-white rounded-xl shadow">
+          <span class="block text-2xl font-bold mb-2 text-[#20CFCF]">01</span>
+          <p>Training</p>
+        </div>
+        <div class="p-6 bg-white rounded-xl shadow">
+          <span class="block text-2xl font-bold mb-2 text-[#20CFCF]">02</span>
+          <p>Thử việc</p>
+        </div>
+        <div class="p-6 bg-white rounded-xl shadow">
+          <span class="block text-2xl font-bold mb-2 text-[#20CFCF]">03</span>
+          <p>Chính thức</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- ===== CHIA SẺ TỪ NHÂN VIÊN ===== -->
-<section class="bg-[#f8fcff] py-16">
-  <div class="max-w-6xl mx-auto px-6 text-center">
-    <h2 class="text-3xl font-bold mb-12 text-[#20CFCF]">Chia sẻ từ nhân viên</h2>
-    <div class="grid md:grid-cols-3 gap-8">
-      
-      <!-- Testimonial 1 -->
-      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-        <img src="assets/img/nhansu/thudo.jpg" alt="Nhân viên 1" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
-        <p class="text-gray-600 italic mb-4">
-          “Herbatech cho tôi cơ hội học hỏi và thử sức trong nhiều dự án AI thú vị. Đồng nghiệp thân thiện và sẵn sàng hỗ trợ.”
-        </p>
-        <h4 class="font-bold text-gray-800">Đỗ Hoài Thu</h4>
-        <span class="text-gray-500 text-sm">Data Annotator</span>
-      </div>
+  <section class="bg-[#f8fcff] py-16">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-12 text-[#20CFCF]">Chia sẻ từ nhân viên</h2>
+      <div class="grid md:grid-cols-3 gap-8">
 
-      <!-- Testimonial 2 -->
-      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-        <img src="assets/img/nhansu/thaivn.jpg" alt="Nhân viên 2" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
-        <p class="text-gray-600 italic mb-4">
-          “Môi trường ở đây năng động và sáng tạo. Tôi được trao quyền và khuyến khích đưa ra ý tưởng mới mỗi ngày.”
-        </p>
-        <h4 class="font-bold text-gray-800">Vũ Ngọc Thái</h4>
-        <span class="text-gray-500 text-sm">Project Manager</span>
-      </div>
+        <!-- Testimonial 1 -->
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+          <img src="assets/img/nhansu/thudo.jpg" alt="Nhân viên 1"
+            class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
+          <p class="text-gray-600 italic mb-4">
+            “Herbatech cho tôi cơ hội học hỏi và thử sức trong nhiều dự án AI thú vị. Đồng nghiệp thân thiện và sẵn sàng
+            hỗ trợ.”
+          </p>
+          <h4 class="font-bold text-gray-800">Đỗ Hoài Thu</h4>
+          <span class="text-gray-500 text-sm">Data Annotator</span>
+        </div>
 
-      <!-- Testimonial 3 -->
-      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
-        <img src="assets/img/nhansu/thaobeo.jpg" alt="Nhân viên 3" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
-        <p class="text-gray-600 italic mb-4">
-          “Herbatech không chỉ là nơi làm việc, mà còn là nơi tôi cảm thấy mình thuộc về và cùng nhau phát triển.”
-        </p>
-        <h4 class="font-bold text-gray-800">Bích Phượng</h4>
-        <span class="text-gray-500 text-sm">QA Tester</span>
-      </div>
+        <!-- Testimonial 2 -->
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+          <img src="assets/img/nhansu/thaivn.jpg" alt="Nhân viên 2"
+            class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
+          <p class="text-gray-600 italic mb-4">
+            “Môi trường ở đây năng động và sáng tạo. Tôi được trao quyền và khuyến khích đưa ra ý tưởng mới mỗi ngày.”
+          </p>
+          <h4 class="font-bold text-gray-800">Vũ Ngọc Thái</h4>
+          <span class="text-gray-500 text-sm">Project Manager</span>
+        </div>
 
+        <!-- Testimonial 3 -->
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+          <img src="assets/img/nhansu/thaobeo.jpg" alt="Nhân viên 3"
+            class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">
+          <p class="text-gray-600 italic mb-4">
+            “Herbatech không chỉ là nơi làm việc, mà còn là nơi tôi cảm thấy mình thuộc về và cùng nhau phát triển.”
+          </p>
+          <h4 class="font-bold text-gray-800">Bích Phượng</h4>
+          <span class="text-gray-500 text-sm">QA Tester</span>
+        </div>
+
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- Đội ngũ quản lý -->
   <section class="py-12 bg-gradient-to-b from-white to-blue-50">
-  <div class="text-center mb-10">
-    <h2 class="text-3xl font-bold text-[#20CFCF]">Đội ngũ quản lý</h2>
-    <p class="text-gray-500 mt-2">Gặp gỡ những người dẫn dắt dự án của chúng tôi</p>
-  </div>
-
-  <div class="flex justify-center gap-6 px-4 flex-wrap">
-    <!-- Card 1 -->
-    <div class="bg-white rounded-2xl shadow-md p-6 text-center w-[300px]">
-      <img src="assets/img/nhansu/thaivn2.png" alt="Project manager" class="mx-auto mb-4 h-48 object-contain" />
-      <h3 class="font-bold text-lg text-[#20CFCF] mb-2">Vũ Ngọc Thái</h3>
-      <p class="text-gray-600 text-sm mb-4">Project Manager</p>
-      <a href="https://docs.google.com/forms/d/1L9WAVmY6HwI6a_3z_SATG83BYD3WqhSAKmphKxzox_o/viewform?edit_requested=true" target="_blank" class="text-blue-600 font-medium inline-flex items-center hover:underline">
-        Đăng ký <span class="ml-1">→</span>
-      </a>
+    <div class="text-center mb-10">
+      <h2 class="text-3xl font-bold text-[#20CFCF]">Đội ngũ quản lý</h2>
+      <p class="text-gray-500 mt-2">Gặp gỡ những người dẫn dắt dự án của chúng tôi</p>
     </div>
 
-<!-- Card 2 -->
-    <div class="bg-white rounded-2xl shadow-md p-6 text-center w-[300px]">
-      <img src="assets/img/nhansu/lannt.png" alt="Project manager" class="mx-auto mb-4 h-48 object-contain" />
-      <h3 class="font-bold text-lg text-[#20CFCF] mb-2">Nguyễn Thị Lân</h3>
-      <p class="text-gray-600 text-sm mb-4">Project Manager</p>
-      <a href="https://docs.google.com/forms/d/1L9WAVmY6HwI6a_3z_SATG83BYD3WqhSAKmphKxzox_o/viewform?edit_requested=true" target="_blank" class="text-blue-600 font-medium inline-flex items-center hover:underline">
-        Đăng ký <span class="ml-1">→</span>
-      </a>
-    </div>
+    <div class="flex justify-center gap-6 px-4 flex-wrap">
+      <!-- Card 1 -->
+      <div class="bg-white rounded-2xl shadow-md p-6 text-center w-[300px]">
+        <img src="assets/img/nhansu/thaivn2.png" alt="Project manager" class="mx-auto mb-4 h-48 object-contain" />
+        <h3 class="font-bold text-lg text-[#20CFCF] mb-2">Vũ Ngọc Thái</h3>
+        <p class="text-gray-600 text-sm mb-4">Project Manager</p>
+        <a href="https://docs.google.com/forms/d/1L9WAVmY6HwI6a_3z_SATG83BYD3WqhSAKmphKxzox_o/viewform?edit_requested=true"
+          target="_blank" class="text-blue-600 font-medium inline-flex items-center hover:underline">
+          Đăng ký <span class="ml-1">→</span>
+        </a>
+      </div>
 
-    <!-- Card 3 -->
-    <div class="bg-white rounded-2xl shadow-md p-6 text-center w-[300px]">
-      <img src="assets/img/nhansu/hieunk2.png" alt="Project manager" class="mx-auto mb-4 h-48 object-contain" />
-      <h3 class="font-bold text-lg text-[#20CFCF] mb-2">Nguyễn Khả Hiếu</h3>
-      <p class="text-gray-600 text-sm mb-4">Project Manager</p>
-      <a href="https://docs.google.com/forms/d/1L9WAVmY6HwI6a_3z_SATG83BYD3WqhSAKmphKxzox_o/viewform?edit_requested=true" target="_blank" class="text-blue-600 font-medium inline-flex items-center hover:underline">
-        Đăng ký <span class="ml-1">→</span>
-      </a>
+      <!-- Card 2 -->
+      <div class="bg-white rounded-2xl shadow-md p-6 text-center w-[300px]">
+        <img src="assets/img/nhansu/lannt.png" alt="Project manager" class="mx-auto mb-4 h-48 object-contain" />
+        <h3 class="font-bold text-lg text-[#20CFCF] mb-2">Nguyễn Thị Lân</h3>
+        <p class="text-gray-600 text-sm mb-4">Project Manager</p>
+        <a href="https://docs.google.com/forms/d/1L9WAVmY6HwI6a_3z_SATG83BYD3WqhSAKmphKxzox_o/viewform?edit_requested=true"
+          target="_blank" class="text-blue-600 font-medium inline-flex items-center hover:underline">
+          Đăng ký <span class="ml-1">→</span>
+        </a>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white rounded-2xl shadow-md p-6 text-center w-[300px]">
+        <img src="assets/img/nhansu/hieunk2.png" alt="Project manager" class="mx-auto mb-4 h-48 object-contain" />
+        <h3 class="font-bold text-lg text-[#20CFCF] mb-2">Nguyễn Khả Hiếu</h3>
+        <p class="text-gray-600 text-sm mb-4">Project Manager</p>
+        <a href="https://docs.google.com/forms/d/1L9WAVmY6HwI6a_3z_SATG83BYD3WqhSAKmphKxzox_o/viewform?edit_requested=true"
+          target="_blank" class="text-blue-600 font-medium inline-flex items-center hover:underline">
+          Đăng ký <span class="ml-1">→</span>
+        </a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
-<!--FOOTER-->
-  <footer class="bg-[#1f1f1f] text-white py-12 mt-12">
-   <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
-    <div>
-     <img alt="Herbatech Logo" class="w-32 mb-4" src="assets/img/logo/Herbatech_logo.png"/>
-     <p class="text-sm text-gray-400">
-      Take the risk or lose the chance
-     </p>
-    </div>
-    <div>
-     <h3 class="font-semibold mb-2">
-      Sản phẩm
-     </h3>
-     <ul class="text-sm space-y-1 text-gray-300">
-      <li>
-       <a class="hover:text-white" href="#">
-        Data
-       </a>
-      </li>
-     </ul>
-    </div>
-    <div>
-     <h3 class="font-semibold mb-2">
-      Công ty
-     </h3>
-     <ul class="text-sm space-y-1 text-gray-300">
-      <li>
-       <a class="hover:text-white" href="./introduce.html">
-        Về chúng tôi
-       </a>
-      </li>
-      <li>
-       <a class="hover:text-white" href="./contact.html">
-        Liên hệ
-       </a>
-      </li>
-     </ul>
-    </div>
-    <div>
-     <h3 class="font-semibold mb-2">
-      Mạng xã hội
-     </h3>
-     <ul class="text-sm space-y-2 text-gray-300">
-      <li class="flex items-center gap-2">
-       <i class="fab fa-facebook-f">
-       </i>
-       <a class="hover:text-white" href="https://www.facebook.com/HerbaTechnology">
-        Facebook
-       </a>
-      </li>
-      <li class="flex items-center gap-2">
-       <i class="fab fa-microsoft"></i>
-       <a class="hover:text-white" href="#">
-       MS Teams
-       </a>
-      </li>
-     </ul>
-    </div>
-   </div>
-   <div class="mt-10 text-center text-xs text-gray-500">2025 Herbatech CO., LTD
-   </div>
-  </footer>
-  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/rellax@1.12.1/rellax.min.js" defer></script>
- </body>
-</html>
-   </div>
-  </footer>
- <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
+  <!-- include footer -->
+  <div id="footer"></div>
+  <script src="include.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
   <script src="assets/js/main.js" defer></script>
   <script src="assets/js/menu.js" defer></script>
- </body>
+</body>
+
 </html>
