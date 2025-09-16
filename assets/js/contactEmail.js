@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const EMAILJS_SERVICE_ID = 'service_dp6r61h';
   const TEMPLATE_COMPANY = 'ndt0409';
   const TEMPLATE_USER = 'Herbatech';
-  const COMPANY_INBOX = 'duyduy.codewriter@gmail.com';
+  const COMPANY_INBOX = 'herbatechnology.hbt@gmail.com';
 
   emailjs.init({ publicKey: 'LH0txEsvdVHtM87J2' });
 
