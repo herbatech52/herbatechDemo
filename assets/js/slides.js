@@ -1,7 +1,6 @@
-// assets/js/slides.js
 async function loadCultureSlides() {
   try {
-    const res = await fetch("assets/data/slides.json", { cache: "no-store" });
+    const res = await fetch("/assets/data/slides.json", { cache: "no-store" });
     const data = await res.json();
     const wrapper = document.getElementById("culture-slides");
 

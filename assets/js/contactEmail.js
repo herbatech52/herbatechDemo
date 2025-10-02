@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
   const EMAILJS_SERVICE_ID = 'service_dp6r61h';
-  const TEMPLATE_COMPANY = 'ndt0409';
-  const TEMPLATE_USER = 'Herbatech';
-  const COMPANY_INBOX = 'herbatechnology.hbt@gmail.com';
+  const TEMPLATE_COMPANY = 'ndt0409'; 
+  const TEMPLATE_USER = 'Herbatech'; 
+  const COMPANY_INBOX = 'duyduy.codewriter@gmail.com'; 
 
   emailjs.init({ publicKey: 'LH0txEsvdVHtM87J2' });
 
@@ -26,8 +26,8 @@ document.addEventListener('DOMContentLoaded', function () {
       message: get('message')
     };
 
-    if (!payload.first_name || !payload.last_name || !payload.work_email) {
-      alert('Vui lòng nhập đủ Họ/Tên và Email.');
+    if (!payload.first_name || !payload.last_name || !payload.work_email || !payload.message) {
+      alert('Vui lòng nhập đầy đủ Họ/Tên, Email và Lời nhắn.');
       return;
     }
 
@@ -52,12 +52,14 @@ document.addEventListener('DOMContentLoaded', function () {
     submitBtn.classList.add('opacity-60', 'cursor-not-allowed');
 
     try {
+      // Gửi thông tin đến công ty
       await emailjs.send(EMAILJS_SERVICE_ID, TEMPLATE_COMPANY, {
         ...payload,
         subject: `New lead — ${payload.first_name} ${payload.last_name} (${payload.company})`,
         to_email: COMPANY_INBOX
       });
 
+      // Gửi thông tin cảm ơn đến người dùng
       await emailjs.send(EMAILJS_SERVICE_ID, TEMPLATE_USER, {
         ...payload,
         subject: `Cảm ơn ${payload.first_name} đã liên hệ Herbatech`,
