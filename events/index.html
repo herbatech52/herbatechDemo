@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Sự kiện | Herbatech</title>
+  <meta name="description"
+    content="Trang sự kiện của Herbatech: hoạt động nội bộ, hội thảo, workshop, và các sự kiện dành cho đối tác/khách hàng.">
+  <link rel="canonical" href="https://herbatech.com.vn/events" />
+
+  <meta property="og:site_name" content="Herbatech" />
+  <meta property="og:title" content="Sự kiện | Herbatech" />
+  <meta property="og:description"
+    content="Cập nhật các sự kiện của Herbatech: hội thảo, workshop, hoạt động nội bộ, sự kiện đối tác." />
+  <meta property="og:url" content="https://herbatech.com.vn/events" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://herbatech.com.vn/assets/img/design/dataannotation.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sự kiện | Herbatech" />
+  <meta name="twitter:description"
+    content="Cập nhật các sự kiện của Herbatech: hội thảo, workshop, hoạt động nội bộ, sự kiện đối tác." />
+  <meta name="twitter:image" content="https://herbatech.com.vn/assets/img/design/dataannotation.jpg" />
+
+  <link href="/assets/img/logo/HerbatechLogo.png" rel="shortcut icon" type="image/png" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link href="/dist/styles.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <style>
+    :root {
+      --header-offset: 96px;
+    }
+
+    /* Fix anchor jump bị header che */
+    [id] {
+      scroll-margin-top: var(--header-offset);
+    }
+  </style>
+</head>
+
+<body class="bg-white">
+  <div class="fixed inset-0 -z-10" id="particles-js"></div>
+
+  <!-- injected header -->
+  <div id="header"></div>
+
+  <main id="page-content" style="padding-top: var(--header-offset);">
+    <!-- HERO -->
+    <section class="w-full bg-white pt-14 pb-8">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+          <div data-aos="fade-up">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900">
+              Sự kiện Herbatech
+            </h1>
+            <p class="mt-3 text-gray-600 text-lg max-w-2xl">
+              Cập nhật hoạt động nội bộ, hội thảo, workshop, và các sự kiện dành cho đối tác/khách hàng.
+            </p>
+          </div>
+
+          <!-- Search -->
+          <div class="w-full md:w-[380px]" data-aos="fade-up" data-aos-delay="100">
+            <form id="eventSearchForm" class="flex items-center gap-2 bg-gray-50 border border-gray-200 rounded-xl px-3 py-2">
+              <i class="fa-solid fa-magnifying-glass text-gray-400"></i>
+              <input id="eventSearchInput" type="search" placeholder="Tìm sự kiện..."
+                class="w-full bg-transparent outline-none text-gray-700 placeholder:text-gray-400" aria-label="Tìm sự kiện" />
+            </form>
+            <p class="mt-2 text-xs text-gray-500">
+              Gợi ý: “workshop”, “team building”, “hội thảo”, “AI”.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED EVENT (render by JS) -->
+    <section class="w-full bg-white pb-10">
+      <div class="max-w-6xl mx-auto px-6" id="featuredEvent">
+        <!-- JS will render featured event here -->
+      </div>
+    </section>
+
+    <!-- MAIN EVENTS LAYOUT -->
+    <section class="w-full bg-white pb-16">
+      <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-10">
+
+        <!-- EVENTS GRID -->
+        <div class="lg:col-span-8">
+          <div class="flex items-center justify-between mb-5" data-aos="fade-up">
+            <h3 class="text-xl font-bold text-gray-900">Sự kiện sắp tới</h3>
+
+            <div class="flex items-center gap-2 text-sm">
+              <span class="text-gray-500">Lọc:</span>
+              <select class="border border-gray-200 rounded-lg px-3 py-2 bg-white text-gray-700 outline-none" disabled>
+                <option value="upcoming">Sắp diễn ra</option>
+                <option value="past">Đã diễn ra</option>
+                <option value="all">Tất cả</option>
+              </select>
+
+              <span class="text-gray-500 ml-2">Sắp xếp:</span>
+              <select class="border border-gray-200 rounded-lg px-3 py-2 bg-white text-gray-700 outline-none" disabled>
+                <option>Mới nhất</option>
+                <option>Gần nhất</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-6" id="eventGrid">
+            <!-- JS will render grid cards here -->
+          </div>
+
+          <!-- Pagination (tạm thời giữ UI, chưa phân trang thật) -->
+          <div class="mt-10 flex items-center justify-center gap-2" data-aos="fade-up">
+            <a class="px-4 py-2 rounded-lg border border-gray-200 text-gray-700 hover:bg-gray-50" href="#">&laquo;</a>
+            <a class="px-4 py-2 rounded-lg bg-[#20CFCF] text-white font-semibold" href="#">1</a>
+            <a class="px-4 py-2 rounded-lg border border-gray-200 text-gray-700 hover:bg-gray-50" href="#">2</a>
+            <a class="px-4 py-2 rounded-lg border border-gray-200 text-gray-700 hover:bg-gray-50" href="#">&raquo;</a>
+          </div>
+        </div>
+
+        <!-- SIDEBAR -->
+        <aside class="lg:col-span-4 space-y-6">
+          <!-- Types -->
+          <div class="rounded-2xl border border-gray-200 p-5" data-aos="fade-up">
+            <h3 class="text-lg font-bold text-gray-900">Loại sự kiện</h3>
+            <div class="mt-4 space-y-2 text-sm" id="eventCategoryList">
+              <!-- JS will render categories here -->
+            </div>
+          </div>
+
+          <!-- Upcoming quick list -->
+          <div class="rounded-2xl border border-gray-200 p-5" data-aos="fade-up" data-aos-delay="50">
+            <h3 class="text-lg font-bold text-gray-900">Sắp diễn ra</h3>
+            <div class="mt-4 space-y-4" id="eventPopularList">
+              <!-- JS will render upcoming list here -->
+            </div>
+          </div>
+
+          <!-- CTA -->
+          <div class="rounded-2xl border border-gray-200 p-5 bg-gray-50" data-aos="fade-up">
+            <h3 class="text-lg font-bold text-gray-900">Đăng ký nhận thông báo sự kiện</h3>
+            <p class="mt-2 text-sm text-gray-600">
+              Nhận email khi có workshop/webinar hoặc sự kiện đối tác mới.
+            </p>
+            <form class="mt-4 flex gap-2">
+              <input type="email" placeholder="Email của bạn"
+                class="w-full border border-gray-200 rounded-xl px-3 py-3 outline-none bg-white" />
+              <button type="button"
+                class="px-4 py-3 rounded-xl bg-[#20CFCF] text-white font-semibold hover:opacity-90 transition">
+                Gửi
+              </button>
+            </form>
+            <p class="mt-2 text-xs text-gray-500">
+              Không spam. Con người đã đủ spam rồi.
+            </p>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+  </main>
+
+  <div id="footer"></div>
+
+  <script src="/include.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js" defer></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/rellax@1.12.1/rellax.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+  <script src="/assets/js/main.js" defer></script>
+
+  <script>
+    // ========= Config =========
+    const CMS_API_BASE = "https://herbatech-cms.onrender.com";
+    const FALLBACK_COVER = "/assets/img/design/dataannotation.jpg";
+
+    // ========= DOM =========
+    const elFeatured = document.getElementById("featuredEvent");
+    const elGrid = document.getElementById("eventGrid");
+    const elCats = document.getElementById("eventCategoryList");
+    const elPopular = document.getElementById("eventPopularList");
+
+    const searchForm = document.getElementById("eventSearchForm");
+    const searchInput = document.getElementById("eventSearchInput");
+
+    // ========= Helpers =========
+    const escapeHtml = (s) => String(s || "")
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+
+    const fmtDate = (iso) => {
+      try { return new Date(iso).toLocaleDateString("vi-VN"); }
+      catch (e) { return ""; }
+    };
+
+    const getQuery = (key) => new URLSearchParams(location.search).get(key) || "";
+
+    const setQuery = (key, value) => {
+      const url = new URL(location.href);
+      if (!value) url.searchParams.delete(key);
+      else url.searchParams.set(key, value);
+      //reload trang theo query mới
+      location.href = url.toString();
+    };
+
+    const eventHref = (slug) => `/events/event.html?slug=${encodeURIComponent(slug)}`;
+
+    // ========= Render =========
+    function renderFeatured(item) {
+      if (!item) {
+        elFeatured.innerHTML = "";
+        return;
+      }
+
+      const cover = item.cover || FALLBACK_COVER;
+      const title = escapeHtml(item.title);
+      const excerpt = escapeHtml(item.excerpt || "");
+      const category = escapeHtml(item.category || "Sự kiện");
+      const date = fmtDate(item.created_at);
+      const minutes = item.reading_minutes || 5;
+      const href = eventHref(item.slug);
+
+      elFeatured.innerHTML = `
+        <a href="${href}"
+          class="group grid md:grid-cols-2 gap-6 rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg transition"
+          data-aos="fade-up">
+          <div class="relative">
+            <img src="${cover}" alt="${title}" class="w-full h-full object-cover min-h-[240px]" />
+            <div class="absolute top-4 left-4 flex gap-2">
+              <span class="inline-flex items-center gap-2 text-xs font-semibold bg-white/90 text-gray-800 px-3 py-1 rounded-full">
+                <i class="fa-solid fa-star text-[#20CFCF]"></i>
+                Sự kiện nổi bật
+              </span>
+              ${
+                item.is_featured
+                  ? `<span class="inline-flex items-center gap-2 text-xs font-semibold bg-[#20CFCF] text-white px-3 py-1 rounded-full">
+                      <i class="fa-solid fa-ticket"></i>
+                      Đáng chú ý
+                    </span>`
+                  : ``
+              }
+            </div>
+          </div>
+
+          <div class="p-6 md:p-8 flex flex-col justify-between">
+            <div>
+              <div class="flex flex-wrap items-center gap-2 text-xs text-gray-500">
+                <span class="inline-flex items-center gap-2">
+                  <i class="fa-regular fa-calendar"></i> ${date}
+                </span>
+                <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+                <span class="inline-flex items-center gap-2">
+                  <i class="fa-solid fa-location-dot"></i> ${category}
+                </span>
+                <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+                <span class="inline-flex items-center gap-2">
+                  <i class="fa-regular fa-clock"></i> ${minutes} phút
+                </span>
+              </div>
+
+              <h2 class="mt-3 text-2xl font-bold text-gray-900 group-hover:text-[#20CFCF] transition">
+                ${title}
+              </h2>
+
+              <p class="mt-3 text-gray-600">${excerpt}</p>
+            </div>
+
+            <div class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#20CFCF]">
+              Xem chi tiết <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </div>
+        </a>
+      `;
+    }
+
+    function renderGrid(items, featuredSlug) {
+      const html = items
+        .filter((i) => !featuredSlug || i.slug !== featuredSlug)
+        .map((item, idx) => {
+          const cover = item.cover || FALLBACK_COVER;
+          const title = escapeHtml(item.title);
+          const excerpt = escapeHtml(item.excerpt || "");
+          const category = escapeHtml(item.category || "Sự kiện");
+          const date = fmtDate(item.created_at);
+          const minutes = item.reading_minutes || 5;
+          const href = eventHref(item.slug);
+
+          return `
+            <article class="rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg transition"
+              data-aos="fade-up" data-aos-delay="${(idx % 2) ? 50 : 0}">
+              <a href="${href}" class="block">
+                <img src="${cover}" alt="${title}" class="w-full h-44 object-cover" />
+              </a>
+              <div class="p-5">
+                <div class="flex flex-wrap items-center gap-2 text-xs text-gray-500">
+                  <span class="inline-flex items-center gap-2"><i class="fa-regular fa-calendar"></i> ${date}</span>
+                  <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+                  <span class="inline-flex items-center gap-2"><i class="fa-solid fa-location-dot"></i> ${category}</span>
+                </div>
+
+                <h4 class="mt-2 font-bold text-gray-900 text-lg leading-snug">
+                  <a href="${href}" class="hover:text-[#20CFCF] transition">${title}</a>
+                </h4>
+
+                <p class="mt-2 text-gray-600 text-sm">${excerpt}</p>
+
+                <div class="mt-4 flex items-center justify-between text-sm">
+                  <span class="text-gray-500 inline-flex items-center gap-2"><i class="fa-regular fa-clock"></i> ${minutes} phút</span>
+                  <span class="inline-flex items-center gap-2 text-xs font-semibold bg-gray-100 text-gray-700 px-3 py-1 rounded-full">
+                    ${category}
+                  </span>
+                </div>
+              </div>
+            </article>
+          `;
+        })
+        .join("");
+
+      elGrid.innerHTML = html || `<p class="text-sm text-gray-500">Chưa có sự kiện nào.</p>`;
+    }
+
+    function renderCategories(items) {
+      const map = new Map();
+      items.forEach((i) => {
+        const c = (i.category || "Sự kiện").trim() || "Sự kiện";
+        map.set(c, (map.get(c) || 0) + 1);
+      });
+
+      const entries = [...map.entries()].sort((a, b) => b[1] - a[1]);
+
+      elCats.innerHTML = entries.map(([cat, count]) => {
+        const q = new URLSearchParams(location.search);
+        q.set("category", cat);
+        q.delete("q");
+        const href = `/events/?${q.toString()}`;
+
+        return `
+          <a href="${href}" class="flex items-center justify-between p-3 rounded-xl hover:bg-gray-50">
+            <span class="text-gray-700">${escapeHtml(cat)}</span>
+            <span class="text-xs text-gray-500">${count}</span>
+          </a>
+        `;
+      }).join("") || `<p class="text-sm text-gray-500">Chưa có danh mục.</p>`;
+    }
+
+    function renderUpcoming(items) {
+      // Chưa có "event_time", lấy 2 item mới nhất làm "Sắp diễn ra" cho hợp UI
+      const top = items.slice(0, 2);
+
+      elPopular.innerHTML = top.map((i) => {
+        const cover = i.cover || FALLBACK_COVER;
+        const title = escapeHtml(i.title);
+        const date = fmtDate(i.created_at);
+        const minutes = i.reading_minutes || 5;
+        const href = eventHref(i.slug);
+
+        return `
+          <a href="${href}" class="flex gap-3 group">
+            <img src="${cover}" alt="${title}" class="w-20 h-16 object-cover rounded-xl border border-gray-200" />
+            <div>
+              <p class="text-sm font-semibold text-gray-900 group-hover:text-[#20CFCF] transition leading-snug">
+                ${title}
+              </p>
+              <p class="text-xs text-gray-500 mt-1">${date} · ${minutes} phút</p>
+            </div>
+          </a>
+        `;
+      }).join("") || `<p class="text-sm text-gray-500">Chưa có sự kiện.</p>`;
+    }
+
+    // ========= Load =========
+    async function loadEvents() {
+      const q = getQuery("q").trim().toLowerCase();
+      const category = getQuery("category").trim();
+
+      // sync input value from URL
+      if (searchInput) searchInput.value = q;
+
+      const res = await fetch(`${CMS_API_BASE}/api/events`, { method: "GET" });
+      if (!res.ok) throw new Error("API /api/events lỗi");
+
+      let items = await res.json();
+
+      // Filter client-side
+      if (category) items = items.filter((i) => (i.category || "Sự kiện") === category);
+      if (q) items = items.filter((i) =>
+        (i.title || "").toLowerCase().includes(q) ||
+        (i.excerpt || "").toLowerCase().includes(q)
+      );
+
+      const featured = items.find((i) => i.is_featured) || items[0] || null;
+
+      renderFeatured(featured);
+      renderGrid(items, featured ? featured.slug : null);
+      renderCategories(items);
+      renderUpcoming(items);
+
+      if (window.AOS) AOS.init({ once: true, duration: 650 });
+    }
+
+    // ========= Search handling =========
+    if (searchForm) {
+      searchForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const val = (searchInput?.value || "").trim();
+        setQuery("q", val);
+      });
+    }
+
+    // ========= Header offset =========
+    function applyHeaderOffset() {
+      const host = document.getElementById("header");
+      const content = document.getElementById("page-content");
+      if (!host || !content) return;
+
+      const realHeader = host.querySelector("header, nav") || host;
+      const h = Math.ceil(realHeader.getBoundingClientRect().height || 96);
+
+      document.documentElement.style.setProperty("--header-offset", `${h}px`);
+      content.style.paddingTop = `var(--header-offset)`;
+    }
+
+    window.addEventListener("load", applyHeaderOffset);
+    window.addEventListener("resize", applyHeaderOffset);
+
+    // ========= Boot =========
+    document.addEventListener("DOMContentLoaded", () => {
+      loadEvents().catch((err) => {
+        console.error(err);
+        if (elFeatured) elFeatured.innerHTML = "";
+        if (elGrid) elGrid.innerHTML = `<p class="text-sm text-gray-500">Không tải được sự kiện. Kiểm tra CMS API/CORS.</p>`;
+        if (elCats) elCats.innerHTML = `<p class="text-sm text-gray-500">Không tải được danh mục.</p>`;
+        if (elPopular) elPopular.innerHTML = `<p class="text-sm text-gray-500">Không tải được dữ liệu.</p>`;
+      });
+    });
+  </script>
+</body>
+
+</html>
