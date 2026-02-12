@@ -18,7 +18,9 @@
     content="Giải pháp AI và xử lý dữ liệu toàn diện: gán nhãn, thu thập hình ảnh, kiểm thử, nhận diện." />
   <meta name="twitter:image" content="https://herbatech.com.vn/assets/img/logo/Herbatech_logo.png" />
 
-  <link href="/assets/img/logo/HerbatechLogo.png" rel="shortcut icon" type="image/png" />
+  <link rel="icon" type="image/png" href="https://herbatech.com.vn/assets/img/logo/HerbatechLogo.png" />
+  <link rel="shortcut icon" href="https://herbatech.com.vn/assets/img/logo/HerbatechLogo.png" type="image/png">
+  <link rel="apple-touch-icon" href="https://herbatech.com.vn/assets/img/logo/HerbatechLogo.png">
 
   <link rel="preconnect" href="https://unpkg.com" crossorigin>
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
@@ -33,11 +35,71 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
   <link rel="preload" as="image" href="/assets/img/bia.png" />
+
+  <style>
+  #noticeModal{
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,.45); /* nhẹ hơn */
+    padding: 12px;
+  }
+  #noticeModal.is-open{ display: flex; }
+
+  #noticeModal .notice-box{
+    width: 100%;
+    max-width: 520px;          /* ✅ nhỏ lại (đổi 520 tuỳ bạn) */
+    max-height: 75vh;          /* ✅ không tràn màn hình */
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 18px;       /* ✅ bo góc nhiều hơn */
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0,0,0,.35);
+    position: relative;
+  }
+
+  /* nếu ảnh popup cao quá thì cho cuộn trong popup */
+  #noticeModal .notice-body{
+    max-height: 75vh;
+    overflow: auto;
+  }
+
+  #noticeModal .notice-body img{
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+</style>
 </head>
 
 <body>
   <div class="fixed inset-0 -z-10" id="particles-js"></div>
   <div id="header"></div>
+
+  <!-- EVENT/NOTICE -->
+<div id="noticeModal">
+
+ <div class="notice-box" style="position:relative;">
+
+  <button id="noticeCloseX"
+    style="position:absolute; top:10px; right:10px; width:40px; height:40px; border-radius:10px;
+           background:rgba(255,255,255,.9); border:1px solid #e5e7eb; cursor:pointer; z-index:2;"
+    aria-label="Đóng">
+    <i class="fa-solid fa-xmark" style="font-size:20px; color:#374151;"></i>
+  </button>
+
+  <div class="notice-body">
+    <img src="/assets/img/popup-event.png"
+         alt="Thông báo sự kiện"
+         style="width:100%; height:auto; display:block;">
+  </div>
+
+  </div>
+</div>
+
 
   <section class="relative w-full h-[90vh] bg-cover bg-center flex items-center justify-center"
     style="background-image: url('assets/img/bia.png');">
@@ -362,6 +424,28 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
   <script src="/assets/js/main.js" defer></script>
+  <script>
+  (function () {
+    const modal = document.getElementById("noticeModal");
+    const closeX = document.getElementById("noticeCloseX");
+    if (!modal || !closeX) return;
+
+    function openModal() { modal.classList.add("is-open"); }
+    function closeModal() { modal.classList.remove("is-open"); }
+
+    window.addEventListener("load", () => setTimeout(openModal, 600));
+
+    closeX.addEventListener("click", closeModal);
+
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal.classList.contains("is-open")) closeModal();
+    });
+  })();
+</script>
 
 </body>
 
