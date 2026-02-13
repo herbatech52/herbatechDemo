@@ -6,9 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title id="pageTitle">Sự kiện | Herbatech</title>
+
   <meta name="description"
     content="Trang sự kiện của Herbatech: hoạt động nội bộ, hội thảo, workshop, và các sự kiện dành cho đối tác/khách hàng."
     id="metaDesc">
+
   <link rel="canonical" href="https://herbatech.com.vn/events" id="canonicalLink" />
 
   <meta property="og:site_name" content="Herbatech" />
@@ -25,11 +27,18 @@
     content="Cập nhật các sự kiện của Herbatech: hội thảo, workshop, hoạt động nội bộ, sự kiện đối tác." id="twDesc" />
   <meta name="twitter:image" content="https://herbatech.com.vn/assets/img/design/dataannotation.jpg" id="twImg" />
 
+  <!-- SEO JSON-LD (auto replace khi load detail) -->
+  <script id="jsonldSchema" type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"WebSite",
+ "name":"Herbatech",
+ "url":"https://herbatech.com.vn/events"
+}
+</script>
+
   <link href="/assets/img/logo/HerbatechLogo.png" rel="shortcut icon" type="image/png" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <link href="/dist/styles.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
   <style>
     :root {
@@ -43,176 +52,63 @@
 </head>
 
 <body class="bg-white">
-  <div class="fixed inset-0 -z-10" id="particles-js"></div>
-
-  <!-- injected header -->
   <div id="header"></div>
 
-  <main id="page-content" style="padding-top: var(--header-offset);">
+  <main id="page-content" style="padding-top:var(--header-offset);">
 
-    <!-- ===================== LIST PAGE ===================== -->
+    <!-- ================= LIST ================= -->
     <div id="listPage">
-
-      <!-- HERO -->
-      <section class="w-full bg-white pt-14 pb-8">
-        <div class="max-w-6xl mx-auto px-6">
-          <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-            <div data-aos="fade-up">
-              <h1 class="text-3xl md:text-4xl font-bold text-gray-900">
-                Sự kiện Herbatech
-              </h1>
-              <p class="mt-3 text-gray-600 text-lg max-w-2xl">
-                Cập nhật hoạt động nội bộ, hội thảo, workshop, và các sự kiện dành cho đối tác/khách hàng.
-              </p>
-            </div>
-
-            <!-- Search -->
-            <div class="w-full md:w-[380px]" data-aos="fade-up" data-aos-delay="100">
-              <form id="searchForm"
-                class="flex items-center gap-2 bg-gray-50 border border-gray-200 rounded-xl px-3 py-2">
-                <i class="fa-solid fa-magnifying-glass text-gray-400"></i>
-                <input id="searchInput" type="search" placeholder="Tìm sự kiện..."
-                  class="w-full bg-transparent outline-none text-gray-700 placeholder:text-gray-400"
-                  aria-label="Tìm sự kiện" />
-              </form>
-              <p class="mt-2 text-xs text-gray-500">
-                Gợi ý: “workshop”, “team building”, “hội thảo”, “AI”.
-              </p>
-            </div>
-          </div>
-        </div>
+      <section class="max-w-6xl mx-auto px-6 pt-14 pb-10">
+        <h1 class="text-3xl md:text-4xl font-bold">Sự kiện Herbatech</h1>
+        <p class="text-gray-600 mt-3 max-w-2xl">
+          Cập nhật hoạt động nội bộ, hội thảo, workshop và sự kiện dành cho đối tác.
+        </p>
       </section>
 
-      <!-- FEATURED EVENT (dynamic) -->
-      <section class="w-full bg-white pb-10">
-        <div class="max-w-6xl mx-auto px-6">
-          <div id="featuredEvent"></div>
-        </div>
+      <section class="max-w-6xl mx-auto px-6 pb-10">
+        <div id="featuredEvent"></div>
       </section>
 
-      <!-- MAIN EVENTS LAYOUT -->
-      <section class="w-full bg-white pb-16">
-        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-10">
-
-          <!-- EVENTS GRID -->
-          <div class="lg:col-span-8">
-            <div class="flex items-center justify-between mb-5" data-aos="fade-up">
-              <h3 class="text-xl font-bold text-gray-900">Sự kiện sắp tới</h3>
-
-              <!-- giữ UI như cũ, logic filter/sort mình làm tối giản (đừng đòi hỏi nhiều ở đời) -->
-              <div class="flex items-center gap-2 text-sm">
-                <span class="text-gray-500">Lọc:</span>
-                <select id="filterSelect"
-                  class="border border-gray-200 rounded-lg px-3 py-2 bg-white text-gray-700 outline-none">
-                  <option value="all">Tất cả</option>
-                  <option value="featured">Nổi bật</option>
-                </select>
-
-                <span class="text-gray-500 ml-2">Sắp xếp:</span>
-                <select id="sortSelect"
-                  class="border border-gray-200 rounded-lg px-3 py-2 bg-white text-gray-700 outline-none">
-                  <option value="new">Mới nhất</option>
-                  <option value="old">Cũ nhất</option>
-                </select>
-              </div>
-            </div>
-
-            <div id="eventsGrid" class="grid sm:grid-cols-2 gap-6"></div>
-
-            <div id="emptyText" class="mt-6 text-sm text-gray-500 hidden">
-              Chưa có sự kiện nào.
-            </div>
-
-            <!-- Pagination (ẩn nếu không cần) -->
-            <div id="pagination" class="mt-10 flex items-center justify-center gap-2 hidden" data-aos="fade-up"></div>
-          </div>
-
-          <!-- SIDEBAR -->
-          <aside class="lg:col-span-4 space-y-6">
-
-            <!-- Types -->
-            <div class="rounded-2xl border border-gray-200 p-5" data-aos="fade-up">
-              <h3 class="text-lg font-bold text-gray-900">Loại sự kiện</h3>
-              <div id="categoryList" class="mt-4 space-y-2 text-sm"></div>
-            </div>
-
-            <!-- Upcoming quick list -->
-            <div class="rounded-2xl border border-gray-200 p-5" data-aos="fade-up" data-aos-delay="50">
-              <h3 class="text-lg font-bold text-gray-900">Sắp diễn ra</h3>
-              <div id="upcomingList" class="mt-4 space-y-4"></div>
-            </div>
-
-            <!-- CTA (giữ nguyên UI) -->
-            <div class="rounded-2xl border border-gray-200 p-5 bg-gray-50" data-aos="fade-up">
-              <h3 class="text-lg font-bold text-gray-900">Đăng ký nhận thông báo sự kiện</h3>
-              <p class="mt-2 text-sm text-gray-600">
-                Nhận email khi có workshop/webinar hoặc sự kiện đối tác mới.
-              </p>
-              <form class="mt-4 flex gap-2" onsubmit="event.preventDefault()">
-                <input type="email" placeholder="Email của bạn"
-                  class="w-full border border-gray-200 rounded-xl px-3 py-3 outline-none bg-white" />
-                <button type="button"
-                  class="px-4 py-3 rounded-xl bg-[#20CFCF] text-white font-semibold hover:opacity-90 transition">
-                  Gửi
-                </button>
-              </form>
-              <p class="mt-2 text-xs text-gray-500">
-                Không spam. Con người đã đủ spam rồi.
-              </p>
-            </div>
-          </aside>
-
-        </div>
+      <section class="max-w-6xl mx-auto px-6 pb-16">
+        <div id="eventsGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+        <div id="emptyText" class="hidden text-sm text-gray-500 mt-6"></div>
       </section>
     </div>
 
-    <!-- ===================== DETAIL PAGE ===================== -->
+    <!-- ================= DETAIL ================= -->
     <div id="detailPage" class="hidden">
-      <section class="w-full bg-white pt-14 pb-14">
-        <div class="max-w-6xl mx-auto px-6">
+      <section class="max-w-3xl mx-auto px-6 pt-14 pb-14">
 
-          <div id="detailLoading" class="text-gray-600">Đang tải sự kiện...</div>
+        <div id="detailLoading">Đang tải sự kiện...</div>
 
-          <div id="detailNotFound" class="hidden">
-            <h1 class="text-2xl font-bold text-gray-900">Không tìm thấy sự kiện</h1>
-            <p class="text-gray-600 mt-2">Link sai slug hoặc sự kiện đã bị xóa.</p>
-            <a href="/events/" class="inline-block mt-6 text-[#20CFCF] font-semibold hover:underline">
-              ← Quay lại danh sách sự kiện
-            </a>
+        <div id="detailNotFound" class="hidden">
+          <h1 class="text-2xl font-bold">Không tìm thấy sự kiện</h1>
+          <a href="/events/" class="text-[#20CFCF] font-semibold mt-4 inline-block">
+            ← Quay lại danh sách sự kiện
+          </a>
+        </div>
+
+        <article id="detailContent" class="hidden">
+
+          <div class="text-sm text-gray-500 flex gap-2">
+            <span id="dDate"></span>
+            <span>•</span>
+            <span id="dCategory"></span>
+            <span>•</span>
+            <span id="dMinutes"></span>
           </div>
 
-          <article id="detailContent" class="hidden">
-            <!-- Meta row -->
-            <div class="flex flex-wrap items-center gap-2 text-sm text-gray-500">
-              <span class="inline-flex items-center gap-2">
-                <i class="fa-regular fa-calendar"></i> <span id="dDate"></span>
-              </span>
-              <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
-              <span class="inline-flex items-center gap-2">
-                <i class="fa-solid fa-tag"></i> <span id="dCategory"></span>
-              </span>
-              <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
-              <span class="inline-flex items-center gap-2">
-                <i class="fa-regular fa-clock"></i> <span id="dMinutes"></span>
-              </span>
-            </div>
+          <h1 id="dTitle" class="text-3xl md:text-4xl font-bold mt-3"></h1>
 
-            <!-- Title -->
-            <h1 id="dTitle" class="mt-3 text-3xl md:text-4xl font-bold text-gray-900"></h1>
+          <p id="dExcerpt" class="text-gray-600 mt-3"></p>
 
-            <!-- Excerpt -->
-            <p id="dExcerpt" class="mt-3 text-gray-600 text-lg max-w-3xl"></p>
+          <div id="dBody" class="prose max-w-none mt-8"></div>
 
-            <!-- Body HTML -->
-            <div id="dBody" class="prose max-w-none mt-8"></div>
+          <a href="/events/" class="inline-block mt-10 text-[#20CFCF] font-semibold">
+            ← Quay lại danh sách sự kiện
+          </a>
 
-            <div class="mt-10">
-              <a href="/events/" class="text-[#20CFCF] font-semibold hover:underline">
-                ← Quay lại danh sách sự kiện
-              </a>
-            </div>
-          </article>
-        </div>
+        </article>
       </section>
     </div>
 
@@ -220,341 +116,121 @@
 
   <div id="footer"></div>
 
-  <script src="/include.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js" defer></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/rellax@1.12.1/rellax.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
-  <script src="assets/js/main.js" defer></script>
-
   <script>
-    // init animations
-    document.addEventListener("DOMContentLoaded", () => {
-      if (window.AOS) AOS.init({ once: true, duration: 650 });
-    });
-
-    // auto header offset so content never gets covered
-    function applyHeaderOffset() {
-      const host = document.getElementById("header");
-      const content = document.getElementById("page-content");
-      if (!host || !content) return;
-
-      const realHeader = host.querySelector("header, nav") || host;
-      const h = Math.ceil(realHeader.getBoundingClientRect().height || 96);
-
-      document.documentElement.style.setProperty("--header-offset", `${h}px`);
-      content.style.paddingTop = `var(--header-offset)`;
-    }
-
-    window.addEventListener("load", applyHeaderOffset);
-    window.addEventListener("resize", applyHeaderOffset);
-
-    // ================== CMS CONFIG ==================
     const CMS_BASE = "https://herbatech-cms.onrender.com";
-    const FALLBACK_COVER = "/assets/img/design/dataannotation.jpg";
-
-    function resolveCover(cover) {
-      if (!cover) return FALLBACK_COVER;
-      if (cover.startsWith("http")) return cover;
-      if (cover.startsWith("/uploads/")) return CMS_BASE + cover;
-      return cover;
-    }
-
-    function escapeHtml(s) {
-      return String(s || "")
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&#039;");
-    }
 
     function getParam(name) {
-      const url = new URL(window.location.href);
+      const url = new URL(location.href);
       return (url.searchParams.get(name) || "").trim();
-    }
-
-    function setMetaForDetail({ title, excerpt, slug, cover }) {
-      const pageTitle = document.getElementById("pageTitle");
-      const metaDesc = document.getElementById("metaDesc");
-      const canonical = document.getElementById("canonicalLink");
-
-      const ogTitle = document.getElementById("ogTitle");
-      const ogDesc = document.getElementById("ogDesc");
-      const ogUrl = document.getElementById("ogUrl");
-      const ogImg = document.getElementById("ogImg");
-
-      const twTitle = document.getElementById("twTitle");
-      const twDesc = document.getElementById("twDesc");
-      const twImg = document.getElementById("twImg");
-
-      const t = `${title} | Herbatech`;
-      const d = excerpt || "Sự kiện Herbatech";
-      const url = `https://herbatech.com.vn/events/?slug=${encodeURIComponent(slug)}`;
-      const img = resolveCover(cover);
-
-      document.title = t;
-      pageTitle.textContent = t;
-      metaDesc.setAttribute("content", d);
-      canonical.setAttribute("href", url);
-
-      ogTitle.setAttribute("content", t);
-      ogDesc.setAttribute("content", d);
-      ogUrl.setAttribute("content", url);
-      ogImg.setAttribute("content", img);
-
-      twTitle.setAttribute("content", t);
-      twDesc.setAttribute("content", d);
-      twImg.setAttribute("content", img);
-    }
-
-    // ================== LIST RENDER ==================
-    const featuredEventEl = document.getElementById("featuredEvent");
-    const eventsGridEl = document.getElementById("eventsGrid");
-    const categoryListEl = document.getElementById("categoryList");
-    const upcomingListEl = document.getElementById("upcomingList");
-    const emptyTextEl = document.getElementById("emptyText");
-
-    const searchForm = document.getElementById("searchForm");
-    const searchInput = document.getElementById("searchInput");
-    const filterSelect = document.getElementById("filterSelect");
-    const sortSelect = document.getElementById("sortSelect");
-
-    function eventHref(slug) {
-      return `/events/?slug=${encodeURIComponent(slug)}`;
     }
 
     function formatDateVN(iso) {
       if (!iso) return "";
       const d = new Date(iso);
-      if (isNaN(d)) return "";
       return d.toLocaleDateString("vi-VN");
     }
 
-    function renderFeatured(item) {
-      if (!item) {
-        featuredEventEl.innerHTML = "";
-        return;
+    /* ================= SEO ULTIMATE ================= */
+    function setMetaForDetail({ title, excerpt, slug, cover, created_at, category }) {
+
+      const t = title + " | Herbatech";
+      const d = excerpt || "Sự kiện Herbatech";
+      const url = `https://herbatech.com.vn/events/?slug=${slug}`;
+
+      document.title = t;
+      metaDesc.setAttribute("content", d);
+      canonicalLink.setAttribute("href", url);
+
+      ogTitle.content = t;
+      ogDesc.content = d;
+      ogUrl.content = url;
+      twTitle.content = t;
+      twDesc.content = d;
+
+      if (cover) {
+        ogImg.content = cover;
+        twImg.content = cover;
       }
 
-      const href = eventHref(item.slug);
-      const img = resolveCover(item.cover);
-      const date = formatDateVN(item.created_at);
-      const cat = item.category || "Sự kiện";
-      const mins = item.reading_minutes || 5;
+      /* JSON-LD EVENT */
+      const schema = {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": title,
+        "description": d,
+        "startDate": created_at || "",
+        "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "organizer": {
+          "@type": "Organization",
+          "name": "Herbatech",
+          "url": "https://herbatech.com.vn"
+        },
+        "url": url,
+        "image": cover || ""
+      };
+
+      document.getElementById("jsonldSchema").textContent =
+        JSON.stringify(schema, null, 2);
+    }
+
+    /* ================= LIST ================= */
+
+    const featuredEventEl = document.getElementById("featuredEvent");
+    const eventsGridEl = document.getElementById("eventsGrid");
+    const emptyTextEl = document.getElementById("emptyText");
+
+    function eventHref(slug) {
+      return `/events/?slug=${encodeURIComponent(slug)}`;
+    }
+
+    function renderFeatured(item) {
+      if (!item) { featuredEventEl.innerHTML = ""; return; }
 
       featuredEventEl.innerHTML = `
-        <a href="${href}"
-          class="group grid md:grid-cols-2 gap-6 rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg transition"
-          data-aos="fade-up">
-          <div class="relative">
-            <img src="${img}" alt="${escapeHtml(item.title)}"
-              class="w-full h-full object-cover min-h-[240px]"
-              onerror="this.onerror=null;this.src='${FALLBACK_COVER}';" />
-            <div class="absolute top-4 left-4 flex gap-2">
-              <span
-                class="inline-flex items-center gap-2 text-xs font-semibold bg-white/90 text-gray-800 px-3 py-1 rounded-full">
-                <i class="fa-solid fa-star text-[#20CFCF]"></i>
-                Sự kiện nổi bật
-              </span>
-              <span
-                class="inline-flex items-center gap-2 text-xs font-semibold bg-[#20CFCF] text-white px-3 py-1 rounded-full">
-                <i class="fa-solid fa-ticket"></i>
-                Đang mở đăng ký
-              </span>
-            </div>
-          </div>
-
-          <div class="p-6 md:p-8 flex flex-col justify-between">
-            <div>
-              <div class="flex flex-wrap items-center gap-2 text-xs text-gray-500">
-                <span class="inline-flex items-center gap-2">
-                  <i class="fa-regular fa-calendar"></i> ${date || "—"}
-                </span>
-                <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
-                <span class="inline-flex items-center gap-2">
-                  <i class="fa-solid fa-tag"></i> ${escapeHtml(cat)}
-                </span>
-                <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
-                <span class="inline-flex items-center gap-2">
-                  <i class="fa-regular fa-clock"></i> ${mins} phút
-                </span>
-              </div>
-
-              <h2 class="mt-3 text-2xl font-bold text-gray-900 group-hover:text-[#20CFCF] transition">
-                ${escapeHtml(item.title)}
-              </h2>
-
-              <p class="mt-3 text-gray-600">
-                ${escapeHtml(item.excerpt || "")}
-              </p>
-            </div>
-
-            <div class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#20CFCF]">
-              Xem chi tiết <i class="fa-solid fa-arrow-right"></i>
-            </div>
-          </div>
-        </a>
-      `;
+<a href="${eventHref(item.slug)}"
+class="group grid md:grid-cols-2 border rounded-2xl overflow-hidden hover:shadow-lg">
+<img src="${item.cover || ""}" class="w-full h-full object-cover min-h-[240px]">
+<div class="p-6">
+<h2 class="text-2xl font-bold">${item.title}</h2>
+<p class="text-gray-600 mt-3">${item.excerpt || ""}</p>
+</div>
+</a>`;
     }
 
     function renderGrid(items, featuredSlug) {
-      const cards = items
-        .filter(ev => !featuredSlug || ev.slug !== featuredSlug)
-        .map((ev, idx) => {
-          const href = eventHref(ev.slug);
-          const img = resolveCover(ev.cover);
-          const date = formatDateVN(ev.created_at);
-          const cat = ev.category || "Sự kiện";
-          const mins = ev.reading_minutes || 5;
-
-          return `
-            <article class="rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg transition"
-              data-aos="fade-up" data-aos-delay="${(idx % 2) * 50}">
-              <a href="${href}" class="block">
-                <img src="${img}" alt="${escapeHtml(ev.title)}" class="w-full h-44 object-cover"
-                  onerror="this.onerror=null;this.src='${FALLBACK_COVER}';" />
-              </a>
-              <div class="p-5">
-                <div class="flex flex-wrap items-center gap-2 text-xs text-gray-500">
-                  <span class="inline-flex items-center gap-2"><i class="fa-regular fa-calendar"></i> ${date || "—"}</span>
-                  <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
-                  <span class="inline-flex items-center gap-2"><i class="fa-solid fa-tag"></i> ${escapeHtml(cat)}</span>
-                </div>
-                <h4 class="mt-2 font-bold text-gray-900 text-lg leading-snug">
-                  <a href="${href}" class="hover:text-[#20CFCF] transition">
-                    ${escapeHtml(ev.title)}
-                  </a>
-                </h4>
-                <p class="mt-2 text-gray-600 text-sm">
-                  ${escapeHtml(ev.excerpt || "")}
-                </p>
-                <div class="mt-4 flex items-center justify-between text-sm">
-                  <span class="text-gray-500 inline-flex items-center gap-2">
-                    <i class="fa-regular fa-clock"></i> ${mins} phút
-                  </span>
-                  <span class="inline-flex items-center gap-2 text-xs font-semibold bg-gray-100 text-gray-700 px-3 py-1 rounded-full">
-                    ${escapeHtml(cat)}
-                  </span>
-                </div>
-              </div>
-            </article>
-          `;
-        }).join("");
-
-      eventsGridEl.innerHTML = cards;
-    }
-
-    function renderCategories(items) {
-      const map = new Map();
-      items.forEach(ev => {
-        const c = (ev.category || "Sự kiện").trim() || "Sự kiện";
-        map.set(c, (map.get(c) || 0) + 1);
-      });
-
-      const entries = [...map.entries()].sort((a, b) => b[1] - a[1]);
-
-      categoryListEl.innerHTML = entries.map(([cat, count]) => {
-        const url = new URL(location.href);
-        url.searchParams.delete("slug");
-        url.searchParams.set("category", cat);
-        url.searchParams.delete("q");
-        return `
-          <a href="${url.pathname + "?" + url.searchParams.toString()}"
-            class="flex items-center justify-between p-3 rounded-xl hover:bg-gray-50">
-            <span class="text-gray-700">${escapeHtml(cat)}</span>
-            <span class="text-xs text-gray-500">${count}</span>
-          </a>
-        `;
-      }).join("") || `<div class="text-sm text-gray-500">Chưa có danh mục.</div>`;
-    }
-
-    function renderUpcoming(items) {
-      const top = items.slice(0, 2);
-      upcomingListEl.innerHTML = top.map(ev => {
-        const href = eventHref(ev.slug);
-        const img = resolveCover(ev.cover);
-        const date = formatDateVN(ev.created_at);
-        return `
-          <a href="${href}" class="flex gap-3 group">
-            <img src="${img}" alt="${escapeHtml(ev.title)}"
-              class="w-20 h-16 object-cover rounded-xl border border-gray-200"
-              onerror="this.onerror=null;this.src='${FALLBACK_COVER}';" />
-            <div>
-              <p class="text-sm font-semibold text-gray-900 group-hover:text-[#20CFCF] transition leading-snug">
-                ${escapeHtml(ev.title)}
-              </p>
-              <p class="text-xs text-gray-500 mt-1">${date || "—"}</p>
-            </div>
-          </a>
-        `;
-      }).join("") || `<div class="text-sm text-gray-500">Chưa có sự kiện.</div>`;
+      eventsGridEl.innerHTML = items
+        .filter(x => x.slug !== featuredSlug)
+        .map(ev => `
+<a href="${eventHref(ev.slug)}"
+class="block border rounded-xl overflow-hidden hover:shadow-lg">
+<img src="${ev.cover || ""}" class="w-full h-44 object-cover">
+<div class="p-4">
+<h3 class="font-bold">${ev.title}</h3>
+<p class="text-sm text-gray-600 mt-2">${ev.excerpt || ""}</p>
+</div>
+</a>`).join("");
     }
 
     async function loadList() {
-      // reset meta for list
       document.title = "Sự kiện | Herbatech";
-      document.getElementById("pageTitle").textContent = "Sự kiện | Herbatech";
-      document.getElementById("metaDesc").setAttribute("content",
-        "Trang sự kiện của Herbatech: hoạt động nội bộ, hội thảo, workshop, và các sự kiện dành cho đối tác/khách hàng.");
-      document.getElementById("canonicalLink").setAttribute("href", "https://herbatech.com.vn/events");
-
-      const q = getParam("q").toLowerCase();
-      const category = getParam("category");
-      if (searchInput) searchInput.value = q;
+      canonicalLink.href = "https://herbatech.com.vn/events";
 
       const res = await fetch(`${CMS_BASE}/api/events`);
-      if (!res.ok) throw new Error("api_failed");
       let items = await res.json();
 
-      // sort
-      const sort = sortSelect?.value || "new";
-      items.sort((a, b) => {
-        const da = new Date(a.created_at || 0).getTime();
-        const db = new Date(b.created_at || 0).getTime();
-        return sort === "old" ? da - db : db - da;
-      });
-
-      // filter UI
-      const f = filterSelect?.value || "all";
-      if (f === "featured") items = items.filter(x => x.is_featured);
-
-      // filter by category param
-      if (category) items = items.filter(x => (x.category || "Sự kiện") === category);
-
-      // search
-      if (q) {
-        items = items.filter(x =>
-          (x.title || "").toLowerCase().includes(q) ||
-          (x.excerpt || "").toLowerCase().includes(q)
-        );
-      }
-
       if (!items.length) {
-        featuredEventEl.innerHTML = "";
-        eventsGridEl.innerHTML = "";
-        categoryListEl.innerHTML = `<div class="text-sm text-gray-500">Chưa có danh mục.</div>`;
-        upcomingListEl.innerHTML = `<div class="text-sm text-gray-500">Chưa có sự kiện.</div>`;
         emptyTextEl.classList.remove("hidden");
         return;
-      } else {
-        emptyTextEl.classList.add("hidden");
       }
 
-      // featured
       const featured = items.find(x => x.is_featured) || items[0];
       renderFeatured(featured);
-
-      // grid
-      renderGrid(items, featured?.slug);
-
-      // sidebar
-      renderCategories(items);
-      renderUpcoming(items);
+      renderGrid(items, featured.slug);
     }
 
-    // ================== DETAIL RENDER ==================
+    /* ================= DETAIL ================= */
+
     const listPage = document.getElementById("listPage");
     const detailPage = document.getElementById("detailPage");
 
@@ -568,72 +244,49 @@
     const dTitle = document.getElementById("dTitle");
     const dExcerpt = document.getElementById("dExcerpt");
     const dBody = document.getElementById("dBody");
-    const dImage = document.getElementById("dImage");
 
     async function loadDetail(slug) {
+
       listPage.classList.add("hidden");
       detailPage.classList.remove("hidden");
 
-      dLoading.classList.remove("hidden");
-      dNotFound.classList.add("hidden");
-      dContent.classList.add("hidden");
-
       try {
-        const res = await fetch(`${CMS_BASE}/api/events/slug/${encodeURIComponent(slug)}`);
-        if (!res.ok) throw new Error("not_found");
+        const res = await fetch(`${CMS_BASE}/api/events/slug/${slug}`);
+        if (!res.ok) throw 0;
+
         const data = await res.json();
 
         setMetaForDetail({
-          title: data.title || "Sự kiện",
-          excerpt: data.excerpt || "",
+          title: data.title,
+          excerpt: data.excerpt,
           slug,
-          cover: data.cover || ""
+          cover: data.cover,
+          created_at: data.created_at,
+          category: data.category
         });
 
-        dDate.textContent = formatDateVN(data.created_at) || "—";
+        dDate.textContent = formatDateVN(data.created_at);
         dCategory.textContent = data.category || "Sự kiện";
-        dMinutes.textContent = `${data.reading_minutes || 5} phút`;
-        dTitle.textContent = data.title || "Sự kiện";
+        dMinutes.textContent = (data.reading_minutes || 5) + " phút";
+        dTitle.textContent = data.title;
         dExcerpt.textContent = data.excerpt || "";
         dBody.innerHTML = data.content || "";
 
-        const img = resolveCover(data.cover);
-        dImage.src = img;
-        dImage.alt = data.title || "Ảnh sự kiện";
-        dImage.onerror = () => { dImage.src = FALLBACK_COVER; };
-
         dLoading.classList.add("hidden");
         dContent.classList.remove("hidden");
+
       } catch (e) {
         dLoading.classList.add("hidden");
         dNotFound.classList.remove("hidden");
       }
     }
 
-    // ================== EVENTS ==================
-    if (searchForm) {
-      searchForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const val = (searchInput.value || "").trim();
-        const url = new URL(location.href);
-        url.searchParams.delete("slug");
-        url.searchParams.delete("category");
-        if (val) url.searchParams.set("q", val); else url.searchParams.delete("q");
-        location.href = url.pathname + (url.searchParams.toString() ? "?" + url.searchParams.toString() : "");
-      });
-    }
+    /* ================= BOOT ================= */
 
-    if (filterSelect) filterSelect.addEventListener("change", () => loadList().catch(() => { }));
-    if (sortSelect) sortSelect.addEventListener("change", () => loadList().catch(() => { }));
-
-    // ================== BOOT ==================
     (function boot() {
       const slug = getParam("slug");
       if (slug) loadDetail(slug);
-      else loadList().catch(() => {
-        emptyTextEl.classList.remove("hidden");
-        emptyTextEl.textContent = "Không tải được sự kiện. Kiểm tra CMS API/CORS.";
-      });
+      else loadList();
     })();
   </script>
 </body>
