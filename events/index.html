@@ -197,14 +197,14 @@
               </span>
             </div>
 
-            <img id="dImage" class="w-full max-h-[420px] object-cover rounded-2xl mt-6 border border-gray-200" src=""
-              alt="" />
+            <!-- <img id="dImage" class="w-full max-h-[420px] object-cover rounded-2xl mt-6 border border-gray-200" src=""
+              alt="" /> -->
               
             <!-- Title -->
             <h1 id="dTitle" class="mt-3 text-3xl md:text-4xl font-bold text-gray-900"></h1>
 
             <!-- Excerpt -->
-            <p id="dExcerpt" class="mt-3 text-gray-600 text-lg max-w-3xl"></p>
+            <!-- <p id="dExcerpt" class="mt-3 text-gray-600 text-lg max-w-3xl"></p> -->
 
             <!-- Body HTML -->
             <div id="dBody" class="prose max-w-none mt-8"></div>
@@ -597,14 +597,12 @@
         dCategory.textContent = data.category || "Sự kiện";
         dMinutes.textContent = `${data.reading_minutes || 5} phút`;
         dTitle.textContent = data.title || "Sự kiện";
-        dExcerpt.textContent = data.excerpt || "";
         dBody.innerHTML = data.content || "";
 
         const img = resolveCover(data.cover);
-        dImage.src = img;
+        
         dImage.alt = data.title || "Ảnh sự kiện";
         dImage.onerror = () => { dImage.src = FALLBACK_COVER; };
-
         dLoading.classList.add("hidden");
         dContent.classList.remove("hidden");
       } catch (e) {
