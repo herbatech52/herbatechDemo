@@ -199,7 +199,7 @@
 
             <!-- <img id="dImage" class="w-full max-h-[420px] object-cover rounded-2xl mt-6 border border-gray-200" src=""
               alt="" /> -->
-              
+
             <!-- Title -->
             <h1 id="dTitle" class="mt-3 text-3xl md:text-4xl font-bold text-gray-900"></h1>
 
@@ -558,73 +558,77 @@
     }
 
     // ================== DETAIL RENDER (ULTRA SAFE) ==================
-const listPage = document.getElementById("listPage");
-const detailPage = document.getElementById("detailPage");
+    const listPage = document.getElementById("listPage");
+    const detailPage = document.getElementById("detailPage");
 
-const dLoading = document.getElementById("detailLoading");
-const dNotFound = document.getElementById("detailNotFound");
-const dContent = document.getElementById("detailContent");
+    const dLoading = document.getElementById("detailLoading");
+    const dNotFound = document.getElementById("detailNotFound");
+    const dContent = document.getElementById("detailContent");
 
-const dDate = document.getElementById("dDate");
-const dCategory = document.getElementById("dCategory");
-const dMinutes = document.getElementById("dMinutes");
-const dTitle = document.getElementById("dTitle");
-const dBody = document.getElementById("dBody");
+    const dDate = document.getElementById("dDate");
+    const dCategory = document.getElementById("dCategory");
+    const dMinutes = document.getElementById("dMinutes");
+    const dTitle = document.getElementById("dTitle");
+    const dBody = document.getElementById("dBody");
 
-const dImage = document.getElementById("dImage");
-const dExcerpt = document.getElementById("dExcerpt");
+    const dImage = document.getElementById("dImage");
+    const dExcerpt = document.getElementById("dExcerpt");
 
-async function loadDetail(slug) {
-  listPage.classList.add("hidden");
-  detailPage.classList.remove("hidden");
+    async function loadDetail(slug) {
+      listPage.classList.add("hidden");
+      detailPage.classList.remove("hidden");
 
-  dLoading.classList.remove("hidden");
-  dNotFound.classList.add("hidden");
-  dContent.classList.add("hidden");
+      dLoading.classList.remove("hidden");
+      dNotFound.classList.add("hidden");
+      dContent.classList.add("hidden");
 
-  try {
-    const res = await fetch(`${CMS_BASE}/api/events/${encodeURIComponent(slug)}`);
-    if (!res.ok) throw new Error("not_found");
+      try {
+        const res = await fetch(`${CMS_BASE}/api/events/${encodeURIComponent(slug)}`);
+        if (!res.ok) throw new Error("not_found");
 
-    const data = await res.json();
+        const data = await res.json();
 
-    setMetaForDetail({
-      title: data.title || "Sự kiện",
-      excerpt: data.excerpt || "",
-      slug,
-      cover: data.cover || ""
-    });
+        setMetaForDetail({
+          title: data.title || "Sự kiện",
+          excerpt: data.excerpt || "",
+          slug,
+          cover: data.cover || ""
+        });
 
-    if (dDate) dDate.textContent = formatDateVN(data.created_at) || "—";
-    if (dCategory) dCategory.textContent = data.category || "Sự kiện";
-    if (dMinutes) dMinutes.textContent = `${data.reading_minutes || 5} phút`;
-    if (dTitle) dTitle.textContent = data.title || "Sự kiện";
+        if (dDate) dDate.textContent = formatDateVN(data.created_at) || "—";
+        if (dCategory) dCategory.textContent = data.category || "Sự kiện";
+        if (dMinutes) dMinutes.textContent = `${data.reading_minutes || 5} phút`;
+        if (dTitle) dTitle.textContent = data.title || "Sự kiện";
 
-    // 👉 chỉ render BODY (ULTRA PRO STYLE)
-    if (dBody) {
-      dBody.innerHTML = data.content || "<p>Chưa có nội dung.</p>";
+        // chỉ render BODY
+        if (dBody) {
+          data.content ||
+            data.editor ||
+            data.body ||
+            data.detail ||
+            "<p>Chưa có nội dung.</p>";
+        }
+
+        if (dImage) {
+          const img = resolveCover(data.cover);
+          dImage.src = img;
+          dImage.alt = data.title || "Ảnh sự kiện";
+          dImage.onerror = () => { dImage.src = FALLBACK_COVER; };
+        }
+
+        if (dExcerpt) {
+          dExcerpt.textContent = data.excerpt || "";
+        }
+
+        dLoading.classList.add("hidden");
+        dContent.classList.remove("hidden");
+
+      } catch (e) {
+        console.error("DETAIL ERROR:", e);
+        dLoading.classList.add("hidden");
+        dNotFound.classList.remove("hidden");
+      }
     }
-
-    if (dImage) {
-      const img = resolveCover(data.cover);
-      dImage.src = img;
-      dImage.alt = data.title || "Ảnh sự kiện";
-      dImage.onerror = () => { dImage.src = FALLBACK_COVER; };
-    }
-    
-    if (dExcerpt) {
-      dExcerpt.textContent = data.excerpt || "";
-    }
-
-    dLoading.classList.add("hidden");
-    dContent.classList.remove("hidden");
-
-  } catch (e) {
-    console.error("DETAIL ERROR:", e);
-    dLoading.classList.add("hidden");
-    dNotFound.classList.remove("hidden");
-  }
-}
 
 
     // ================== EVENTS ==================
