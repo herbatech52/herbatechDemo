@@ -99,7 +99,7 @@
             <div class="flex items-center justify-between mb-5" data-aos="fade-up">
               <h3 class="text-xl font-bold text-gray-900">Sự kiện sắp tới</h3>
 
-              <!-- giữ UI như cũ, logic filter/sort mình làm tối giản (đừng đòi hỏi nhiều ở đời) -->
+              <!-- giữ UI như cũ, logic filter/sort mình làm tối giản -->
               <div class="flex items-center gap-2 text-sm">
                 <span class="text-gray-500">Lọc:</span>
                 <select id="filterSelect"
@@ -582,7 +582,7 @@
       dContent.classList.add("hidden");
 
       try {
-        const res = await fetch(`${CMS_BASE}/api/events/slug/${encodeURIComponent(slug)}`);
+        const res = await fetch(`${CMS_BASE}/api/events/${encodeURIComponent(slug)}`);
         if (!res.ok) throw new Error("not_found");
         const data = await res.json();
 
