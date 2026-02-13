@@ -14,8 +14,7 @@
   <meta property="og:site_name" content="Herbatech" />
   <meta property="og:title" content="Sự kiện | Herbatech" id="ogTitle" />
   <meta property="og:description"
-    content="Cập nhật các sự kiện của Herbatech: hội thảo, workshop, hoạt động nội bộ, sự kiện đối tác."
-    id="ogDesc" />
+    content="Cập nhật các sự kiện của Herbatech: hội thảo, workshop, hoạt động nội bộ, sự kiện đối tác." id="ogDesc" />
   <meta property="og:url" content="https://herbatech.com.vn/events" id="ogUrl" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://herbatech.com.vn/assets/img/design/dataannotation.jpg" id="ogImg" />
@@ -23,8 +22,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Sự kiện | Herbatech" id="twTitle" />
   <meta name="twitter:description"
-    content="Cập nhật các sự kiện của Herbatech: hội thảo, workshop, hoạt động nội bộ, sự kiện đối tác."
-    id="twDesc" />
+    content="Cập nhật các sự kiện của Herbatech: hội thảo, workshop, hoạt động nội bộ, sự kiện đối tác." id="twDesc" />
   <meta name="twitter:image" content="https://herbatech.com.vn/assets/img/design/dataannotation.jpg" id="twImg" />
 
   <link href="/assets/img/logo/HerbatechLogo.png" rel="shortcut icon" type="image/png" />
@@ -34,8 +32,13 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
   <style>
-    :root { --header-offset: 96px; }
-    [id] { scroll-margin-top: var(--header-offset); }
+    :root {
+      --header-offset: 96px;
+    }
+
+    [id] {
+      scroll-margin-top: var(--header-offset);
+    }
   </style>
 </head>
 
@@ -65,7 +68,8 @@
 
             <!-- Search -->
             <div class="w-full md:w-[380px]" data-aos="fade-up" data-aos-delay="100">
-              <form id="searchForm" class="flex items-center gap-2 bg-gray-50 border border-gray-200 rounded-xl px-3 py-2">
+              <form id="searchForm"
+                class="flex items-center gap-2 bg-gray-50 border border-gray-200 rounded-xl px-3 py-2">
                 <i class="fa-solid fa-magnifying-glass text-gray-400"></i>
                 <input id="searchInput" type="search" placeholder="Tìm sự kiện..."
                   class="w-full bg-transparent outline-none text-gray-700 placeholder:text-gray-400"
@@ -98,13 +102,15 @@
               <!-- giữ UI như cũ, logic filter/sort mình làm tối giản (đừng đòi hỏi nhiều ở đời) -->
               <div class="flex items-center gap-2 text-sm">
                 <span class="text-gray-500">Lọc:</span>
-                <select id="filterSelect" class="border border-gray-200 rounded-lg px-3 py-2 bg-white text-gray-700 outline-none">
+                <select id="filterSelect"
+                  class="border border-gray-200 rounded-lg px-3 py-2 bg-white text-gray-700 outline-none">
                   <option value="all">Tất cả</option>
                   <option value="featured">Nổi bật</option>
                 </select>
 
                 <span class="text-gray-500 ml-2">Sắp xếp:</span>
-                <select id="sortSelect" class="border border-gray-200 rounded-lg px-3 py-2 bg-white text-gray-700 outline-none">
+                <select id="sortSelect"
+                  class="border border-gray-200 rounded-lg px-3 py-2 bg-white text-gray-700 outline-none">
                   <option value="new">Mới nhất</option>
                   <option value="old">Cũ nhất</option>
                 </select>
@@ -199,17 +205,6 @@
 
             <!-- Body HTML -->
             <div id="dBody" class="prose max-w-none mt-8"></div>
-
-            <!-- Ảnh sự kiện (đây là ảnh upload từ admin) -->
-            <div class="mt-10 rounded-2xl border border-gray-200 p-5 bg-gray-50">
-              <h3 class="text-lg font-bold text-gray-900">Ảnh sự kiện</h3>
-              <p class="text-sm text-gray-600 mt-1">
-                Ảnh này được upload trong trang admin (CMS).
-              </p>
-              <div class="mt-4 rounded-2xl overflow-hidden border border-gray-200 bg-white">
-                <img id="dImage" src="" alt="" class="w-full h-auto object-cover" />
-              </div>
-            </div>
 
             <div class="mt-10">
               <a href="/events/" class="text-[#20CFCF] font-semibold hover:underline">
@@ -584,7 +579,7 @@
       dContent.classList.add("hidden");
 
       try {
-        const res = await fetch(`${CMS_BASE}/api/events/${encodeURIComponent(slug)}`);
+        const res = await fetch(`${CMS_BASE}/api/events/slug/${encodeURIComponent(slug)}`);
         if (!res.ok) throw new Error("not_found");
         const data = await res.json();
 
@@ -628,8 +623,8 @@
       });
     }
 
-    if (filterSelect) filterSelect.addEventListener("change", () => loadList().catch(() => {}));
-    if (sortSelect) sortSelect.addEventListener("change", () => loadList().catch(() => {}));
+    if (filterSelect) filterSelect.addEventListener("change", () => loadList().catch(() => { }));
+    if (sortSelect) sortSelect.addEventListener("change", () => loadList().catch(() => { }));
 
     // ================== BOOT ==================
     (function boot() {
