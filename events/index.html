@@ -557,59 +557,75 @@
       renderUpcoming(items);
     }
 
-    // ================== DETAIL RENDER ==================
-    const listPage = document.getElementById("listPage");
-    const detailPage = document.getElementById("detailPage");
+    // ================== DETAIL RENDER (ULTRA SAFE) ==================
+const listPage = document.getElementById("listPage");
+const detailPage = document.getElementById("detailPage");
 
-    const dLoading = document.getElementById("detailLoading");
-    const dNotFound = document.getElementById("detailNotFound");
-    const dContent = document.getElementById("detailContent");
+const dLoading = document.getElementById("detailLoading");
+const dNotFound = document.getElementById("detailNotFound");
+const dContent = document.getElementById("detailContent");
 
-    const dDate = document.getElementById("dDate");
-    const dCategory = document.getElementById("dCategory");
-    const dMinutes = document.getElementById("dMinutes");
-    const dTitle = document.getElementById("dTitle");
-    const dExcerpt = document.getElementById("dExcerpt");
-    const dBody = document.getElementById("dBody");
-    const dImage = document.getElementById("dImage");
+const dDate = document.getElementById("dDate");
+const dCategory = document.getElementById("dCategory");
+const dMinutes = document.getElementById("dMinutes");
+const dTitle = document.getElementById("dTitle");
+const dBody = document.getElementById("dBody");
 
-    async function loadDetail(slug) {
-      listPage.classList.add("hidden");
-      detailPage.classList.remove("hidden");
+const dImage = document.getElementById("dImage");
+const dExcerpt = document.getElementById("dExcerpt");
 
-      dLoading.classList.remove("hidden");
-      dNotFound.classList.add("hidden");
-      dContent.classList.add("hidden");
+async function loadDetail(slug) {
+  listPage.classList.add("hidden");
+  detailPage.classList.remove("hidden");
 
-      try {
-        const res = await fetch(`${CMS_BASE}/api/events/${encodeURIComponent(slug)}`);
-        if (!res.ok) throw new Error("not_found");
-        const data = await res.json();
+  dLoading.classList.remove("hidden");
+  dNotFound.classList.add("hidden");
+  dContent.classList.add("hidden");
 
-        setMetaForDetail({
-          title: data.title || "Sự kiện",
-          excerpt: data.excerpt || "",
-          slug,
-          cover: data.cover || ""
-        });
+  try {
+    const res = await fetch(`${CMS_BASE}/api/events/${encodeURIComponent(slug)}`);
+    if (!res.ok) throw new Error("not_found");
 
-        dDate.textContent = formatDateVN(data.created_at) || "—";
-        dCategory.textContent = data.category || "Sự kiện";
-        dMinutes.textContent = `${data.reading_minutes || 5} phút`;
-        dTitle.textContent = data.title || "Sự kiện";
-        dBody.innerHTML = data.content || "";
+    const data = await res.json();
 
-        const img = resolveCover(data.cover);
-        
-        dImage.alt = data.title || "Ảnh sự kiện";
-        dImage.onerror = () => { dImage.src = FALLBACK_COVER; };
-        dLoading.classList.add("hidden");
-        dContent.classList.remove("hidden");
-      } catch (e) {
-        dLoading.classList.add("hidden");
-        dNotFound.classList.remove("hidden");
-      }
+    setMetaForDetail({
+      title: data.title || "Sự kiện",
+      excerpt: data.excerpt || "",
+      slug,
+      cover: data.cover || ""
+    });
+
+    if (dDate) dDate.textContent = formatDateVN(data.created_at) || "—";
+    if (dCategory) dCategory.textContent = data.category || "Sự kiện";
+    if (dMinutes) dMinutes.textContent = `${data.reading_minutes || 5} phút`;
+    if (dTitle) dTitle.textContent = data.title || "Sự kiện";
+
+    // 👉 chỉ render BODY (ULTRA PRO STYLE)
+    if (dBody) {
+      dBody.innerHTML = data.content || "<p>Chưa có nội dung.</p>";
     }
+
+    if (dImage) {
+      const img = resolveCover(data.cover);
+      dImage.src = img;
+      dImage.alt = data.title || "Ảnh sự kiện";
+      dImage.onerror = () => { dImage.src = FALLBACK_COVER; };
+    }
+    
+    if (dExcerpt) {
+      dExcerpt.textContent = data.excerpt || "";
+    }
+
+    dLoading.classList.add("hidden");
+    dContent.classList.remove("hidden");
+
+  } catch (e) {
+    console.error("DETAIL ERROR:", e);
+    dLoading.classList.add("hidden");
+    dNotFound.classList.remove("hidden");
+  }
+}
+
 
     // ================== EVENTS ==================
     if (searchForm) {
