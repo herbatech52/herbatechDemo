@@ -142,8 +142,7 @@
               <div id="upcomingList" class="mt-4 space-y-4"></div>
             </div>
 
-            <!-- CTA (giữ nguyên UI) -->
-            <div class="rounded-2xl border border-gray-200 p-5 bg-gray-50" data-aos="fade-up">
+            <!--<div class="rounded-2xl border border-gray-200 p-5 bg-gray-50" data-aos="fade-up">
               <h3 class="text-lg font-bold text-gray-900">Đăng ký nhận thông báo sự kiện</h3>
               <p class="mt-2 text-sm text-gray-600">
                 Nhận email khi có workshop/webinar hoặc sự kiện đối tác mới.
@@ -159,7 +158,7 @@
               <p class="mt-2 text-xs text-gray-500">
                 Không spam. Con người đã đủ spam rồi.
               </p>
-            </div>
+            </div>-->
           </aside>
 
         </div>
@@ -600,14 +599,16 @@
         if (dMinutes) dMinutes.textContent = `${data.reading_minutes || 5} phút`;
         if (dTitle) dTitle.textContent = data.title || "Sự kiện";
 
-        // chỉ render BODY
+        // render 
         if (dBody) {
-          data.content ||
+          dBody.innerHTML =
+            data.content ||
             data.editor ||
             data.body ||
             data.detail ||
             "<p>Chưa có nội dung.</p>";
         }
+
 
         if (dImage) {
           const img = resolveCover(data.cover);
