@@ -44,24 +44,23 @@
     display: none;
     align-items: center;
     justify-content: center;
-    background: rgba(0,0,0,.45); /* nhẹ hơn */
+    background: rgba(0,0,0,.45); 
     padding: 12px;
   }
   #noticeModal.is-open{ display: flex; }
 
   #noticeModal .notice-box{
     width: 100%;
-    max-width: 520px;          /* ✅ nhỏ lại (đổi 520 tuỳ bạn) */
-    max-height: 75vh;          /* ✅ không tràn màn hình */
+    max-width: 520px;       
+    max-height: 75vh;          
     background: #fff;
     border: 1px solid #e5e7eb;
-    border-radius: 18px;       /* ✅ bo góc nhiều hơn */
+    border-radius: 18px;      
     overflow: hidden;
     box-shadow: 0 30px 80px rgba(0,0,0,.35);
     position: relative;
   }
 
-  /* nếu ảnh popup cao quá thì cho cuộn trong popup */
   #noticeModal .notice-body{
     max-height: 75vh;
     overflow: auto;
@@ -79,7 +78,7 @@
   <div class="fixed inset-0 -z-10" id="particles-js"></div>
   <div id="header"></div>
 
-  <!-- EVENT/NOTICE -->
+  <!-- EVENT/NOTICE
 <div id="noticeModal">
 
  <div class="notice-box" style="position:relative;">
@@ -90,12 +89,12 @@
     aria-label="Đóng">
     <i class="fa-solid fa-xmark" style="font-size:20px; color:#374151;"></i>
   </button>
-
-  <div class="notice-body">
+  
+ <div class="notice-body">
     <img src="/assets/img/popup-event.png"
          alt="Thông báo sự kiện"
          style="width:100%; height:auto; display:block;">
-  </div>
+  </div> -->
 
   </div>
 </div>

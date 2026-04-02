@@ -32,7 +32,7 @@ function wireHeaderInteractions(root = document) {
       drawer.classList.add('translate-x-full');
       backdrop && backdrop.classList.add('hidden');
     };
-
+    
     openBtn.addEventListener('click', open, { passive: true });
     closeBtn && closeBtn.addEventListener('click', close, { passive: true });
     backdrop && backdrop.addEventListener('click', close, { passive: true });
