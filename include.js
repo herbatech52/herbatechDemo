@@ -44,6 +44,12 @@ function wireHeaderInteractions(root = document) {
       caret && caret.classList.toggle('rotate-180');
     }, { passive: true });
   }
+  // try{
+
+  // }
+  // catch (e){
+  //   subBtn && console.error(logger.error("không load được menu mobile", e));
+  // }
 }
 
 (async () => {
